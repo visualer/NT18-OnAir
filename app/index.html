@@ -23,7 +23,7 @@
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#2F3BA2">
 
-    <meta name="theme-color" content="#2F3BA2">
+    <meta name="theme-color" content="#EE5389">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../lib/material/material.min.css">
@@ -320,29 +320,27 @@
             let result = idx.search($("#searchInput").val());
             if (result.length === 0) return; // TODO: add some hint
             result.forEach(function (elem) {
+
               let resultJson = data[elem.ref];
+              let authors = resultJson.author.map(function (authorName, index) {
+                return `${authorName}<sup>${resultJson.mapping[index]}</sup>`;
+              }).join(', ');
+              let labs = resultJson.lab.map(function (labName, index) {
+                return `(${index + 1}) ${labName}`;
+              }).join(', ');
+
               $searchResult.append($(`
                 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
                   <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
                     <div class="mdl-card__supporting-text">
                       <h4 class="mdl-card__title-text">${resultJson.title}</h4>
-                      <h6>
-                        ${resultJson.author.map(function (authorName, index) {
-                          return authorName + "<sup>" + resultJson.mapping[index] + "</sup>";
-                        }).join(', ')}
-                      </h6>
-                      <br />
-                      <p>
-                        ${resultJson.lab.map(function (labName, index) {
-                          return "(" + (index + 1) + ") " + labName;
-                        }).join(', ')}
-                      </p>
-                      <hr />
-                      ${resultJson.content}
+                      <h6>${authors}</h6><br /><p>${labs}</p>
+                      <hr />${resultJson.content}
                     </div>
                   </div>
                 </section>
               `));
+
             });
           }
         });
