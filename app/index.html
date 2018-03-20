@@ -204,7 +204,7 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>NT18 OnAir</h3>
+          <h1>NT18 OnAir</h1>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
@@ -224,12 +224,12 @@
             </header>
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
               <div class="mdl-card__supporting-text"
-                   style="margin-top: 10px; margin-bottom: 20px;">
-                <h3>NT18 OnAir</h3>
+                   style="margin-top: 10px; margin-bottom: 20px; text-align: center;">
+                <h2>NT18 OnAir</h2>
                 <p>
                   Welcome to Peking University!<br /><br />
-                  NT18 OnAir WebApp provides all the essential information of the NT18 Conference,
-                  when you are in Peking University, including
+                  NT18 OnAir provides all the essential information of the NT18 Conference
+                  on your mobile, including
                   program information, abstracts, etc.<br /><br />
                   Hope you enjoy your staying here!
                 </p>
@@ -247,12 +247,15 @@
                    style="margin-top: 0; margin-bottom: 0; border: none;">
                 <h3>Abstracts</h3>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="search">
-                  <label class="mdl-textfield__label" for="search">Search...</label>
+                  <input class="mdl-textfield__input" type="text" id="searchInput">
+                  <label class="mdl-textfield__label" for="searchInput">Search...</label>
                 </div>
               </div>
             </div>
           </section>
+          <div id="searchResult">
+
+          </div>
           <section class="section--footer"></section>
         </div>
 
@@ -270,7 +273,8 @@
           <div class="mdl-mega-footer--bottom-section">
             <div class="mdl-logo mdl-color-text--grey-200">
               &copy; 2009–2018 Nanomaterials & Nanostructures Group, Peking University. All rights reserved.
-              <br /><br />
+              <br />
+              <br />
               Please contact Sida Sun, accel(at)pku.edu.cn for any technical assistance.
               (<a href="https://github.com/visualer" class="mdl-color-text--grey-500">GitHub</a>)
             </div>
@@ -279,12 +283,71 @@
       </main>
     </div>
 
+    <script src="../lib/jquery/jquery-3.3.1.min.js"></script>
     <script defer src="../lib/material/material.min.js"></script>
     <script src="../lib/lunr/lunr.js"></script>
 
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/app.js"></script>
     <!-- endbuild -->
+    <script>
 
+      $.getJSON("../data/abstracts.json", function (data) {
+        let idx = lunr(function () {
+          this.ref("id");
+          this.field("title");
+          this.field("lab");
+          this.field("content");
+          this.field("author");
+
+          data.forEach(function (doc) {
+            this.add({
+              id: doc.id,
+              title: doc.title,
+              author: doc.author.join(" "),
+              lab: doc.lab.join(" "),
+              content: doc.content,
+              mapping: doc.mapping
+            });
+          }, this);
+        });
+
+        let $searchResult = $("#searchResult");
+        $("#searchInput").keydown(function (e) {
+          if (e.keyCode === 13) {
+            e.preventDefault();
+            $searchResult.html("");
+            let result = idx.search($("#searchInput").val());
+            if (result.length === 0) return; // TODO: add some hint
+            result.forEach(function (elem) {
+              let resultJson = data[elem.ref];
+              $searchResult.append($(`
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-card__supporting-text">
+                      <h4 class="mdl-card__title-text">${resultJson.title}</h4>
+                      <h6>
+                        ${resultJson.author.map(function (authorName, index) {
+                          return authorName + "<sup>" + resultJson.mapping[index] + "</sup>";
+                        }).join(', ')}
+                      </h6>
+                      <br />
+                      <p>
+                        ${resultJson.lab.map(function (labName, index) {
+                          return "(" + (index + 1) + ") " + labName;
+                        }).join(', ')}
+                      </p>
+                      <hr />
+                      ${resultJson.content}
+                    </div>
+                  </div>
+                </section>
+              `));
+            });
+          }
+        });
+      });
+
+    </script>
   </body>
 </html>
