@@ -146,7 +146,7 @@
       }
 
       .main-content section.section--footer {
-        padding: 64px 0;
+        padding: 20px 0;
         margin: 0 -8px -8px -8px;
       }
 
@@ -188,7 +188,8 @@
                 <h3>NT18 OnAir</h3>
                 <p>
                   Welcome to Peking University!<br /><br />
-                  NT18 OnAir WebApp provides all the essential information of the NT18 Conference, including
+                  NT18 OnAir WebApp provides all the essential information of the NT18 Conference,
+                  when you are in Peking University, including
                   program information, abstracts, etc.<br /><br />
                   Hope you enjoy your staying here!
                 </p>
@@ -202,9 +203,17 @@
         <div class="mdl-layout__tab-panel" id="abstract">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text"
+                   style="margin-top: 0; margin-bottom: 0; border: none;">
                 <h3>Abstracts</h3>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="search">
+                  <label class="mdl-textfield__label" for="search">Search...</label>
+                </div>
+              </div>
             </div>
           </section>
+          <section class="section--footer"></section>
         </div>
 
         <!-- Footer -->
@@ -219,11 +228,11 @@
             </div>
           </div>
           <div class="mdl-mega-footer--bottom-section">
-            <div class="mdl-logo">
+            <div class="mdl-logo mdl-color-text--grey-200">
               &copy; 2009–2018 Nanomaterials & Nanostructures Group, Peking University. All rights reserved.
-              <br />
+              <br /><br />
               Please contact Sida Sun, accel(at)pku.edu.cn for any technical assistance.
-              <a href="https://github.com/visualer" class="mdl-color-text--grey-500">(GitHub)</a>
+              (<a href="https://github.com/visualer" class="mdl-color-text--grey-500">GitHub</a>)
             </div>
           </div>
         </footer>
