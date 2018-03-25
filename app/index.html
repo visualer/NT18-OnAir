@@ -23,7 +23,7 @@
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
     <meta name="msapplication-TileColor" content="#2F3BA2">
 
-    <meta name="theme-color" content="#EE5389">
+    <meta name="theme-color" content="#2F3BA2">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../lib/material/material.min.css">
@@ -33,11 +33,12 @@
     <style>
 
       html, body {
-        font-family: 'Lato', 'Roboto', 'Helvetica', sans-serif;
+        font-family: 'Roboto', 'Helvetica', sans-serif !important;
         margin: 0;
         padding: 0;
       }
 
+      /** DO NOT CHANGE THIS **/
       .main-content .mdl-layout__header-row {
         padding-left: 40px;
       }
@@ -55,7 +56,7 @@
         overflow: visible;
       }
       .main-content .mdl-layout__tab-bar-container {
-        height: 64px;
+        height: 56px;
       }
       .main-content .mdl-layout__tab-bar {
         padding: 0;
@@ -65,8 +66,8 @@
         width: 100%;
       }
       .main-content .mdl-layout__tab-bar .mdl-layout__tab {
-        height: 64px;
-        line-height: 64px;
+        height: 56px;
+        line-height: 56px;
       }
       .main-content .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
         background-color: white;
@@ -76,6 +77,8 @@
         padding: 8px;
         padding-top: 48px;
       }
+      /** END OF DO NOT CHANGE **/
+
       .main-content .mdl-card {
         height: auto;
         display: flex;
@@ -85,16 +88,13 @@
         height: auto;
       }
       .main-content .mdl-card .mdl-card__supporting-text {
-        margin: 40px;
+        margin: 20px;
         flex-grow: 1;
         padding: 0;
         color: inherit;
-        width: calc(100% - 80px);
+        width: calc(100% - 40px);
       }
-      .main-content.main-content .mdl-card__supporting-text h4 {
-        margin-top: 0;
-        margin-bottom: 20px;
-      }
+
       .main-content .mdl-card__actions {
         margin: 0;
         padding: 4px 40px;
@@ -115,7 +115,7 @@
 
       .main-content .mdl-layout__content section:not(:last-of-type) {
         position: relative;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
       }
       .main-content section.section--center {
         max-width: 860px;
@@ -186,20 +186,87 @@
       .main-content .mdl-card .mdl-card__supporting-text > h3:first-child {
         margin-bottom: 24px;
       }
-      .main-content .mdl-layout__tab-panel:not(#overview) {
-        background-color: white;
+
+      .main-content .mdl-layout__tab-panel {
+        background-color: #EEEEEE;
       }
 
-      .main-content .mdl-menu__container {
-        z-index: 99;
+
+      @media (min-width: 479px) {
+
+        .mdl-cell--4-col-tablet:first-child {
+          margin-left: 8px;
+        }
+
+        .mdl-cell--4-col-tablet:last-child {
+          margin-right: 8px;
+        }
+
+        .mdl-cell--4-col-tablet {
+          margin: 8px;
+        }
+
+        .mdl-grid {
+          padding: 0;
+        }
+
       }
 
+      @media (min-width: 860px) {
+
+        .mdl-cell--6-col-desktop:nth-child(2n+1) {
+          margin-left: 0;
+        }
+
+        .mdl-cell--6-col-desktop:nth-child(2n) {
+          margin-right: 0;
+        }
+
+        .mdl-cell--6-col-desktop {
+          margin: 16px;
+        }
+
+        .mdl-grid {
+          padding: 0;
+        }
+
+      }
+
+      @media (max-width: 479px) {
+
+        .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+          width: 100%;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+
+        .NTLogo {
+          margin-top: 30px;
+          margin-bottom: 0;
+        }
+
+      }
+
+      @media (max-width: 860px) {
+
+        .mdl-grid.mdl-grid--no-spacing {
+          width: calc(100% - 16px);
+        }
+
+      }
+
+      .title-card {
+        min-height: 0;
+      }
 
 
     </style>
   </head>
   <body class="main-content mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <!-- Header -->
+
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
@@ -208,24 +275,42 @@
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
+
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#home" class="mdl-layout__tab is-active">Home</a>
-          <a href="#abstract" class="mdl-layout__tab">Abstracts</a>
+          <a id="tabHome" href="#home" class="mdl-layout__tab is-active">Home</a>
+          <a id="tabAbstract" href="#abstract" class="mdl-layout__tab">Abstracts</a>
         </div>
       </header>
+
+      <!-- Content -->
       <main class="mdl-layout__content">
 
         <!-- Home tab -->
         <div class="mdl-layout__tab-panel is-active" id="home">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+
+          <!-- title card -->
+          <section class="section--center mdl-grid mdl-shadow--3dp mdl-grid--no-spacing">
             <header class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone"
-                    style="margin-top: 20px; margin-bottom: 10px;">
-              <img src="images/NT18Logo.png" width="70%"/>
+                    style="background-color: white;">
+              <img src="images/NT18Logo.png" width="70%" class="NTLogo"/>
             </header>
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+            <div class="title-card mdl-card mdl-cell
+            mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone"
+                 style="background-color: white;">
               <div class="mdl-card__supporting-text"
-                   style="margin-top: 10px; margin-bottom: 20px; text-align: center;">
+                   style="text-align: center;">
                 <h2>NT18 OnAir</h2>
+              </div>
+            </div>
+          </section>
+
+          <!-- main card -->
+          <section class="mdl-grid section--center">
+            <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__title mdl-color-text--white mdl-color--blue-300" style="height: 100px;">
+                <h2 class="mdl-card__title-text">Welcome</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
                 <p>
                   Welcome to Peking University!<br /><br />
                   NT18 OnAir provides all the essential information of the NT18 Conference
@@ -235,16 +320,50 @@
                 </p>
               </div>
             </div>
+            <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__title mdl-color-text--white mdl-color--purple-300" style="height: 100px">
+                <h2 class="mdl-card__title-text">Conference Abstracts</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <p>
+                  NT18 Conference Abstracts are all available at NT18 OnAir.<br /><br />
+                  You can search by title, author, affiliation and content, and read them online.
+                </p>
+              </div>
+              <div class="mdl-card__actions">
+                <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--deep-purple-300"
+                   onclick="$('#tabAbstract').find('span').click();">Search abstracts</div>
+              </div>
+            </div>
+            <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__title mdl-color-text--white mdl-color--purple-300" style="height: 100px">
+                <h2 class="mdl-card__title-text">Conference Abstracts</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <p>
+                  NT18 Conference Abstracts are all available at NT18 OnAir.<br /><br />
+                  You can search by title, author, affiliation and content, and read them online.
+                </p>
+              </div>
+              <div class="mdl-card__actions">
+                <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--deep-purple-300"
+                     onclick="$('#tabAbstract').find('span').click();">Search abstracts</div>
+              </div>
+            </div>
           </section>
+
           <section class="section--footer"></section>
         </div>
+        <!--end home tab-->
 
         <!-- Abstract tab -->
         <div class="mdl-layout__tab-panel" id="abstract">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+          <section class="section--center mdl-grid mdl-shadow--2dp mdl-grid--no-spacing">
+            <div class="mdl-card mdl-cell mdl-cell--12-col-desktop
+            mdl-cell--8-col-tablet mdl-cell--4-col-phone"
+                 style="background-color: white;">
               <div class="mdl-card__supporting-text"
-                   style="margin-top: 0; margin-bottom: 0; border: none;">
+                   style="margin-top: 10px; margin-bottom: 0;">
                 <h3>Abstracts</h3>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="searchInput">
@@ -260,7 +379,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="mdl-mega-footer">
+        <footer class="mdl-mega-footer" style="bottom: 0;">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" title="" type="checkbox" checked>
@@ -319,7 +438,7 @@
             $searchResult.html("");
             let result = idx.search($("#searchInput").val());
             if (result.length === 0) return; // TODO: add some hint
-            result.forEach(function (elem) {
+            result.forEach(function (elem, resultIndex) {
 
               let resultJson = data[elem.ref];
               let authors = resultJson.author.map(function (authorName, index) {
@@ -329,12 +448,16 @@
                 return `(${index + 1}) ${labName}`;
               }).join(', ');
 
+              let colors = ["mdl-color--blue-300", "mdl-color--purple-300", "mdl-color--deep-purple-300"];
               $searchResult.append($(`
-                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-                  <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                <section class="section--center mdl-grid mdl-shadow--2dp mdl-grid--no-spacing">
+                  <div class="mdl-card mdl-cell
+                              mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <div class="mdl-card__title mdl-color-text--white ${colors[resultIndex % 4]}" style="min-height: 80px;">
+                      <h4 class="mdl-card__title-text" style="margin-top: 30px;">${resultJson.title}</h4>
+                    </div>
                     <div class="mdl-card__supporting-text">
-                      <h4 class="mdl-card__title-text">${resultJson.title}</h4>
-                      <h6>${authors}</h6><br /><p>${labs}</p>
+                      <h6 style="margin: 12px;">${authors}</h6><br /><p>${labs}</p>
                       <hr />${resultJson.content}
                     </div>
                   </div>
