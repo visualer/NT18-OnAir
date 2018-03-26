@@ -377,13 +377,13 @@
                   <input class="mdl-textfield__input" type="text" id="searchInput">
                   <label class="mdl-textfield__label" for="searchInput">Search...</label>
                 </div>
-                <div class="mdl-card__actions" style="padding: 4px 20px;">
+                <div class="mdl-card__actions" style="padding: 4px 0;">
                   <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--deep-purple-300"
                        onclick="$('.resultInnerContent').removeClass('hidden');"
                        style="display: inline-block;">Expand All</div>
                   <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--deep-purple-300"
                        onclick="$('.resultInnerContent').addClass('hidden');"
-                       style="display: inline-block;">Hide All</div>
+                       style="display: inline-block;">Collapse All</div>
                 </div>
               </div>
 
@@ -493,12 +493,13 @@
                       <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[resultIndex % 4]}"
                            onclick="$($('#searchResult').children()[${resultIndex}])
                            .find('.resultInnerContent').addClass('hidden');">
-                           Hide</div>
+                           Collapse</div>
                     </div>
                   </div>
                 </section>
               `));
             });
+            componentHandler.upgradeAllRegistered();
             $searchResult.css("opacity", 1);
             $(".searchResultUnits").transition({
               animation : 'fly down',
