@@ -370,8 +370,6 @@
                    style="margin-top: 10px; margin-bottom: 0;">
                 <h3>
                   Abstracts
-                  <span class="mdl-badge searchBadge" data-badge="0" style="display: inline;">
-                  </span>
                 </h3>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="searchInput">
@@ -457,9 +455,6 @@
             $searchResult.css("opacity", 0);
             $searchResult.html("");
             let result = idx.search($("#searchInput").val());
-            let $searchBadge = $(".searchBadge");
-            $searchBadge.attr("data-badge", result.length);
-            $searchBadge.transition("pulse").transition("pulse");
             if (result.length === 0) return; // TODO: add some hint
             result.forEach(function (elem, resultIndex) {
 
@@ -502,9 +497,9 @@
             componentHandler.upgradeAllRegistered();
             $searchResult.css("opacity", 1);
             $(".searchResultUnits").transition({
-              animation : 'fly down',
-              duration  : 1000 / result.length,
-              interval  : 1000 / result.length
+              animation : 'slide down',
+              duration  : 200,
+              interval  : 100
             });
 
           }
