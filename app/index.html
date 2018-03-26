@@ -12,21 +12,22 @@
     <link rel="manifest" href="manifest.json">
 
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Web Starter Kit">
+    <meta name="application-name" content="NT18 OnAir">
     <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <meta name="apple-mobile-web-app-title" content="NT18 OnAir">
     <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
+    <meta name="msapplication-TileColor" content="#94070A">
 
-    <meta name="theme-color" content="#2F3BA2">
+    <!--meta name="theme-color" content="#2F3BA2"-->
+    <meta name="theme-color" content="#94070A">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../lib/material/material.min.css">
+    <link rel="stylesheet" href="../lib/material/material.red-orange.min.css">
     <link rel="stylesheet" href="../lib/semantic-ui-transition/transition.min.css">
 
     <!--link rel="stylesheet" href="styles/main.css"-->
@@ -101,15 +102,7 @@
         padding: 4px 40px;
         color: inherit;
       }
-      .main-content .mdl-card__actions a {
-        color: #00BCD4;
-        margin: 0;
-      }
-      .main-content .mdl-card__actions a:hover,
-      .main-content .mdl-card__actions a:active {
-        color: inherit;
-        background-color: transparent;
-      }
+
       .main-content .mdl-card__supporting-text + .mdl-card__actions {
         border-top: 1px solid rgba(0, 0, 0, 0.12);
       }
@@ -212,7 +205,12 @@
 
       }
 
-      @media (min-width: 860px) {
+      @media (min-width: 1024px) {
+
+        .main-content .mdl-layout__header {
+          background: url("images/pkucloud1h100.png") right no-repeat #94070A;
+          background-size: auto 100%;
+        }
 
         .mdl-cell--6-col-desktop:nth-child(2n+1) {
           margin-left: 0;
@@ -234,6 +232,11 @@
 
       @media (max-width: 479px) {
 
+        .main-content .mdl-layout__tab-bar {
+          background: url("images/pkucloud1h100.png") right no-repeat #94070A !important;
+          background-size: auto 100% !important;
+        }
+
         .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
           width: 100%;
           margin-top: 8px;
@@ -247,7 +250,7 @@
 
       }
 
-      @media (max-width: 860px) {
+      @media (max-width: 1024px) {
 
         .mdl-grid.mdl-grid--no-spacing {
           width: calc(100% - 16px);
@@ -259,9 +262,19 @@
 
       }
 
+      @media (max-width: 1024px) and (min-width: 479px) {
+
+        .main-content .mdl-layout__tab-bar {
+          background: url("images/pkucloud1h100.png") right no-repeat #94070A !important;
+          background-size: 50% auto !important;
+        }
+
+      }
+
       .title-card {
         min-height: 0;
       }
+
 
 
     </style>
@@ -271,11 +284,11 @@
 
       <!-- Header -->
 
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+      <header class="mdl-layout__header mdl-layout__header--scroll">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h1>NT18 OnAir</h1>
+          <img src="images/NT18Title.png" height="200%" />
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
@@ -303,7 +316,7 @@
                  style="background-color: white;">
               <div class="mdl-card__supporting-text"
                    style="text-align: center;">
-                <h2>NT18 OnAir [Dev Version]</h2>
+                <h2>NT18 OnAir</h2>
               </div>
             </div>
           </section>
@@ -311,7 +324,9 @@
           <!-- main card -->
           <section class="mdl-grid section--center">
             <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__title mdl-color-text--white mdl-color--blue-300" style="height: 100px;">
+              <div class="mdl-card__title mdl-color-text--white mdl-color--red-900"
+                   style="background: url('images/slider/slider (6).jpg') no-repeat;
+                   background-size: cover; height: 180px;">
                 <h2 class="mdl-card__title-text">Welcome</h2>
               </div>
               <div class="mdl-card__supporting-text">
@@ -325,7 +340,9 @@
               </div>
             </div>
             <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__title mdl-color-text--white mdl-color--purple-300" style="height: 100px">
+              <div class="mdl-card__title mdl-color-text--white mdl-color--deep-orange-600"
+                   style="background: url('images/slider/slider (10).jpg') no-repeat;
+                   background-size: cover; height: 180px;">
                 <h2 class="mdl-card__title-text">Conference Abstracts</h2>
               </div>
               <div class="mdl-card__supporting-text">
@@ -335,12 +352,14 @@
                 </p>
               </div>
               <div class="mdl-card__actions">
-                <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--deep-purple-300"
+                <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
                    onclick="$('#tabAbstract').find('span').click();">Search abstracts</div>
               </div>
             </div>
             <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__title mdl-color-text--white mdl-color--purple-300" style="height: 100px">
+              <div class="mdl-card__title mdl-color-text--white mdl-color--orange-700"
+                   style="background: url('images/slider/slider (3).jpg') no-repeat;
+                   background-size: cover; height: 180px;">
                 <h2 class="mdl-card__title-text">Conference Abstracts</h2>
               </div>
               <div class="mdl-card__supporting-text">
@@ -350,7 +369,7 @@
                 </p>
               </div>
               <div class="mdl-card__actions">
-                <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--deep-purple-300"
+                <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
                      onclick="$('#tabAbstract').find('span').click();">Search abstracts</div>
               </div>
             </div>
