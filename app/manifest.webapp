@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "name": "Web Starter Kit",
+  "name": "NT18 OnAir",
   "launch_path": "/index.html",
-  "description": "A front-end template that helps you build fast, modern mobile web apps.",
+  "description": "19th International Conference on the Science and Application of Nanotubes and Low-dimensional Materials",
   "icons": {
     "128": "/images/touch/icon-128x128.png"
   },
   "developer": {
-    "name": "",
-    "url": ""
+    "name": "Sida Sun",
+    "url": "https://github.com/visualer"
   },
   "installs_allowed_from": [
     "*"
@@ -18,8 +18,8 @@
   },
   "locales": {
     "en": {
-      "name": "Web Starter Kit",
-      "description": "A front-end template that helps you build fast, modern mobile web apps."
+      "name": "NT18 OnAir",
+      "description": "19th International Conference on the Science and Application of Nanotubes and Low-dimensional Materials "
     }
   }
 }
