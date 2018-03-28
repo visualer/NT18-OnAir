@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "0.1.0",
   "name": "NT18 OnAir",
-  "launch_path": "/index.html",
+  "launch_path": "/NT18-OnAir/index.html",
   "description": "19th International Conference on the Science and Application of Nanotubes and Low-dimensional Materials",
   "icons": {
     "128": "/images/touch/icon-128x128.png"
