@@ -2,24 +2,36 @@
   "name": "NT18 OnAir",
   "short_name": "NT18 OnAir",
   "icons": [{
-        "src": "images/touch/icon-128x128.png",
-        "sizes": "128x128",
-        "type": "image/png"
-      }, {
-        "src": "images/touch/apple-touch-icon.png",
-        "sizes": "152x152",
-        "type": "image/png"
-      }, {
-        "src": "images/touch/ms-touch-icon-144x144-precomposed.png",
-        "sizes": "144x144",
-        "type": "image/png"
-      }, {
-        "src": "images/touch/chrome-touch-icon-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      }],
-  "start_url": "/index.html",
+    "src": "images/touch/icon-128x128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/apple-touch-icon.png",
+    "sizes": "152x152",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/ms-touch-icon-144x144-precomposed.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/chrome-touch-icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/splash-256x256.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/splash-384x384.png",
+    "sizes": "384x384",
+    "type": "image/png"
+  }, {
+    "src": "images/touch/splash-512x512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "/NT18-OnAir/index.html",
   "display": "standalone",
-  "background_color": "#3E4EB8",
-  "theme_color": "#2F3BA2"
+  "background_color": "#FFFFFF",
+  "theme_color": "#94070A"
 }

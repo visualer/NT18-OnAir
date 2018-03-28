@@ -16,7 +16,7 @@
     <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="bl">
     <meta name="apple-mobile-web-app-title" content="NT18 OnAir">
     <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
@@ -26,8 +26,8 @@
     <meta name="theme-color" content="#94070A">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../lib/material/material.red-orange.min.css">
-    <link rel="stylesheet" href="../lib/semantic-ui-transition/transition.min.css">
+    <link rel="stylesheet" href="lib/material/material.red-orange.min.css">
+    <link rel="stylesheet" href="lib/semantic-ui-transition/transition.min.css">
 
     <!--link rel="stylesheet" href="styles/main.css"-->
 
@@ -255,10 +255,6 @@
           width: calc(100% - 16px);
         }
 
-        .abstract-header {
-
-        }
-
       }
 
       @media (max-width: 1024px) and (min-width: 479px) {
@@ -270,11 +266,34 @@
 
       }
 
-      .title-card {
+
+      #schedule .mdl-list__item {
+        height: auto;
+        padding: 6px 16px;
+      }
+
+      #schedule .schedule-topics .mdl-list {
+        margin: 0;
+      }
+
+      #schedule .schedule-topics .mdl-secondary-list .mdl-list__item {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 18px;
+        height: auto;
         min-height: 0;
+        color: rgba(0, 0, 0, .54);
+        display: block;
+        padding: 0 16px;
       }
 
 
+      .image-card-header {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 180px !important;
+      }
 
     </style>
   </head>
@@ -295,6 +314,7 @@
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           <a id="tabHome" href="#home" class="mdl-layout__tab is-active">Home</a>
           <a id="tabAbstract" href="#abstract" class="mdl-layout__tab">Abstracts</a>
+          <a id="tabSchedule" href="#schedule" class="mdl-layout__tab">Schedule</a>
         </div>
       </header>
 
@@ -310,9 +330,8 @@
                     style="background-color: white;">
               <img src="images/NT18Logo.png" width="70%" class="NTLogo"/>
             </header>
-            <div class="title-card mdl-card mdl-cell
-            mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone"
-                 style="background-color: white;">
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone"
+                 style="background-color: white; min-height: 0;">
               <div class="mdl-card__supporting-text"
                    style="text-align: center;">
                 <h2>NT18 OnAir</h2>
@@ -323,9 +342,8 @@
           <!-- main card -->
           <section class="mdl-grid section--center">
             <div class="mdl-card mdl-shadow--3dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__title mdl-color-text--white"
-                   style="background: url('images/slider/slider (6).jpg') no-repeat;
-                   background-size: cover; height: 180px;">
+              <div class="mdl-card__title mdl-color-text--white image-card-header"
+                   style="background-image: url('images/slider/slider-1.jpg');">
                 <h2 class="mdl-card__title-text">Welcome</h2>
               </div>
               <div class="mdl-card__supporting-text">
@@ -339,9 +357,8 @@
               </div>
             </div>
             <div class="mdl-card mdl-shadow--3dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__title mdl-color-text--white"
-                   style="background: url('images/slider/slider (10).jpg') no-repeat;
-                   background-size: cover; height: 180px;">
+              <div class="mdl-card__title mdl-color-text--white image-card-header"
+                   style="background-image: url('images/slider/slider-2.jpg');">
                 <h2 class="mdl-card__title-text">Conference Abstracts</h2>
               </div>
               <div class="mdl-card__supporting-text">
@@ -356,24 +373,22 @@
               </div>
             </div>
             <div class="mdl-card mdl-shadow--3dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__title mdl-color-text--white"
-                   style="background: url('images/slider/slider (3).jpg') no-repeat;
-                   background-size: cover; height: 180px;">
-                <h2 class="mdl-card__title-text">Conference Abstracts</h2>
+              <div class="mdl-card__title mdl-color-text--white image-card-header"
+                   style="background-image: url('images/slider/slider-3.jpg');">
+                <h2 class="mdl-card__title-text">Schedule</h2>
               </div>
               <div class="mdl-card__supporting-text">
                 <p>
-                  NT18 Conference Abstracts are all available at NT18 OnAir.<br /><br />
-                  You can search by title, author, affiliation and content, and read them online.
+                  The detailed schedule of NT18 can be found on "schedule" tab.<br /><br />
+                  <b>Program information and important dates are shown before NT18 is to be held.</b>
                 </p>
               </div>
               <div class="mdl-card__actions">
                 <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
-                     onclick="$('#tabAbstract').find('span').click();">Search abstracts</div>
+                     onclick="$('#tabSchedule').find('span').click();">View Details</div>
               </div>
             </div>
           </section>
-
           <section class="section--footer"></section>
         </div>
         <!--end home tab-->
@@ -393,21 +408,26 @@
                   <input class="mdl-textfield__input" type="text" id="searchInput">
                   <label class="mdl-textfield__label" for="searchInput">Search...</label>
                 </div>
-                <div class="mdl-card__actions" style="padding: 4px 0;">
+                <div style="padding: 4px 0;;" class="mdl-card__actions hidden">
+                  <!-- that extra ; is to avoid a bug -->
                   <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
                        onclick="$('.resultInnerContent').removeClass('hidden');"
-                       style="display: inline-block;">Expand All</div>
+                       style="display: inline-block; padding: 0 10px;">Expand All</div>
                   <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
                        onclick="$('.resultInnerContent').addClass('hidden');"
-                       style="display: inline-block;">Collapse All</div>
+                       style="display: inline-block; padding: 0 10px;">Collapse All</div>
                 </div>
               </div>
             </div>
           </section>
-
-          <div id="searchResult"></div>
-
+          <div id="searchResult">
+          </div>
           <section class="section--footer"></section>
+        </div>
+
+        <!-- Schedule tab -->
+        <div class="mdl-layout__tab-panel" id="schedule">
+          <!-- schedule tab partial -->
         </div>
 
         <!-- Footer -->
@@ -423,7 +443,7 @@
           </div>
           <div class="mdl-mega-footer--bottom-section">
             <div class="mdl-logo mdl-color-text--grey-200">
-              &copy; 2009–2018 Nanomaterials & Nanostructures Group, Peking University. All rights reserved.
+              &copy; 2009–2018 Nanomaterials and Nanostructures Group, Peking University. All rights reserved.
               <br />
               <br />
               Please contact Sida Sun, accel(at)pku.edu.cn for any technical assistance.
@@ -438,21 +458,25 @@
         <div class="mdl-snackbar__text"></div>
         <button class="mdl-snackbar__action" type="button"></button>
       </div>
+
     </div>
 
+    <script src="lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="lib/material/material.min.js"></script>
+    <script src="lib/semantic-ui-transition/transition.min.js"></script>
+    <script src="lib/lunr/lunr.min.js"></script>
 
-    <script src="../lib/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../lib/material/material.min.js"></script>
-    <script src="../lib/semantic-ui-transition/transition.min.js"></script>
-    <script src="../lib/lunr/lunr.js"></script>
-
-    <!-- build:js scripts/main.min.js -->
+    <!-- build:js scripts/app.min.js -->
     <script src="scripts/app.js"></script>
     <!-- endbuild -->
     <script>
 
+      let colorSeries = ["deep-orange-600", "orange-700", "orange-500", "orange-700"];
+      let colors = colorSeries.map((e) => "mdl-color--" + e);
+      let textColors = colorSeries.map((e) => "mdl-color-text--" + e);
+
       let errorContainer = document.querySelector('#errorContainer');
-      let msg = (message, actionHandler, actionText) => {
+      let showMsg = (message, actionHandler, actionText) => {
         errorContainer.MaterialSnackbar.showSnackbar({
           message: message,
           timeout: 3000,
@@ -461,22 +485,24 @@
         });
       };
 
+      let idx = null, data = null;
+      let mail = null;
+
       $.ajaxSetup({
         error: (xhr, status, exception) => {
-          let mail = `mailto:accel@pku.edu.cn?subject=NT18 OnAir Bug&body=status:${status}; exception:${exception}`;
-          setTimeout(() => { msg("Abstracts data load error", () => { location.href = mail; }, "Report")}, 3000);
+          mail = `mailto:accel@pku.edu.cn?subject=NT18 OnAir Bug&body=status:${status}; exception:${exception}`;
+          setTimeout(() => { showMsg("Abstracts load error", () => { location.href = mail; }, "Report"); }, 3000);
         }
       });
 
-      $.getJSON("../data/abstracts.json", function (data) {
-
-        let idx = lunr(function () {
+      $.getJSON("data/abstracts.json", function (data_) {
+        data = data_;
+        idx = lunr(function () {
           this.ref("id");
           this.field("title");
           this.field("lab");
           this.field("content");
           this.field("author");
-
           data.forEach(function (doc) {
             this.add({
               id: doc.id,
@@ -488,62 +514,74 @@
             });
           }, this);
         });
+      });
+
+
+      // absract tab processing
+
+      $("#searchInput").keydown((e) => {
 
         let $searchResult = $("#searchResult");
         let $searchInput = $("#searchInput");
-        let colorSeries = ["deep-orange-600", "orange-700", "orange-500", "orange-700"];
-        let colors = colorSeries.map((e) => "mdl-color--" + e);
-        let textColors = colorSeries.map((e) => "mdl-color-text--" + e);
+        let $searchActions = $("#abstract").find(".mdl-card__actions");
 
-        $searchInput.keydown(function (e) {
+        if (e.keyCode !== 13) return true;
+        e.preventDefault();
 
-          if (e.keyCode !== 13) return true;
-          // handle 'enter' and 'search'
+        if (idx === null) { showMsg("Abstracts load error", () => { location.href = mail; }, "Report"); return; }
 
-          e.preventDefault();
-          $searchResult.html("");
-          let result = idx.search($searchInput.val());
-          if (result.length === 0) { msg("No result", () => { $searchInput.val(""); }, "Clear Input"); return; }
+        $searchResult.html("");
 
-          result.forEach(function (elem, resultIndex) {
+        let result = idx.search($searchInput.val());
+        if (result.length === 0) {
+          showMsg("No result", () => { $searchInput.val(""); }, "Clear Input");
+          if (!$searchActions.hasClass("hidden")) $searchActions.transition('slide up');
+          return;
+        }
+        if ($searchActions.hasClass("hidden")) $searchActions.transition('slide down');
 
-            let resultJson = data[elem.ref];
-            let authors = resultJson.author
-              .map((authorName, index) => `${authorName}<sup>${resultJson.mapping[index]}</sup>`).join(', ');
-            let labs = resultJson.lab
-              .map((labName, index) => `(${index + 1}) ${labName}`).join(', ');
-            let colorIndex = resultIndex % colors.length;
+        result.forEach(function (elem, resultIndex) {
 
-            $searchResult.append($(`
-              <section class="section--center mdl-grid mdl-shadow--3dp mdl-grid--no-spacing hidden searchResultUnits">
-                <div class="mdl-card mdl-cell
-                            mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-                  <div class="mdl-card__title mdl-color-text--white ${colors[colorIndex]}"
-                       style="min-height: 80px;">
-                    <h4 class="mdl-card__title-text" style="margin-top: 30px;">${resultJson.title}</h4>
-                  </div>
-                  <div class="mdl-card__supporting-text">
-                    <h6 style="margin: 12px;">${authors}</h6><br /><p>${labs}</p>
-                    <span class="resultInnerContent hidden"><hr />${resultJson.content}</span>
-                  </div>
-                  <div class="mdl-card__actions">
-                    <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]}">
-                      Toggle Visibility
-                    </div>
+          let resultJson = data[elem.ref];
+          let authors = resultJson.author
+            .map((authorName, index) => `${authorName}<sup>${resultJson.mapping[index]}</sup>`).join(', ');
+          let labs = resultJson.lab
+            .map((labName, index) => `(${index + 1}) ${labName}`).join(', ');
+          let colorIndex = resultIndex % colors.length;
+
+          $searchResult.append($(`
+            <section class="section--center mdl-grid mdl-shadow--3dp mdl-grid--no-spacing hidden searchResultUnits">
+              <div class="mdl-card mdl-cell
+                          mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                <div class="mdl-card__title mdl-color-text--white ${colors[colorIndex]}"
+                     style="min-height: 80px;">
+                  <h4 class="mdl-card__title-text" style="margin-top: 30px;">${resultJson.title}</h4>
+                </div>
+                <div class="mdl-card__supporting-text">
+                  <h6 style="margin: 12px;">${authors}</h6><br /><p>${labs}</p>
+                  <span class="resultInnerContent hidden"><hr />${resultJson.content}</span>
+                </div>
+                <div class="mdl-card__actions">
+                  <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]}">
+                    Toggle Visibility
                   </div>
                 </div>
-              </section>
-            `).click((e) => {
-              if ($(e.target).hasClass('mdl-button__ripple-container'))
-                $(e.currentTarget).find('.resultInnerContent').toggleClass("hidden");
-            }));
-          });
-
-          componentHandler.upgradeAllRegistered();
-          $(".searchResultUnits").transition({ animation: 'slide down', duration: 200, interval: 100 });
+              </div>
+            </section>
+          `).click((e) => {
+            if ($(e.target).hasClass('mdl-button__ripple-container'))
+              $(e.currentTarget).find('.resultInnerContent').toggleClass("hidden");
+          }));
         });
 
+        componentHandler.upgradeAllRegistered();
+        $(".searchResultUnits").transition({ animation: 'slide down', duration: 200, interval: 100 });
       });
+
+      // schedule tab
+      $("#schedule").load("partial/schedule.html");
+
+      componentHandler.upgradeAllRegistered();
 
     </script>
   </body>
