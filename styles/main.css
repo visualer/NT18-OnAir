@@ -150,7 +150,9 @@ html, body {
   background-color: #EEEEEE;
 }
 
-@media (min-width: 479px) {
+/* Media queries */
+
+@media (min-width: 481px) {
 
   .mdl-cell--4-col-tablet:first-child {
     margin-left: 8px;
@@ -170,7 +172,7 @@ html, body {
 
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 
   .main-content .mdl-layout__header {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
@@ -193,9 +195,13 @@ html, body {
     padding: 0;
   }
 
+  .mdl-layout--small-medium-screen-only {
+    display: none;
+  }
+
 }
 
-@media (max-width: 479px) {
+@media (max-width: 480px) {
 
   .main-content .mdl-layout__tab-bar {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A !important;
@@ -223,7 +229,7 @@ html, body {
 
 }
 
-@media (max-width: 1024px) and (min-width: 479px) {
+@media (max-width: 1024px) and (min-width: 481px) {
 
   .main-content .mdl-layout__tab-bar {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A !important;
