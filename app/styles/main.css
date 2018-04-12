@@ -239,10 +239,22 @@ section.section--center .section__text:not(:last-child) {
 
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 1024px) {
+
+  .mdl-grid.mdl-grid--no-spacing {
+    width: calc(100% - 16px);
+  }
 
   .mdl-layout__tab-bar {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .mdl-layout__tab-bar {
     background-size: auto 100%;
   }
 
@@ -259,18 +271,9 @@ section.section--center .section__text:not(:last-child) {
 
 }
 
-@media (max-width: 1024px) {
-
-  .mdl-grid.mdl-grid--no-spacing {
-    width: calc(100% - 16px);
-  }
-
-}
-
 @media (max-width: 1024px) and (min-width: 481px) {
 
   .mdl-layout__tab-bar {
-    background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
     background-size: 50% auto;
   }
 
