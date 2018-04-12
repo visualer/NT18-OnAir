@@ -60,6 +60,15 @@
     "lab": ["Department of Chemistry, Rensselaer Polytechnic Institute, Cogswell Laboratory", "Department of Mathematics, Rensselaer Polytechnic Institute", "Wadsworth Center"],
     "content": "Sequence-specific binding of proteins to DNA is arguably the most important foundation of cellular function, since it exerts fundamental control over the abundance of virtually all cellular functional macromolecules. Identification of promoter sequences and transcription factor binding sites in the genome thus represents one of the grand challenges of the post-genomic era. The most successful bioinformatics methods today are based on models that represent DNA by sequences of letters (motif methods). Unfortunately, the sequence data used for training and validation is quite limited. Motif models are thus hampered both by small sample sizes and by an abstract representation that has little to do with the energetics of binding. It is here that cheminformatics can supply additional information and introduce a more accurate and sensitive chemical representation of DNA-protein interactions. Drawing upon our experience with E.coli transcription factors and sigma factors, we show how characterization of DNA through features of electron densities sampled on the vdW surfaces of the major and minor grooves (\"Dixels\") captures the effects of environmental perturbations of neighboring base pairs, without requiring additional sequence data for training.",
     "mapping": [1, 1, 2, 3, 3]
+  },
+
+  {
+    "id": "7",
+    "title": "Dixel modeling of gene expression",
+    "author": ["N Sukumar", "Curt M. Breneman", "Kristin P. Bennett", "Charles Lawrence", "Inna Vitol"],
+    "lab": ["Department of Chemistry, Rensselaer Polytechnic Institute, Cogswell Laboratory", "Department of Mathematics, Rensselaer Polytechnic Institute", "Wadsworth Center"],
+    "content": "Sequence-specific binding of proteins to DNA is arguably the most important foundation of cellular function, since it exerts fundamental control over the abundance of virtually all cellular functional macromolecules. Identification of promoter sequences and transcription factor binding sites in the genome thus represents one of the grand challenges of the post-genomic era. The most successful bioinformatics methods today are based on models that represent DNA by sequences of letters (motif methods). Unfortunately, the sequence data used for training and validation is quite limited. Motif models are thus hampered both by small sample sizes and by an abstract representation that has little to do with the energetics of binding. It is here that cheminformatics can supply additional information and introduce a more accurate and sensitive chemical representation of DNA-protein interactions. Drawing upon our experience with E.coli transcription factors and sigma factors, we show how characterization of DNA through features of electron densities sampled on the vdW surfaces of the major and minor grooves (\"Dixels\") captures the effects of environmental perturbations of neighboring base pairs, without requiring additional sequence data for training.",
+    "mapping": [1, 1, 2, 3, 3]
   }
 
 ]
