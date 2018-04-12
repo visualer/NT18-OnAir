@@ -31,42 +31,6 @@
 
   <link rel="stylesheet" href="styles/main.css">
 
-  <style>
-
-    .mdl__loader {
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      background: #FFFFFF;
-      z-index: 102;
-      opacity: 0.97;
-    }
-
-    .mdl__loader .mdl-loader__content {
-      width: 80%;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .mdl__loader .mdl-spinner {
-      width: 56px;
-      height: 56px;
-    }
-
-    .mdl__loader .mdl-spinner__circle {
-      border-width: 6px;
-    }
-
-    @media all and (display-mode: standalone), all and (min-width: 1025px)  {
-      .non-standalone {
-        display: none;
-      }
-    }
-
-  </style>
-
 </head>
 <body class="main-content mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -107,7 +71,7 @@
     <div class="mdl-layout--large-screen-only mdl-layout__header-row">
     </div>
 
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a id="tabHome" href="#home" class="mdl-layout__tab is-active">Home</a>
       <a id="tabAbstract" href="#abstract" class="mdl-layout__tab">Abstracts</a>
       <a id="tabSchedule" href="#schedule" class="mdl-layout__tab">Schedule</a>
@@ -212,7 +176,7 @@
             mdl-cell--8-col-tablet mdl-cell--4-col-phone"
              style="background-color: white;">
           <div class="mdl-card__supporting-text mdl-typography--text-center"
-               style="margin-top: 10px; margin-bottom: 0;">
+               style="padding: 0 20px;">
             <h3>
               Abstracts
             </h3>

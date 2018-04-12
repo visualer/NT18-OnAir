@@ -78,10 +78,10 @@ function init() {
       showMsg('No result', () => {
         $searchInput.val('');
       }, 'Clear Input');
-      if (!$searchActions.hasClass('hidden')) $searchActions.transition('slide up');
+      if (!$searchActions.hasClass('hidden')) $searchActions.transition('fade out');
       return;
     }
-    if ($searchActions.hasClass('hidden')) $searchActions.transition('slide down');
+    if ($searchActions.hasClass('hidden')) $searchActions.transition('fade in');
 
     result.forEach(function (elem, resultIndex) {
 
@@ -106,7 +106,7 @@ function init() {
                 </div>
                 <div class="mdl-card__actions">
                   <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]}">
-                    Toggle Visibility
+                    Toggle Content
                   </div>
                 </div>
               </div>
@@ -126,12 +126,6 @@ function init() {
   $("#schedule").load('partial/schedule.html');
 
   componentHandler.upgradeAllRegistered();
-
-  $(function () {
-
-  });
-
-  init = null; // run once
 
 }
 
