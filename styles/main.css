@@ -1,6 +1,6 @@
 
 html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif !important;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -49,6 +49,7 @@ html, body {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  background-color: rgb(211,47,47);
 }
 .mdl-layout__tab-bar .mdl-layout__tab {
   height: 56px;
@@ -238,11 +239,23 @@ section.section--center .section__text:not(:last-child) {
 
 }
 
+
+@media (max-width: 1024px) {
+
+  .mdl-grid.mdl-grid--no-spacing {
+    width: calc(100% - 16px);
+  }
+
+  .mdl-layout__tab-bar {
+    background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
+  }
+
+}
+
 @media (max-width: 480px) {
 
   .mdl-layout__tab-bar {
-    background: url("../images/pkucloud1h100.png") right no-repeat #94070A !important;
-    background-size: auto 100% !important;
+    background-size: auto 100%;
   }
 
   .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
@@ -258,19 +271,10 @@ section.section--center .section__text:not(:last-child) {
 
 }
 
-@media (max-width: 1024px) {
-
-  .mdl-grid.mdl-grid--no-spacing {
-    width: calc(100% - 16px);
-  }
-
-}
-
 @media (max-width: 1024px) and (min-width: 481px) {
 
   .mdl-layout__tab-bar {
-    background: url("../images/pkucloud1h100.png") right no-repeat #94070A !important;
-    background-size: 50% auto !important;
+    background-size: 50% auto;
   }
 
 }
@@ -301,5 +305,5 @@ section.section--center .section__text:not(:last-child) {
 .image-card-header {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 180px !important;
+  height: 180px;
 }
