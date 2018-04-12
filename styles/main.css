@@ -66,6 +66,7 @@ main > .mdl-layout__tab-panel {
 
 .mdl-grid.mdl-grid--no-spacing {
   border-radius: 10px;
+  background: #FFFFFF;
 }
 
 .mdl-grid.mdl-grid--no-spacing header {
