@@ -5,152 +5,188 @@ html, body {
   padding: 0;
 }
 
+.mdl__loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  z-index: 102;
+}
+
+.mdl__loader .mdl-loader__content {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
 /** DO NOT CHANGE THIS **/
-.main-content .mdl-layout__header-row {
+
+.mdl-layout__header-row {
   padding-left: 40px;
 }
-.main-content .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
+.mdl-layout.is-small-screen .mdl-layout__header-row h3 {
   font-size: inherit;
 }
-.main-content .mdl-layout__tab-bar-button {
+.mdl-layout__tab-bar-button {
   display: none;
 }
-.main-content .mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
+.mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
   display: none;
 }
-.main-content .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
-.main-content .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
+.mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
+.mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
   overflow: visible;
 }
-.main-content .mdl-layout__tab-bar-container {
+.mdl-layout__tab-bar-container {
   height: 56px;
 }
-.main-content .mdl-layout__tab-bar {
+.mdl-layout__tab-bar {
   padding: 0;
   padding-left: 16px;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
 }
-.main-content .mdl-layout__tab-bar .mdl-layout__tab {
+.mdl-layout__tab-bar .mdl-layout__tab {
   height: 56px;
   line-height: 56px;
 }
-.main-content .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
+.mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
   background-color: white;
   height: 4px;
 }
-.main-content main > .mdl-layout__tab-panel {
+main > .mdl-layout__tab-panel {
   padding: 8px;
   padding-top: 48px;
 }
 /** END OF DO NOT CHANGE **/
 
-.main-content .mdl-card {
+.mdl-grid.mdl-grid--no-spacing {
+  border-radius: 10px;
+}
+
+.mdl-grid.mdl-grid--no-spacing header {
+  border-radius: 10px;
+}
+
+.mdl-card {
   height: auto;
   display: flex;
   flex-direction: column;
+  background: none;
+  border-radius: 10px;
 }
-.main-content .mdl-card > * {
+.mdl-card > * {
   height: auto;
 }
-.main-content .mdl-card .mdl-card__supporting-text {
-  margin: 20px;
+.mdl-card .mdl-card__supporting-text {
   flex-grow: 1;
-  padding: 0;
+  padding: 20px;
+  margin: 0;
   color: inherit;
   width: calc(100% - 40px);
+  background: #FFFFFF;
 }
 
-.main-content .mdl-card__actions {
+.mdl-card__actions {
   margin: 0;
   padding: 4px 40px;
   color: inherit;
+  background: #FFFFFF;
 }
 
-.main-content .mdl-card__supporting-text + .mdl-card__actions {
+.mdl-card__supporting-text + .mdl-card__actions {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.main-content .mdl-layout__content section:not(:last-of-type) {
+.mdl-layout__content section:not(:last-of-type) {
   position: relative;
   margin-bottom: 24px;
 }
-.main-content section.section--center {
+section.section--center {
   max-width: 860px;
 }
 
-.main-content section > header{
+section > header{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-content section > .section__play-btn {
+section > .section__play-btn {
   min-height: 200px;
 }
-.main-content section > header > .material-icons {
+section > header > .material-icons {
   font-size: 3rem;
 }
-.main-content section > button {
+section > button {
   position: absolute;
   z-index: 99;
   top: 8px;
   right: 8px;
 }
-.main-content section .section__circle {
+section .section__circle {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-grow: 0;
   flex-shrink: 1;
 }
-.main-content section .section__text {
+section .section__text {
   flex-grow: 1;
   flex-shrink: 0;
   padding-top: 8px;
 }
-.main-content section .section__text h5 {
+section .section__text h5 {
   font-size: inherit;
   margin: 0;
   margin-bottom: 0.5em;
 }
-.main-content section .section__text a {
+section .section__text a {
   text-decoration: none;
 }
-.main-content section .section__circle-container > .section__circle-container__circle {
+section .section__circle-container > .section__circle-container__circle {
   width: 64px;
   height: 64px;
   border-radius: 32px;
   margin: 8px 0;
 }
-.main-content section.section--footer .section__circle--big {
+section.section--footer .section__circle--big {
   width: 100px;
   height: 100px;
   border-radius: 50px;
   margin: 8px 32px;
 }
-.main-content .is-small-screen section.section--footer .section__circle--big {
+.is-small-screen section.section--footer .section__circle--big {
   width: 50px;
   height: 50px;
   border-radius: 25px;
   margin: 8px 16px;
 }
-.main-content section.section--footer {
+section.section--footer {
   padding: 64px 0;
   margin: 0 -8px -8px -8px;
 }
-.main-content section.section--center .section__text:not(:last-child) {
+section.section--center .section__text:not(:last-child) {
   border-bottom: 1px solid rgba(0,0,0,.13);
 }
-.main-content .mdl-card .mdl-card__supporting-text > h3:first-child {
+.mdl-card .mdl-card__supporting-text > h3:first-child {
   margin-bottom: 24px;
 }
 
-.main-content .mdl-layout__tab-panel {
-  background-color: #EEEEEE;
+.mdl-layout__tab-panel {
+  background-color: #F8F8F8;
 }
 
 /* Media queries */
+
+@media all and (display-mode: standalone), all and (min-width: 1025px)  {
+  .non-standalone {
+    display: none;
+  }
+}
 
 @media (min-width: 481px) {
 
@@ -174,7 +210,7 @@ html, body {
 
 @media (min-width: 1025px) {
 
-  .main-content .mdl-layout__header {
+  .mdl-layout__header {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
     background-size: auto 100%;
   }
@@ -203,7 +239,7 @@ html, body {
 
 @media (max-width: 480px) {
 
-  .main-content .mdl-layout__tab-bar {
+  .mdl-layout__tab-bar {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A !important;
     background-size: auto 100% !important;
   }
@@ -231,7 +267,7 @@ html, body {
 
 @media (max-width: 1024px) and (min-width: 481px) {
 
-  .main-content .mdl-layout__tab-bar {
+  .mdl-layout__tab-bar {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A !important;
     background-size: 50% auto !important;
   }
