@@ -133,20 +133,14 @@ main > .mdl-layout__tab-panel {
   font-size: 3rem;
 }
 
-.main-content section .ext-menu-button {
+.main-content section .fav-button {
   position: absolute;
   z-index: 99;
   top: 8px;
   right: 8px;
   height: 32px; /* is that .mdl_card > * rule necessary? */
 }
-.main-content section .section__circle {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 0;
-  flex-shrink: 1;
-}
+
 .main-content section .section__text {
   flex-grow: 1;
   flex-shrink: 0;
@@ -160,24 +154,7 @@ main > .mdl-layout__tab-panel {
 .main-content section .section__text a {
   text-decoration: none;
 }
-.main-content section .section__circle-container > .section__circle-container__circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-  margin: 8px 0;
-}
-.main-content section.section--footer .section__circle--big {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  margin: 8px 32px;
-}
-.main-content .is-small-screen section.section--footer .section__circle--big {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 8px 16px;
-}
+
 .main-content section.section--footer {
   padding: 32px 0;
   margin: 0 -8px -8px -8px;
