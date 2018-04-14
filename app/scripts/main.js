@@ -1,31 +1,34 @@
 
+'use strict';
+
+
+let data = null;
+let idx = null;
+let errorReport = null;
+let LocalForage = window.localforage;
+let fav = [];
+let isPC = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+
+function showMsg(message, actionHandler = () => {}, actionText = 'OK') {
+  let sb = document.querySelector('#msgContainer').MaterialSnackbar;
+  sb.showSnackbar({
+    message: message,
+    timeout: 3000,
+    actionHandler: () => { actionHandler(); sb.hideSnackbar(); },
+    actionText: actionText
+  });
+}
+
 function init() {
 
   /* Init all components and functions */
 
-  let colorSeries = ['deep-orange-600', 'orange-700', 'orange-500', 'orange-700'];
-  let colors = colorSeries.map((e) => 'mdl-color--' + e);
-  let textColors = colorSeries.map((e) => 'mdl-color-text--' + e);
-
-  let errorContainer = document.querySelector('#errorContainer');
-  let showMsg = (message, actionHandler, actionText) => {
-    errorContainer.MaterialSnackbar.showSnackbar({
-      message: message,
-      timeout: 3000,
-      actionHandler: actionHandler,
-      actionText: actionText
-    });
-  };
-
-  let idx = null, data = null;
-  let mail = null;
-
   $.ajaxSetup({
     error: (xhr, status, exception) => {
-      mail = `mailto:accel@pku.edu.cn?subject=NT18 OnAir Bug&body=status:${status}; exception:${exception}`;
+      errorReport = `mailto:accel@pku.edu.cn?subject=NT18 OnAir Bug&body=status:${status}; exception:${exception}`;
       setTimeout(() => {
-        showMsg('Abstracts load error', () => {
-          location.href = mail;
+        showMsg('Load error', () => {
+          location.href = errorReport;
         }, 'Report');
       }, 3000);
     }
@@ -52,10 +55,49 @@ function init() {
     });
   });
 
+  LocalForage.config({
+    driver: LocalForage.INDEXEDDB,
+    name: 'NT18 OnAir'
+  });
 
-  // abstract tab processing
+  LocalForage.getItem('favorites', function (err, val) {
+    if (val === null) {
+      LocalForage.setItem('favorites', fav);
+    } else {
+      fav = val;
+    }
+  });
 
-  $('#searchInput').keydown((e) => {
+  // abstract tab
+
+  addSearchHandler();
+
+  // schedule tab
+
+  $('#schedule').load('partial/schedule.html');
+
+  componentHandler.upgradeAllRegistered();
+
+}
+
+
+function addSearchHandler() {
+
+  let colorSeries = ['deep-purple-300', 'deep-purple-400', 'indigo-500', 'indigo-400'];
+  let colors = colorSeries.map((e) => 'mdl-color--' + e);
+  let textColors = colorSeries.map((e) => 'mdl-color-text--' + e);
+
+  let $searchInput = $('#searchInput');
+  let $searchInputLabel = $searchInput.parent().children('label');
+  $searchInput.focus(() => {
+    $searchInputLabel.html('Search...');
+  });
+  $searchInput.blur(() => {
+    if ($searchInput.val() === '')
+      $searchInputLabel.html('Search... or enter ":all" ":fav"');
+  });
+
+  $searchInput.keydown((e) => {
 
     let $searchResult = $('#searchResult');
     let $searchInput = $('#searchInput');
@@ -66,17 +108,23 @@ function init() {
 
     if (idx === null) {
       showMsg('Abstracts load error', () => {
-        location.href = mail;
+        location.href = errorReport;
       }, 'Report');
       return;
     }
 
     $searchResult.html('');
 
-    let result = idx.search($searchInput.val());
+    let searchString = $searchInput.val();
+    let result = idx.search((searchString === ':all' || searchString === ':fav') ? '*' : searchString);
+    if (searchString === ':fav') {
+      result = result.filter((elem) => fav.indexOf(elem.ref) > -1);
+    }
+
+
     if (result.length === 0) {
-      showMsg('No result', () => {
-        $searchInput.val('');
+      showMsg('No ' + (searchString === ':fav' ? 'favorites' : 'result'), () => {
+        $searchInput.parent()[0].MaterialTextfield.change('');
       }, 'Clear Input');
       if (!$searchActions.hasClass('hidden')) $searchActions.transition('fade out');
       return;
@@ -93,45 +141,72 @@ function init() {
       let colorIndex = resultIndex % colors.length;
 
       $searchResult.append($(`
-            <section class="section--center mdl-grid mdl-shadow--2dp mdl-grid--no-spacing hidden resultUnits">
-              <div class="mdl-card mdl-cell
-                          mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-                <div class="mdl-card__title mdl-color-text--white ${colors[colorIndex]}"
-                     style="min-height: 80px;">
-                  <h4 class="mdl-card__title-text" style="margin-top: 30px;">${resultJson.title}</h4>
-                </div>
-                <div class="mdl-card__supporting-text">
-                  <h6 style="margin: 12px;">${authors}</h6><br /><p>${labs}</p>
-                  <span class="resultInnerContent hidden"><hr />${resultJson.content}</span>
-                </div>
-                <div class="mdl-card__actions">
-                  <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]}">
-                    Toggle Content
-                  </div>
-                </div>
+          <div class="mdl-card mdl-cell mdl-shadow--2dp result-unit hidden
+                      mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-card__title mdl-color-text--white ${colors[colorIndex]}"
+                 style="min-height: 80px;">
+              <h4 class="mdl-card__title-text" style="margin-top: 30px;">${resultJson.title}</h4>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <h6 style="margin: 12px;">${authors}</h6><br /><p>${labs}</p>
+              <span class="resultInnerContent hidden"><hr />${resultJson.content}</span>
+            </div>
+            <div class="mdl-card__actions">
+              <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]} toggle-button"
+                   id="toggleButton${resultIndex}">
+                Toggle Content
               </div>
-            </section>
-          `).click((e) => {
-        if ($(e.target).hasClass('mdl-button__ripple-container'))
-          $(e.currentTarget).find('.resultInnerContent').toggleClass('hidden');
-      }));
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fav-button" 
+                    id="favButton${resultIndex}">
+              <i class="material-icons mdl-color-text--white">
+                ${fav.indexOf(resultJson.id) > -1 ? 'star' : 'star_border'}
+              </i>
+            </button>
+            <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left" id="tooltip${resultIndex}"
+                 data-mdl-for="favButton${resultIndex}" data-mdl-taphold="true">
+              ${fav.indexOf(resultJson.id) > -1 ? 'Remove from' : 'Add to'} favorites
+            </div>
+          </div>
+        `).click((e) => {
+          if ($(e.target.parentElement).hasClass('toggle-button'))
+            $(e.currentTarget).find('.resultInnerContent').toggleClass('hidden');
+        })
+      );
+
+      $(`#favButton${resultIndex}`)
+        .on('click', function () {
+          let favIndex = fav.indexOf(resultJson.id);
+          let isFav = favIndex > -1;
+          $(this).find('i').html('star' + (isFav ? '_border' : ''));
+          if (isFav)
+            fav.splice(favIndex, 1);
+          else
+            fav.push(resultJson.id);
+          $(`#tooltip${resultIndex}`).html(`${isFav ? 'Add to' : 'Remove from'} favorites`);
+          showMsg((isFav ? 'Removed from' : 'Added to') + ' favorites');
+          LocalForage.setItem('favorites', fav);
+        })
+        .on('taphold', (ev) => {
+          if (isPC)
+            $(`#tooltip${resultIndex}`)[0].MaterialTooltip.boundMouseEnterHandler(ev);
+        });
+
     });
 
     componentHandler.upgradeAllRegistered();
-    $(".resultUnits").transition({ animation: 'slide down', duration: 200, interval: 100 });
+
+    $('.result-unit').transition({ animation: 'slide down', duration: 200, interval: 100 });
+
   });
-
-  // schedule tab
-
-  $("#schedule").load('partial/schedule.html');
-
-  componentHandler.upgradeAllRegistered();
 
 }
 
-
 function skipA2HS() {
-
   $('.mdl__loader.non-standalone').transition('fade out');
+}
 
+function clickTab(tabId) {
+  $(tabId).find('span').click();
+  scrollTo(0, 0);
 }

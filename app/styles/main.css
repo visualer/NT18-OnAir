@@ -1,11 +1,13 @@
 
+/* OK MDL gets substituted by MDC, but MDC seems to be in active development. */
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.mdl__loader {
+.main-content .mdl__loader {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -15,7 +17,7 @@ html, body {
   z-index: 102;
 }
 
-.mdl__loader .mdl-loader__content {
+.main-content .mdl__loader .mdl-loader__content {
   width: 80%;
   margin: 0 auto;
   text-align: center;
@@ -24,26 +26,26 @@ html, body {
 
 /** DO NOT CHANGE THIS **/
 
-.mdl-layout__header-row {
+.main-content .mdl-layout__header-row {
   padding-left: 40px;
 }
-.mdl-layout.is-small-screen .mdl-layout__header-row h3 {
+.main-content .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
   font-size: inherit;
 }
-.mdl-layout__tab-bar-button {
+.main-content .mdl-layout__tab-bar-button {
   display: none;
 }
-.mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
+.main-content .mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
   display: none;
 }
-.mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
-.mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
+.main-content .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
+.main-content .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
   overflow: visible;
 }
-.mdl-layout__tab-bar-container {
+.main-content .mdl-layout__tab-bar-container {
   height: 56px;
 }
-.mdl-layout__tab-bar {
+.main-content .mdl-layout__tab-bar {
   padding: 0;
   padding-left: 16px;
   box-sizing: border-box;
@@ -51,11 +53,11 @@ html, body {
   width: 100%;
   background-color: rgb(211,47,47);
 }
-.mdl-layout__tab-bar .mdl-layout__tab {
+.main-content .mdl-layout__tab-bar .mdl-layout__tab {
   height: 56px;
   line-height: 56px;
 }
-.mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
+.main-content .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
   background-color: white;
   height: 4px;
 }
@@ -65,26 +67,30 @@ main > .mdl-layout__tab-panel {
 }
 /** END OF DO NOT CHANGE **/
 
-.mdl-grid.mdl-grid--no-spacing {
+.main-content .mdl-grid {
+  padding: 0;
+}
+
+.main-content .mdl-grid.mdl-grid--no-spacing {
   border-radius: 10px;
   background: #FFFFFF;
 }
 
-.mdl-grid.mdl-grid--no-spacing header {
+.main-content .mdl-grid.mdl-grid--no-spacing header {
   border-radius: 10px;
 }
 
-.mdl-card {
+.main-content .mdl-card {
   height: auto;
   display: flex;
   flex-direction: column;
   background: none;
   border-radius: 10px;
 }
-.mdl-card > * {
+.main-content .mdl-card > * {
   height: auto;
 }
-.mdl-card .mdl-card__supporting-text {
+.main-content .mdl-card .mdl-card__supporting-text {
   flex-grow: 1;
   padding: 20px;
   margin: 0;
@@ -93,203 +99,172 @@ main > .mdl-layout__tab-panel {
   background: #FFFFFF;
 }
 
-.mdl-card__actions {
+.main-content .mdl-card__actions {
   margin: 0;
   padding: 4px 40px;
   color: inherit;
   background: #FFFFFF;
 }
 
-.mdl-card__supporting-text + .mdl-card__actions {
+.main-content .mdl-card__supporting-text + .mdl-card__actions {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.mdl-layout__content section:not(:last-of-type) {
+.main-content .mdl-layout__content section:not(:last-of-type) {
   position: relative;
   margin-bottom: 24px;
 }
-section.section--center {
+.main-content .mdl-layout__content section:last-of-type {
+  position: relative;
+}
+.main-content section.section--center {
   max-width: 860px;
 }
 
-section > header{
+.main-content section > header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-section > .section__play-btn {
+.main-content section > .section__play-btn {
   min-height: 200px;
 }
-section > header > .material-icons {
+.main-content section > header > .material-icons {
   font-size: 3rem;
 }
-section > button {
+
+.main-content section .fav-button {
   position: absolute;
   z-index: 99;
   top: 8px;
   right: 8px;
+  height: 32px; /* is that .mdl_card > * rule necessary? */
 }
-section .section__circle {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 0;
-  flex-shrink: 1;
-}
-section .section__text {
+
+.main-content section .section__text {
   flex-grow: 1;
   flex-shrink: 0;
   padding-top: 8px;
 }
-section .section__text h5 {
+.main-content section .section__text h5 {
   font-size: inherit;
   margin: 0;
   margin-bottom: 0.5em;
 }
-section .section__text a {
+.main-content section .section__text a {
   text-decoration: none;
 }
-section .section__circle-container > .section__circle-container__circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 32px;
-  margin: 8px 0;
-}
-section.section--footer .section__circle--big {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  margin: 8px 32px;
-}
-.is-small-screen section.section--footer .section__circle--big {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 8px 16px;
-}
-section.section--footer {
-  padding: 64px 0;
+
+.main-content section.section--footer {
+  padding: 32px 0;
   margin: 0 -8px -8px -8px;
 }
-section.section--center .section__text:not(:last-child) {
+.main-content section.section--center .section__text:not(:last-child) {
   border-bottom: 1px solid rgba(0,0,0,.13);
 }
-.mdl-card .mdl-card__supporting-text > h3:first-child {
+.main-content .mdl-card .mdl-card__supporting-text > h3:first-child {
   margin-bottom: 24px;
 }
 
-.mdl-layout__tab-panel {
+.main-content .mdl-layout__tab-panel {
   background-color: #F8F8F8;
 }
 
 /* Media queries */
 
-@media all and (display-mode: standalone), all and (min-width: 1025px)  {
-  .non-standalone {
+@media all and (display-mode: standalone), all and (min-width: 840px)  {
+  .main-content .non-standalone {
     display: none;
   }
 }
 
-@media (min-width: 481px) {
-
-  .mdl-cell--4-col-tablet:first-child {
-    margin-left: 8px;
-  }
-
-  .mdl-cell--4-col-tablet:last-child {
-    margin-right: 8px;
-  }
-
-  .mdl-cell--4-col-tablet {
-    margin: 8px;
-  }
-
-  .mdl-grid {
-    padding: 0;
-  }
+@media (min-width: 480px) {
 
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 840px) {
 
-  .mdl-layout__header {
+  .main-content .mdl-layout__header {
     background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
     background-size: auto 100%;
   }
 
-  .mdl-cell--6-col-desktop:nth-child(2n+1) {
+  .main-content .mdl-grid:not(.mdl-grid--no-spacing) .mdl-cell--6-col-desktop:nth-of-type(2n+1) {
+    width: calc(50% - 8px);
     margin-left: 0;
   }
 
-  .mdl-cell--6-col-desktop:nth-child(2n) {
+  .main-content .mdl-grid:not(.mdl-grid--no-spacing) .mdl-cell--6-col-desktop:nth-of-type(2n) {
+    width: calc(50% - 8px);
     margin-right: 0;
   }
 
-  .mdl-cell--6-col-desktop {
-    margin: 16px;
+  .main-content .mdl-grid:not(.mdl-grid--no-spacing) .mdl-cell--12-col-desktop {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .mdl-grid {
-    padding: 0;
+}
+
+
+@media (max-width: 839px) {
+
+  .main-content .mdl-grid.mdl-grid--no-spacing {
+    width: calc(100% - 16px);
   }
 
-  .mdl-layout--small-medium-screen-only {
+  .main-content .mdl-layout__tab-bar {
+    background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
+  }
+
+  /* fuck inconsistency */
+  /* used media query to substitute .is-small-screen */
+
+  .main-content .mdl-layout--large-screen-only-override {
     display: none;
   }
 
 }
 
+@media (max-width: 479px) {
 
-@media (max-width: 1024px) {
-
-  .mdl-grid.mdl-grid--no-spacing {
-    width: calc(100% - 16px);
-  }
-
-  .mdl-layout__tab-bar {
-    background: url("../images/pkucloud1h100.png") right no-repeat #94070A;
-  }
-
-}
-
-@media (max-width: 480px) {
-
-  .mdl-layout__tab-bar {
+  .main-content .mdl-layout__tab-bar {
     background-size: auto 100%;
   }
 
-  .mdl-cell--4-col-phone.mdl-cell--4-col-phone {
+  .main-content .mdl-card {
     width: 100%;
     margin-top: 8px;
     margin-bottom: 8px;
   }
 
-  .NTLogo {
+  .main-content .NTLogo {
     margin-top: 30px;
     margin-bottom: 0;
   }
 
 }
 
-@media (max-width: 1024px) and (min-width: 481px) {
+@media (max-width: 839px) and (min-width: 480px) {
 
-  .mdl-layout__tab-bar {
+  .main-content .mdl-layout__tab-bar {
     background-size: 50% auto;
   }
 
 }
 
 
-#schedule .mdl-list__item {
+.main-content #schedule .mdl-list__item {
   height: auto;
   padding: 6px 16px;
 }
 
-#schedule .schedule-topics .mdl-list {
+.main-content #schedule .schedule-topics .mdl-list {
   margin: 0;
 }
 
-#schedule .schedule-topics .mdl-secondary-list .mdl-list__item {
+.main-content #schedule .schedule-topics .mdl-secondary-list .mdl-list__item {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
@@ -302,7 +277,7 @@ section.section--center .section__text:not(:last-child) {
 }
 
 
-.image-card-header {
+.main-content .image-card-header {
   background-repeat: no-repeat;
   background-size: cover;
   height: 180px;

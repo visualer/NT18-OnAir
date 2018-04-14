@@ -26,7 +26,8 @@
   <meta name="theme-color" content="#94070A">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="lib/material/material.red-orange.min.css">
+  <link rel="stylesheet" href="lib/material/material.min.css">
+  <link rel="stylesheet" href="lib/material/material-grid.min.css">
   <link rel="stylesheet" href="lib/semantic-ui-transition/transition.min.css">
 
   <link rel="stylesheet" href="styles/main.css">
@@ -47,10 +48,10 @@
         NT18 OnAir
       </h2>
       <div style="margin-top: 50px; margin-bottom: 10px;">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+        <div class="mdl-button mdl-js-button mdl-js-ripple-effect"
                 id="installPrompt" style="font-size: large;">
           Install
-        </button>
+        </div>
         <div class="mdl-tooltip mdl-tooltip--large" data-mdl-for="installPrompt">
           Tap "<b>Add to Home Screen</b>" option in your browser's menu
         </div>
@@ -63,12 +64,12 @@
   <!-- Header -->
 
   <header class="mdl-layout__header mdl-layout__header--scroll">
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    <div class="mdl-layout--large-screen-only-override mdl-layout__header-row">
     </div>
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    <div class="mdl-layout--large-screen-only-override mdl-layout__header-row">
       <img src="images/NT18Title.png" height="200%" />
     </div>
-    <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+    <div class="mdl-layout--large-screen-only-override mdl-layout__header-row">
     </div>
 
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
@@ -94,9 +95,7 @@
              style="background-color: white; min-height: 0;">
           <div class="mdl-card__supporting-text"
                style="text-align: center;">
-            <h2>NT18 OnAir
-              <small class="mdl-layout--large-screen-only">Desktop</small>
-            </h2>
+            <h2>NT18 OnAir</h2>
           </div>
         </div>
       </section>
@@ -117,7 +116,8 @@
 
       <!-- main card -->
       <section class="mdl-grid section--center">
-        <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
+                    mdl-cell--4-col-tablet mdl-cell--4-col-phone">
           <div class="mdl-card__title mdl-color-text--white image-card-header"
                style="background-image: url('images/slider/slider-1.jpg');">
             <h2 class="mdl-card__title-text">Welcome</h2>
@@ -132,7 +132,8 @@
             </p>
           </div>
         </div>
-        <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
+                    mdl-cell--4-col-tablet mdl-cell--4-col-phone">
           <div class="mdl-card__title mdl-color-text--white image-card-header"
                style="background-image: url('images/slider/slider-2.jpg');">
             <h2 class="mdl-card__title-text">Conference Abstracts</h2>
@@ -145,10 +146,11 @@
           </div>
           <div class="mdl-card__actions">
             <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
-                 onclick="$('#tabAbstract').find('span').click();">Search abstracts</div>
+                 onclick="clickTab('#tabAbstract');">Search abstracts</div>
           </div>
         </div>
-        <div class="mdl-card mdl-shadow--2dp mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
+                    mdl-cell--4-col-tablet mdl-cell--4-col-phone">
           <div class="mdl-card__title mdl-color-text--white image-card-header"
                style="background-image: url('images/slider/slider-3.jpg');">
             <h2 class="mdl-card__title-text">Schedule</h2>
@@ -161,7 +163,7 @@
           </div>
           <div class="mdl-card__actions">
             <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
-                 onclick="$('#tabSchedule').find('span').click();">View Details</div>
+                 onclick="clickTab('#tabSchedule');">View Details</div>
           </div>
         </div>
       </section>
@@ -182,7 +184,7 @@
             </h3>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="searchInput">
-              <label class="mdl-textfield__label" for="searchInput">Search...</label>
+              <label class="mdl-textfield__label" for="searchInput">Search... or enter ":all ":fav"</label>
             </div>
             <div style="padding: 4px 0;;" class="mdl-card__actions hidden">
               <!-- that extra ; is to avoid a bug -->
@@ -196,8 +198,8 @@
           </div>
         </div>
       </section>
-      <div id="searchResult">
-      </div>
+      <section id="searchResult" class="section--center mdl-grid">
+      </section>
       <section class="section--footer"></section>
     </div>
 
@@ -207,7 +209,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="mdl-mega-footer" style="bottom: 0;">
+    <footer class="mdl-mega-footer mdl-layout--large-screen-only-override" style="bottom: 0;">
       <div class="mdl-mega-footer--middle-section">
         <div class="mdl-mega-footer--drop-down-section">
           <input class="mdl-mega-footer--heading-checkbox" title="" type="checkbox" checked>
@@ -229,8 +231,8 @@
     </footer>
   </main>
 
-  <!-- error -->
-  <div id="errorContainer" class="mdl-js-snackbar mdl-snackbar">
+  <!-- snack bar message -->
+  <div id="msgContainer" class="mdl-js-snackbar mdl-snackbar">
     <div class="mdl-snackbar__text"></div>
     <button class="mdl-snackbar__action" type="button"></button>
   </div>
@@ -238,9 +240,11 @@
 </div>
 
 <script src="lib/jquery/jquery-3.3.1.min.js"></script>
+<script src="lib/jquery/jquery.mobile.tap-event.min.js"></script>
 <script src="lib/material/material.min.js"></script>
 <script src="lib/semantic-ui-transition/transition.min.js"></script>
 <script src="lib/lunr/lunr.min.js"></script>
+<script src="lib/localforage/localforage.min.js"></script>
 
 <!-- build:js scripts/app.min.js -->
 <script src="scripts/main.js"></script>
