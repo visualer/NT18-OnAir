@@ -87,9 +87,7 @@ main > .mdl-layout__tab-panel {
   background: none;
   border-radius: 10px;
 }
-.main-content .mdl-card > * {
-  height: auto;
-}
+
 .main-content .mdl-card .mdl-card__supporting-text {
   flex-grow: 1;
   padding: 20px;
