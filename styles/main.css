@@ -14,7 +14,7 @@ html, body {
   display: flex;
   align-items: center;
   background: #FFFFFF;
-  z-index: 102;
+  z-index: 4;
 }
 
 .main-content .mdl__loader .mdl-loader__content {
@@ -133,7 +133,7 @@ main > .mdl-layout__tab-panel {
 
 .main-content section .fav-button {
   position: absolute;
-  z-index: 99;
+  z-index: 3;
   top: 8px;
   right: 8px;
   height: 32px; /* is that .mdl_card > * rule necessary? */
