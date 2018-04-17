@@ -80,6 +80,18 @@ main > .mdl-layout__tab-panel {
   border-radius: 10px;
 }
 
+.main-content .mdl-grid.mdl-grid--no-spacing .help-button {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  right: 8px;
+  height: 32px;
+}
+
+.main-content .mdl-grid.mdl-grid--no-spacing .help-button-tooltip.help-button-tooltip {
+  margin-top: 0 !important; /* fuck inline styles */
+}
+
 .main-content .mdl-card {
   height: auto;
   display: flex;
