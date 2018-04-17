@@ -1,5 +1,8 @@
 
 /* eslint-env browser */
+
+let deferredPrompt = null;
+
 (function() {
   'use strict';
 
@@ -34,9 +37,10 @@
           installingWorker.onstatechange = function() {
             switch (installingWorker.state) {
               case 'installed':
-
-                $('.newContentPrompt').transition('slide down');
-
+                // new content prompt
+                showMsg('New content is available.', () => {
+                  location.reload(true); // true or false doesn't matter?
+                }, 'Reload', 5000);
                 break;
 
               case 'redundant':
@@ -53,6 +57,12 @@
       console.error('Error during service worker registration:', e);
     });
   }
+
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    return false;
+  });
 
   $(init);
 
