@@ -109,10 +109,17 @@
                    style="display: inline-block;">Collapse All</div>
             </div>
           </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon help-button" id="helpButton">
+            <i class="material-icons">help_outline</i>
+          </button>
+          <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left help-button-tooltip"
+               data-mdl-for="helpButton">
+            wildcard: *<br />:all &mdash; show all<br />:fav &mdash; show favorites<br />
+            fields: title, author, content<br /><br />Example: "author:Alex*"
+          </div>
         </div>
       </section>
-      <section id="searchResult" class="section--center mdl-grid">
-      </section>
+      <section id="searchResult" class="section--center mdl-grid"></section>
       <section class="section--footer"></section>
     </div>
 
