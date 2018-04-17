@@ -63,7 +63,7 @@ html, body {
 }
 main > .mdl-layout__tab-panel {
   padding: 8px;
-  padding-top: 48px;
+  padding-top: 30px;
 }
 /** END OF DO NOT CHANGE **/
 
@@ -252,6 +252,13 @@ main > .mdl-layout__tab-panel {
 
 }
 
+@media (min-height: 801px) {
+  .mdl-layout--small-height-only {
+    display: none;
+  }
+}
+
+/* partial specific */
 
 .main-content #schedule .mdl-list__item {
   height: auto;
@@ -279,4 +286,30 @@ main > .mdl-layout__tab-panel {
   background-repeat: no-repeat;
   background-size: cover;
   height: 180px;
+}
+
+/* font */
+/* from Google Stylesheet, locally hosted */
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(material-icons.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons', serif; /* fuck  */
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
