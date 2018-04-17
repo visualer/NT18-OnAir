@@ -252,7 +252,7 @@ main > .mdl-layout__tab-panel {
 
 }
 
-@media (min-height: 801px) {
+@media (min-height: 836px) {
   .mdl-layout--small-height-only {
     display: none;
   }
