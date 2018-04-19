@@ -7,7 +7,7 @@ let idx = null;
 let errorReport = null;
 let LocalForage = window.localforage;
 let fav = [];
-let isPC = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
+let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 
 function checkDeferredPrompt() {
   if (deferredPrompt !== null) {
@@ -19,14 +19,13 @@ function checkDeferredPrompt() {
           ' "Add to Home Screen" option in your browser\'s menu', () => {}, 'OK', 10000);
       } else {
         alert('NT18 OnAir successfully installed.');
-        close();
       }
     });
   }
 }
 
 function showMsg(message, actionHandler = () => {}, actionText = 'OK', timeout = 3000) {
-  let sb = document.querySelector('#msgContainer').MaterialSnackbar;
+  let sb = $('#msgContainer')[0].MaterialSnackbar;
   sb.showSnackbar({
     message: message,
     timeout: timeout,
@@ -95,20 +94,13 @@ function addSearchHandler() {
 
   let $searchInput = $('#searchInput');
   let $searchInputLabel = $('#searchInputLabel');
+
   $searchInput.focus(() => {
-
       $searchInputLabel.html('Search...');
-
   }).blur(() => {
-
       if ($searchInput.val() === '')
         $searchInputLabel.html('Search... or enter ":all" ":fav"');
-
   }).keydown((e) => {
-
-    let colorSeries = ['deep-purple-300', 'deep-purple-400', 'indigo-500', 'indigo-400'];
-    let colors = colorSeries.map((e) => 'mdl-color--' + e);
-    let textColors = colorSeries.map((e) => 'mdl-color-text--' + e);
     let $searchResult = $('#searchResult');
     let $searchActions = $('#abstract').find('.mdl-card__actions');
     let searchString = $searchInput.val();
@@ -130,7 +122,7 @@ function addSearchHandler() {
     }
 
     if (result.length === 0) {
-      showMsg('No ' + (searchString === ':fav' ? 'favorites' : 'result'), () => {
+      showMsg(`No ${searchString === ':fav' ? 'favorites' : 'result'}`, () => {
         $searchInput.parent()[0].MaterialTextfield.change('');
       }, 'Clear Input');
       if (!$searchActions.hasClass('hidden')) $searchActions.transition('fade out');
@@ -141,65 +133,8 @@ function addSearchHandler() {
       $searchActions.transition('fade in');
     }
 
-    result.forEach(function (elem, resultIndex) {
-
-      let resultEntry = data[elem.ref];
-      let authorHTML = resultEntry.authorHTML;
-      let affHTML = resultEntry.affHTML;
-      let colorIndex = resultIndex % colors.length;
-
-      $searchResult.append($(`
-          <div class="mdl-card mdl-cell mdl-shadow--2dp result-unit hidden
-                      mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="mdl-card__title mdl-color-text--white ${colors[colorIndex]}"
-                 style="min-height: 80px;">
-              <h4 class="mdl-card__title-text" style="margin-top: 30px;">${resultEntry.title}</h4>
-            </div>
-            <div class="mdl-card__supporting-text">
-              <h6 style="margin: 12px;">${authorHTML}</h6><br /><p>${affHTML}</p>
-              <span class="resultInnerContent hidden"><hr />${resultEntry.content}</span>
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]} toggle-button"
-                   id="toggleButton${resultIndex}">
-                Toggle Content
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fav-button" 
-                    id="favButton${resultIndex}">
-              <i class="material-icons mdl-color-text--white">
-                ${fav.indexOf(resultEntry.id) > -1 ? 'star' : 'star_border'}
-              </i>
-            </button>
-            <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left" id="tooltip${resultIndex}"
-                 data-mdl-for="favButton${resultIndex}" data-mdl-taphold="true">
-              ${fav.indexOf(resultEntry.id) > -1 ? 'Remove from' : 'Add to'} favorites
-            </div>
-          </div>
-        `).click((e) => {
-          if ($(e.target.parentElement).hasClass('toggle-button'))
-            $(e.currentTarget).find('.resultInnerContent').toggleClass('hidden');
-        })
-      );
-
-      $(`#favButton${resultIndex}`)
-        .on('click', function () {
-          let favIndex = fav.indexOf(resultEntry.id);
-          let isFav = favIndex > -1;
-          $(this).find('i').html('star' + (isFav ? '_border' : ''));
-          if (isFav)
-            fav.splice(favIndex, 1);
-          else
-            fav.push(resultEntry.id);
-          $(`#tooltip${resultIndex}`).html(`${isFav ? 'Add to' : 'Remove from'} favorites`);
-          showMsg((isFav ? 'Removed from' : 'Added to') + ' favorites');
-          LocalForage.setItem('favorites', fav);
-        })
-        .on('taphold', (ev) => {
-          if (isPC)
-            $(`#tooltip${resultIndex}`)[0].MaterialTooltip.boundMouseEnterHandler(ev);
-        });
-
+    result.forEach((elem, resultIndex) => {
+      $searchResult.append(generateResultTemplate(elem, resultIndex));
     });
 
     componentHandler.upgradeAllRegistered();
@@ -208,6 +143,73 @@ function addSearchHandler() {
 
   });
 
+}
+
+
+function generateResultTemplate(elem, resultIndex) {
+
+  let colorSeries = ['deep-purple-300', 'deep-purple-400', 'indigo-500', 'indigo-400'];
+  let colors = colorSeries.map((e) => 'mdl-color--' + e);
+  let textColors = colorSeries.map((e) => 'mdl-color-text--' + e);
+
+  let resultEntry = data[elem.ref];
+  let colorIndex = resultIndex % colors.length;
+
+  return $(`
+          <div class="mdl-card mdl-cell mdl-shadow--2dp result-unit hidden
+                      mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"
+               data-article-id="${resultEntry.id}" data-result-id="${resultIndex}">
+            <div class="mdl-card__title mdl-color-text--white ${colors[colorIndex]}"
+                 style="min-height: 80px;">
+              <h4 class="mdl-card__title-text" style="margin-top: 30px;">${resultEntry.title}</h4>
+            </div>
+            <div class="mdl-card__supporting-text">
+              <h6 style="margin: 12px;">${resultEntry.authorHTML}</h6><br /><p>${resultEntry.affHTML}</p>
+              <span class="result-content hidden"><hr />${resultEntry.content}</span>
+            </div>
+            <div class="mdl-card__actions">
+              <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]} toggle-button">
+                Toggle Content
+              </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fav-button" 
+                    id="favButton${resultIndex}">
+              <i class="material-icons mdl-color-text--white fav-icon">
+                ${fav.indexOf(resultEntry.id) > -1 ? 'star' : 'star_border'}
+              </i>
+            </button>
+            <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left"
+                 data-mdl-for="favButton${resultIndex}" data-mdl-taphold="true">
+              ${fav.indexOf(resultEntry.id) > -1 ? 'Remove from' : 'Add to'} favorites
+            </div>
+          </div>
+        `).click((e) => {
+          let $target = $(e.target.parentElement);
+          let $currTarget = $(e.currentTarget);
+          let currArticleId = $currTarget.attr('data-article-id');
+
+          if ($target.hasClass('toggle-button')) {
+            $currTarget.find('.result-content').toggleClass('hidden');
+            return false;
+          }
+          else if ($target.hasClass('fav-button')) {
+            let favIndex = fav.indexOf(currArticleId);
+            let isFav = favIndex > -1;
+            $currTarget.find('.fav-icon').html(`star${isFav ? '_border' : ''}`);
+            if (isFav)
+              fav.splice(favIndex, 1);
+            else
+              fav.push(currArticleId);
+            $currTarget.find('.mdl-tooltip').html(`${isFav ? 'Add to' : 'Remove from'} favorites`);
+            showMsg(`${isFav ? 'Removed from' : 'Added to'} favorites`);
+            LocalForage.setItem('favorites', fav);
+            return false;
+          }
+        }).taphold((e) => {
+          if ($(e.target.parentElement).hasClass('fav-button') && isMobile)
+            $(e.currentTarget).find('.mdl-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
+          return false;
+        });
 }
 
 function skipA2HS() {
