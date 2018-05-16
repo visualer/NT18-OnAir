@@ -139,7 +139,7 @@ function addSearchHandler() {
 
     componentHandler.upgradeAllRegistered();
 
-    $('.result-unit').transition({ animation: 'slide down', duration: 200, interval: 100 });
+    $('.result-unit').transition({ animation: 'fade in', duration: 300, interval: 100 });
 
   });
 
