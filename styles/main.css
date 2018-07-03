@@ -151,6 +151,23 @@ main > .mdl-layout__tab-panel {
   height: 32px; /* is that .mdl_card > * rule necessary? */
 }
 
+.main-content section .category-info {
+  display: inline-block;
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  left: 8px;
+  height: 32px;
+}
+.main-content section .category-info p {
+  display: block;
+  font-size: 16px;
+  top: 4px;
+  left: 4px;
+  position: relative;
+  color: white;
+}
+
 .main-content section .section__text {
   flex-grow: 1;
   flex-shrink: 0;
