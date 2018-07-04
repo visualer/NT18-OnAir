@@ -33,9 +33,11 @@ import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
+import lunr from 'lunr';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+const fs = require('fs');
 
 // Lint JavaScript
 /*
@@ -114,6 +116,7 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
+      './app/scripts/functions.js',
       './app/scripts/main.js',
       './app/scripts/app.js'
       // Other scripts
@@ -160,11 +163,44 @@ gulp.task('html', () => {
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
+// generate prebuild index for lunr
+gulp.task('lunr-prebuild', () => {
+  let absData = JSON.parse(fs.readFileSync('app/data/abstracts.json', {encoding: 'utf8'}));
+  let idx = lunr(function () {
+    this.ref('index');
+    this.field('id');
+    this.field('category');
+    this.field('title');
+    this.field('author');
+    this.field('content');
+    this.field('poster_num');
+    absData.forEach(function (doc, index) {
+      this.add({
+        index: index,
+        id: doc.id,
+        category: doc.category,
+        title: doc.title,
+        author: `${doc.author.join(' ')} ${doc.dept} ${doc.affl}`,
+        content: doc.content,
+        poster_num: `${doc.poster_num} ${doc.poster_num.substring(0, 2)}`,
+        // only for IDE to recognize the variable
+        corr_name: '',
+        first_email: '',
+        corr_email: '',
+        dept: '',
+        affl: ''
+      });
+    }, this);
+  });
+  fs.writeFileSync('app/data/abstracts-indexed.json', JSON.stringify(idx), {encoding: 'utf8'});
+});
+
+
 // Build production files, the default task
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['html', 'scripts', 'images', 'copy'],
+    ['lunr-prebuild', 'html', 'scripts', 'images', 'copy'],
     'generate-service-worker',
     cb
   )
@@ -211,7 +247,6 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
       `${rootDir}/styles/**/*.css`,
       `${rootDir}/*.{html,json}`,
       `${rootDir}/data/*`,
-      `${rootDir}/partial/*`,
       `${rootDir}/lib/**/*.min.{js,css}`
     ],
     // Translates a static file path to the relative URL that it's served from.

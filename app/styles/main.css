@@ -5,6 +5,11 @@ html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+p {
+  line-height: 20px;
 }
 
 .main-content .mdl__loader {
@@ -98,6 +103,7 @@ main > .mdl-layout__tab-panel {
   flex-direction: column;
   background: none;
   border-radius: 10px;
+  min-height: 0;
 }
 
 .main-content .mdl-card .mdl-card__supporting-text {
@@ -143,14 +149,6 @@ main > .mdl-layout__tab-panel {
   font-size: 3rem;
 }
 
-.main-content section .fav-button {
-  position: absolute;
-  z-index: 3;
-  top: 8px;
-  right: 8px;
-  height: 32px; /* is that .mdl_card > * rule necessary? */
-}
-
 .main-content section .section__text {
   flex-grow: 1;
   flex-shrink: 0;
@@ -180,7 +178,13 @@ main > .mdl-layout__tab-panel {
   background-color: #F8F8F8;
 }
 
-/* Media queries */
+/*
+ *
+ *
+ * Media queries
+ *
+ *
+ */
 
 @media all and (display-mode: standalone), all and (min-width: 840px)  {
   .main-content .non-standalone {
@@ -270,18 +274,49 @@ main > .mdl-layout__tab-panel {
   }
 }
 
-/* partial specific */
+/*
+ *
+ *
+ * non-general rules
+ *
+ *
+ */
 
-.main-content #schedule .mdl-list__item {
+.main-content section .fav-button {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  right: 8px;
+  height: 32px; /* is that .mdl_card > * rule necessary? */
+}
+
+.main-content section .category-info {
+  display: inline-block;
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  left: 8px;
+  height: 32px;
+}
+.main-content section .category-info p {
+  display: block;
+  font-size: 16px;
+  top: 4px;
+  left: 4px;
+  position: relative;
+  color: white;
+}
+
+.main-content .topics-card .mdl-list__item {
   height: auto;
   padding: 6px 16px;
 }
 
-.main-content #schedule .schedule-topics .mdl-list {
+.main-content .topics-card .mdl-list {
   margin: 0;
 }
 
-.main-content #schedule .schedule-topics .mdl-secondary-list .mdl-list__item {
+.main-content .topics-card .mdl-secondary-list .mdl-list__item {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
@@ -293,15 +328,57 @@ main > .mdl-layout__tab-panel {
   padding: 0 16px;
 }
 
+.main-content #schedule .schedule-compact .mdl-list__item--three-line {
+  height: auto;
+  padding: 6px 10px;
+}
+.main-content #schedule .schedule-compact .mdl-list__item--three-line .mdl-list__item-primary-content {
+  height: auto;
+}
+.main-content #schedule .schedule-compact .mdl-list__item .mdl-list__item-primary-content .mdl-list__item-icon {
+  margin-right: 8px;
+}
+.main-content #schedule .schedule-compact .mdl-list__item--three-line .mdl-list__item-text-body {
+  height: auto;
+}
 
-.main-content .image-card-header {
-  background-repeat: no-repeat;
+
+
+
+/* CSS only for background images.
+ */
+
+.main-content .image-card-header-slider-1 {
+  background: url('../images/slider/slider-1.jpg') no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-slider-2 {
+  background: url('../images/slider/slider-2.jpg') no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-slider-3 {
+  background: url('../images/slider/slider-3.jpg') no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-slider-5 {
+  background: url('../images/slider/slider-5.jpg') bottom center no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-poly-1 {
+  background: url('../images/polygons/poly-1.png') bottom center no-repeat;
   background-size: cover;
   height: 180px;
 }
 
-/* font */
-/* from Google Stylesheet, locally hosted */
+
+
+/* font
+ * credit from Google Stylesheet, locally hosted
+ */
 
 @font-face {
   font-family: 'Material Icons';

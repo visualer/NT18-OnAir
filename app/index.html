@@ -37,7 +37,6 @@
 
 
   <!-- Non-standalone Loader -->
-
   <div class="mdl__loader non-standalone">
     <div class="mdl-loader__content">
       <div style="margin-bottom: 30px;">
@@ -59,7 +58,6 @@
   </div>
 
   <!-- Header -->
-
   <header class="mdl-layout__header mdl-layout__header--scroll">
     <div class="mdl-layout--large-screen-only-override mdl-layout__header-row">
     </div>
@@ -71,42 +69,74 @@
 
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a id="tabHome" href="#home" class="mdl-layout__tab is-active">Home</a>
-      <a id="tabAbstract" href="#abstract" class="mdl-layout__tab">Abstracts</a>
       <a id="tabSchedule" href="#schedule" class="mdl-layout__tab">Schedule</a>
+      <a id="tabAbstract" href="#abstract" class="mdl-layout__tab">Poster Abstracts</a>
     </div>
   </header>
 
   <!-- Content -->
   <main class="mdl-layout__content">
 
-    <!-- Home tab partial -->
-    <div class="mdl-layout__tab-panel is-active" id="home"></div>
+    <!-- Home tab with partial -->
+    <div class="mdl-layout__tab-panel is-active" id="home">
+
+      <!-- title card -->
+      <section class="section--center mdl-grid mdl-shadow--2dp mdl-grid--no-spacing">
+        <header class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone"
+                style="background-color: white;">
+          <img src="images/NT18Logo.png" width="60%" class="NTLogo" />
+        </header>
+        <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone"
+             style="background-color: white; min-height: 0;">
+          <div class="mdl-card__supporting-text"
+               style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+            <h2>NT18 OnAir</h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- Home tab partial -->
+      <div id="home-partial"></div>
+      <section class="section--footer"></section>
+    </div>
+
+    <!-- Schedule tab partial -->
+    <div class="mdl-layout__tab-panel" id="schedule"></div>
 
     <!-- Abstract tab -->
     <div class="mdl-layout__tab-panel" id="abstract">
       <section class="section--center mdl-grid mdl-shadow--2dp mdl-grid--no-spacing">
         <div class="mdl-card mdl-cell mdl-cell--12-col-desktop
             mdl-cell--8-col-tablet mdl-cell--4-col-phone"
-             style="background-color: white;">
+             style="background-color: white; overflow: initial;">
           <div class="mdl-card__supporting-text mdl-typography--text-center"
-               style="padding: 0 20px;">
-            <h3>
-              Abstracts
-            </h3>
+               style="padding: 0 20px; border-radius: 10px;">
+            <h4>
+              Poster Abstracts
+            </h4>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="searchInput">
               <label class="mdl-textfield__label" for="searchInput" id="searchInputLabel">
-                Search... or enter ":all ":fav"
+                Search... or enter ":fav"
               </label>
             </div>
             <div style="padding: 4px 0;;" class="mdl-card__actions hidden">
               <!-- that extra ; is to avoid a bug -->
-              <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+                      id="searchActionPrev">
+                <i class="material-icons">chevron_left</i>
+              </button>
+              <div id="searchActionPageNum" style="font-size: 16px; display: inline;"></div>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+                      id="searchActionNext">
+                <i class="material-icons">chevron_right</i>
+              </button>
+              <!--<div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
                    onclick="$('.result-content').removeClass('hidden');"
                    style="display: inline-block;">Expand All</div>
               <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
                    onclick="$('.result-content').addClass('hidden');"
-                   style="display: inline-block;">Collapse All</div>
+                   style="display: inline-block;">Collapse All</div>-->
             </div>
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon help-button" id="helpButton">
@@ -114,17 +144,19 @@
           </button>
           <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left help-button-tooltip"
                data-mdl-for="helpButton">
-            wildcard: *<br />:all &mdash; show all<br />:fav &mdash; show favorites<br />
-            fields: title, author, content<br /><br />Example: "author:Alex*"
+            <b>Search options:</b><br />
+            :fav &mdash; show favorites<br />ab*c &mdash; ab...c wildcard<br />
+            +abc &mdash; must include abc<br />-abc &mdash; exclude abc<br /><br />
+            <b>Search fields</b>:<br />
+            author:, title:, category:, content:, poster_num:
           </div>
         </div>
       </section>
-      <section id="searchResult" class="section--center mdl-grid"></section>
+      <section id="searchResult" class="section--center mdl-grid" style="align-items: center;">
+        <!-- Placeholder for search results-->
+      </section>
       <section class="section--footer"></section>
     </div>
-
-    <!-- Schedule tab partial -->
-    <div class="mdl-layout__tab-panel" id="schedule"></div>
 
     <!-- Footer -->
     <footer class="mdl-mega-footer mdl-layout--small-height-only mdl-layout--large-screen-only" style="bottom: 0;">
@@ -164,8 +196,8 @@
 <script src="lib/semantic-ui-transition/transition.min.js"></script>
 <script src="lib/lunr/lunr.min.js"></script>
 <script src="lib/localforage/localforage.min.js"></script>
-
 <!-- build:js scripts/app.min.js -->
+<script src="scripts/functions.js"></script>
 <script src="scripts/main.js"></script>
 <script src="scripts/app.js"></script>
 <!-- endbuild -->
