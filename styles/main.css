@@ -5,6 +5,11 @@ html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+p {
+  line-height: 20px;
 }
 
 .main-content .mdl__loader {
@@ -98,6 +103,7 @@ main > .mdl-layout__tab-panel {
   flex-direction: column;
   background: none;
   border-radius: 10px;
+  min-height: 0;
 }
 
 .main-content .mdl-card .mdl-card__supporting-text {
