@@ -149,31 +149,6 @@ main > .mdl-layout__tab-panel {
   font-size: 3rem;
 }
 
-.main-content section .fav-button {
-  position: absolute;
-  z-index: 3;
-  top: 8px;
-  right: 8px;
-  height: 32px; /* is that .mdl_card > * rule necessary? */
-}
-
-.main-content section .category-info {
-  display: inline-block;
-  position: absolute;
-  z-index: 3;
-  top: 8px;
-  left: 8px;
-  height: 32px;
-}
-.main-content section .category-info p {
-  display: block;
-  font-size: 16px;
-  top: 4px;
-  left: 4px;
-  position: relative;
-  color: white;
-}
-
 .main-content section .section__text {
   flex-grow: 1;
   flex-shrink: 0;
@@ -203,7 +178,13 @@ main > .mdl-layout__tab-panel {
   background-color: #F8F8F8;
 }
 
-/* Media queries */
+/*
+ *
+ *
+ * Media queries
+ *
+ *
+ */
 
 @media all and (display-mode: standalone), all and (min-width: 840px)  {
   .main-content .non-standalone {
@@ -293,7 +274,38 @@ main > .mdl-layout__tab-panel {
   }
 }
 
-/* partial specific */
+/*
+ *
+ *
+ * non-general rules
+ *
+ *
+ */
+
+.main-content section .fav-button {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  right: 8px;
+  height: 32px; /* is that .mdl_card > * rule necessary? */
+}
+
+.main-content section .category-info {
+  display: inline-block;
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  left: 8px;
+  height: 32px;
+}
+.main-content section .category-info p {
+  display: block;
+  font-size: 16px;
+  top: 4px;
+  left: 4px;
+  position: relative;
+  color: white;
+}
 
 .main-content .topics-card .mdl-list__item {
   height: auto;
