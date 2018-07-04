@@ -186,7 +186,7 @@ main > .mdl-layout__tab-panel {
  *
  */
 
-@media all and (display-mode: standalone), all and (min-width: 840px), all and (display-mode: fullscreen)  {
+@media all and (display-mode: standalone), all and (min-width: 840px)  {
   .main-content .non-standalone {
     display: none;
   }
