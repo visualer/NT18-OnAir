@@ -295,16 +295,16 @@ main > .mdl-layout__tab-panel {
 
 /* partial specific */
 
-.main-content #schedule .mdl-list__item {
+.main-content .topics-card .mdl-list__item {
   height: auto;
   padding: 6px 16px;
 }
 
-.main-content #schedule .schedule-topics .mdl-list {
+.main-content .topics-card .mdl-list {
   margin: 0;
 }
 
-.main-content #schedule .schedule-topics .mdl-secondary-list .mdl-list__item {
+.main-content .topics-card .mdl-secondary-list .mdl-list__item {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
@@ -316,15 +316,54 @@ main > .mdl-layout__tab-panel {
   padding: 0 16px;
 }
 
+.main-content #schedule .schedule-compact .mdl-list__item--three-line .mdl-list__item-primary-content {
+  height: auto;
+}
 
-.main-content .image-card-header {
-  background-repeat: no-repeat;
+.main-content #schedule .schedule-compact .mdl-list__item--three-line .mdl-list__item-text-body {
+  height: auto;
+}
+
+
+/* CSS only for background images.
+ */
+
+.main-content .image-card-header-slider-1 {
+  background: url('../images/slider/slider-1.jpg') no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-slider-2 {
+  background: url('../images/slider/slider-2.jpg') no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-slider-3 {
+  background: url('../images/slider/slider-3.jpg') no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-slider-5 {
+  background: url('../images/slider/slider-5.jpg') bottom center no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-poly-1 {
+  background: url('../images/polygons/poly-1.png') bottom center no-repeat;
   background-size: cover;
   height: 180px;
 }
 
-/* font */
-/* from Google Stylesheet, locally hosted */
+
+
+
+
+
+
+
+/* font
+ * credit from Google Stylesheet, locally hosted
+ */
 
 @font-face {
   font-family: 'Material Icons';
