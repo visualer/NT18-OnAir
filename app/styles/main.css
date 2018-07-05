@@ -175,6 +175,11 @@ main > .mdl-layout__tab-panel {
   background-color: #F8F8F8;
 }
 
+.main-content .mdl-list__item.mdl-button {
+  text-transform: none;
+  text-align: inherit;
+}
+
 /*
  *
  *

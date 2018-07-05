@@ -54,7 +54,22 @@ function init() {
   });
 
   $('#home-partial').load('partial/home-partial.html');
-  $('#schedule').load('partial/schedule-partial.html');
+  $('#schedule').load('partial/schedule-partial.html', () => {
+    $('#schedule-partial').click((e) => {
+      let $target = $(e.target), $arrow = $target.prev().children(':first'), $next = $target.parent().next();
+      if (!$target.hasClass('mdl-button__ripple-container')) return false;
+      let rotate = parseInt($arrow.attr('data-rotate')) || 0; // 0 or 1
+      $arrow.attr('data-rotate', 1 - rotate);
+      $({ deg: rotate * 180 }).animate({ deg: (1 - rotate) * 180 }, {
+        duration: 200,
+        easing: 'swing',
+        step: (now) => {
+          $arrow.css('transform', `rotate(${now}deg)`);
+        }
+      });
+      $next.toggleClass('hidden');
+    })
+  });
 
   $.getJSON('data/abstracts.json', function (data_) {
     data = data_;
