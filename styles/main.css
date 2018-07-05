@@ -375,6 +375,11 @@ main > .mdl-layout__tab-panel {
   background-size: cover;
   height: 180px;
 }
+.main-content .image-card-header-poly-2 {
+  background: url('../images/polygons/poly-2.png') bottom center no-repeat;
+  background-size: cover;
+  height: 180px;
+}
 
 
 
