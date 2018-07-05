@@ -5,11 +5,10 @@
 let data = null;
 let idx = null;
 let errorReport = null;
-let LocalForage = window.localforage;
 let fav = [];
 let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-let categories = ['A1', 'A2', 'A3', 'A4', 'S1', 'S2', 'S3', 'S4', 'C1', 'C2', 'I', 'O'];
-
+let isPhone = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
+let swiperObj = null;
 let skipA2HS = () => { $('.mdl__loader.non-standalone').transition('fade out'); };
 let clickTab = (tabId) => { $(tabId).find('span').click(); };
 
@@ -55,8 +54,29 @@ function init() {
 
   $('#home-partial').load('partial/home-partial.html');
   $('#schedule').load('partial/schedule-partial.html', () => {
-    $('#schedule-partial').click((e) => {
-      let $target = $(e.target), $arrow = $target.prev().children(':first'), $next = $target.parent().next();
+
+    if (isPhone) {
+      // init swiper
+      $('#schedule-partial').addClass('swiper-container')
+        .children().addClass('swiper-slide').css('margin-left', '0')
+        .appendTo('<div class="swiper-wrapper"></div>')
+        .parent().appendTo('#schedule-partial')
+        .parent().append('<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>');
+
+      swiperObj = new Swiper('.swiper-container', {
+        spaceBetween: 70,
+        roundLengths: true,
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+      });
+      $('#tabSchedule').one('click', '.mdl-layout__tab-ripple-container', () => {
+        // swiper should be initialized when it's visible. https://github.com/nolimits4web/swiper/issues/2276
+        swiperObj.update();
+      })
+    }
+
+    componentHandler.upgradeAllRegistered();
+    $('#schedule').find('.mdl-button__ripple-container').click(function () {
+      let $target = $(this), $arrow = $target.prev().children(':first'), $next = $target.parent().next();
       if (!$target.hasClass('mdl-button__ripple-container')) return false;
       let rotate = parseInt($arrow.attr('data-rotate')) || 0; // 0 or 1
       $arrow.attr('data-rotate', 1 - rotate);
@@ -68,25 +88,23 @@ function init() {
         }
       });
       $next.toggleClass('hidden');
-    })
+    });
+
   });
 
-  $.getJSON('data/abstracts.json', function (data_) {
-    data = data_;
-  });
+  let localforage = window.localforage;
 
-  $.getJSON('data/abstracts-indexed.json', function (data_) {
-    idx = lunr.Index.load(data_);
-  });
+  $.getJSON('data/abstracts.json', function (data_) { data = data_; });
+  $.getJSON('data/abstracts-indexed.json', function (data_) { idx = lunr.Index.load(data_); });
 
-  LocalForage.config({
-    driver: [LocalForage.INDEXEDDB, LocalForage.WEBSQL, LocalForage.LOCALSTORAGE],
+  localforage.config({
+    driver: [localforage.INDEXEDDB, localforage.WEBSQL, localforage.LOCALSTORAGE],
     name: 'NT18 OnAir'
   });
 
-  LocalForage.getItem('favorites', function (err, val) {
+  localforage.getItem('favorites', function (err, val) {
     if (val === null) {
-      LocalForage.setItem('favorites', fav);
+      localforage.setItem('favorites', fav);
     } else {
       fav = val;
     }

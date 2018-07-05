@@ -1,6 +1,5 @@
 'use strict';
 
-
 function addSearchHandler() {
 
   let $searchInput = $('#searchInput');
@@ -82,7 +81,6 @@ function addSearchHandler() {
     $searchInput.blur();
 
   });
-
 }
 
 
@@ -168,7 +166,7 @@ function generateResultTemplate(elem, resultIndex) {
             }
             $currTarget.find('.mdl-tooltip').html(`${isFav ? 'Add to' : 'Remove from'} favorites`);
             showMsg(`${isFav ? 'Removed from' : 'Added to'} favorites.`);
-            LocalForage.setItem('favorites', fav);
+            window.localforage.setItem('favorites', fav);
             return false;
           }
 
