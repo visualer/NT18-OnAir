@@ -6,7 +6,7 @@
     "affl": "Saarland University",
     "author": [
       "Katherine, Aristizabal",
-      "Sebastian, Suárez"
+      "Sebastian, Suarez"
     ],
     "dept": "Dept. Materials Science &amp; Engineering",
     "first_email": "katherine.aristizabal@uni-saarland.de",
@@ -21,15 +21,15 @@
     "title": "Towards the development of multifunctional wood coatings based on carbon nanotubes",
     "affl": "Poznan University of Technology",
     "author": [
-      "Damian, Łukawski",
+      "Damian, Lukawski",
       "Agnieszka, Lekawa-Raus",
-      "Wojciech, Grześkowiak",
+      "Wojciech, Grzeskowiak",
       "Filip, Lisiecki",
       "Alina, Dudkowiak"
     ],
     "dept": "Faculty of Technical Physics",
     "first_email": "damian.m.lukawski@doctorate.put.poznan.pl",
-    "corr_name": "Damian, Łukawski",
+    "corr_name": "Damian, Lukawski",
     "corr_email": "damian.m.lukawski@doctorate.put.poznan.pl",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris velit, fermentum at condimentum sit amet, mollis vel erat. Vestibulum ornare tincidunt dui, sit amet mollis nisi rhoncus sit amet. Morbi sodales, metus non dignissim condimentum, mi libero ultrices leo, ac cursus risus mauris in massa. Proin congue posuere elit et malesuada. Mauris semper id felis ut rutrum. Proin finibus venenatis magna eget condimentum. Nullam pretium felis sit amet quam laoreet, nec viverra felis congue. Integer sit amet fermentum est, ut condimentum nunc. Nunc quis metus non velit facilisis sollicitudin sed sed dui. In pellentesque, justo ut ullamcorper fringilla, magna lorem sodales sapien, nec ornare diam sem eu metus. Phasellus egestas erat at imperdiet faucibus. Maecenas placerat hendrerit tellus et rhoncus.",
     "poster_num": "PO002"
@@ -42,7 +42,7 @@
     "author": [
       "Stefania, Sandoval",
       "Elzbieta, Pach",
-      "Belén, Ballesteros",
+      "Belen, Ballesteros",
       "Gerard, Tobias"
     ],
     "dept": "Solid State Chemistry",
@@ -69,7 +69,7 @@
   },
   {
     "id": "849036",
-    "category": "I",
+    "category": "U",
     "title": "High-Yield Production of MoS2 and WS2 Quantum Sheets",
     "affl": "National Center for Nanoscience and Technology",
     "author": [
@@ -85,7 +85,7 @@
   {
     "id": "849432",
     "category": "C1",
-    "title": "Ultrafast Carrier Thermalization and Relaxation Dynamics in Few‐Layer MoS2 Atomic Layers",
+    "title": "Ultrafast Carrier Thermalization and Relaxation Dynamics in Few-Layer MoS2 Atomic Layers",
     "affl": "Guangdong University of Technology",
     "author": [
       "Zhaogang, Nie",
@@ -439,7 +439,7 @@
     "id": "892539",
     "category": "A1",
     "title": "Silk-Sheathed Carbon Nanotube Wires for Wearable Electronic Textiles",
-    "affl": "清华大学",
+    "affl": "Tsinghua University",
     "author": [
       "Zhe, Yin",
       "Yingying, Zhang"
@@ -482,7 +482,7 @@
     "id": "893157",
     "category": "A1",
     "title": "Hierarchical Structured Carbon Materials for Flexible and Wearable Electronics",
-    "affl": "清华大学",
+    "affl": "Tsinghua University",
     "author": [
       "Yingying, Zhang",
       "Chunya, Wang",
@@ -498,7 +498,7 @@
   },
   {
     "id": "894120",
-    "category": "I",
+    "category": "U",
     "title": "Clean, fast and scalable transfer of ultrathin, patterned vertically-aligned carbon nanotube arrays ",
     "affl": "Institute of Metal Research",
     "author": [
@@ -620,7 +620,7 @@
     "id": "899365",
     "category": "T",
     "title": "Analytical Modeling of Single-Walled Carbon Nanotube Energies",
-    "affl": "Luleå University of Technology",
+    "affl": "Lulea University of Technology",
     "author": [
       "Daniel, Hedman",
       "J. Andreas, Larsson"
@@ -674,7 +674,7 @@
     "id": "899583",
     "category": "S1",
     "title": "Growth of coiled amorphous carbon nanotube array forest and its electromagnetic wave absorbing properties",
-    "affl": "西北工业大学",
+    "affl": "Northwestern Polytechnical University",
     "author": [
       "Tingkai, Zhao"
     ],
@@ -758,7 +758,7 @@
       "Zhiming, Shi",
       "Zhen, Cao",
       "Dabing, Li",
-      "Udo, Schwingenschlögl"
+      "Udo, Schwingenschlogl"
     ],
     "dept": "State Key Laboratory of Luminescence and Applications",
     "first_email": "shizm@ciomp.ac.cn",
@@ -834,7 +834,7 @@
     "affl": "Aalto university",
     "author": [
       "Fatemeh, Davodi",
-      "Elisabeth, Mühlhausen",
+      "Elisabeth, Muhlhausen",
       "Mohammad, Tavakkoli",
       "Jani, Sainio",
       "Hua, Jiang",
@@ -876,9 +876,9 @@
     "affl": "Institute of Physics, Poznan University of Technology",
     "author": [
       "Karol, Rytel",
-      "Bolesław, Barszcz",
-      "Kamil, Kędzierski",
-      "Danuta, Wróbel"
+      "Boleslaw, Barszcz",
+      "Kamil, Kedzierski",
+      "Danuta, Wrobel"
     ],
     "dept": "Faculty of Technical Physics",
     "first_email": "karol.t.rytel@doctorate.put.poznan.pl",
@@ -985,7 +985,7 @@
   },
   {
     "id": "902350",
-    "category": "I",
+    "category": "U",
     "title": "Functional inkjet printing inks of graphene, metal oxide for gas sensors",
     "affl": "University of Cambridge",
     "author": [
@@ -1103,7 +1103,7 @@
     "id": "904054",
     "category": "S1",
     "title": "A carbon-welded isolated single-wall carbon nanotube network with near-ohmic joint contacts",
-    "affl": "中国科学院金属研究所",
+    "affl": "Institute of Metal Research, Chinese Academy of Sciences",
     "author": [
       "Song, Jiang",
       "Peng-Xiang, Hou",
@@ -1119,7 +1119,7 @@
   },
   {
     "id": "904303",
-    "category": "I",
+    "category": "U",
     "title": "Continuous Fabrication of Meter-Scale Single-Wall Carbon Nanotube Films and Their Use in Flexible and Transparent Integrated Circuits",
     "affl": "Institute of metal research, chinese academy of sciences",
     "author": [
@@ -1146,7 +1146,7 @@
     "id": "904643",
     "category": "S1",
     "title": "CVD Growth of Fingerprint-like Patterned 3D Graphene Film for Ultrasensitive Pressure Sensor",
-    "affl": "清华大学",
+    "affl": "Tsinghua University",
     "author": [
       "Kailun, Xia",
       "Yingying, Zhang"
@@ -1510,7 +1510,7 @@
     "affl": "Peking University",
     "author": [
       "Juan, Yang",
-      "Daqi`, Zhang",
+      "Daqi, Zhang",
       "Chenmaya, Xia",
       "Henan, Li",
       "Li, Ding",
@@ -1717,7 +1717,7 @@
   {
     "id": "908096",
     "category": "S2",
-    "title": "Less-Defective Dispersion of Individual SWCNTs using Repetitive Sonication–Ultracentrifugation Process",
+    "title": "Less-Defective Dispersion of Individual SWCNTs using Repetitive Sonication-Ultracentrifugation Process",
     "affl": "National Institute of Advanced Industrial Science and Technology",
     "author": [
       "Guowei, Wang",
@@ -1806,7 +1806,7 @@
   {
     "id": "908215",
     "category": "C1",
-    "title": "Moiré pattern in encapsulated 2D materials",
+    "title": "Moire pattern in encapsulated 2D materials",
     "affl": "Faculty of Engineering and Physical Sciences, University of Manchester",
     "author": [
       "Yibo, Wang",
@@ -2028,7 +2028,7 @@
     "id": "908878",
     "category": "S1",
     "title": "Freestanding Graphene, polymer Microtube with Multiple Structure",
-    "affl": "nankai university",
+    "affl": "Nankai university",
     "author": [
       "Manman, Wu",
       "Tengfei, Zhang",
@@ -2698,7 +2698,7 @@
       "Xiaofan, Hou",
       "Jinli, Qiao"
     ],
-    "dept": "东华大学",
+    "dept": "Donghua University",
     "first_email": "349035120@qq.com",
     "corr_name": "Jinli, Qiao",
     "corr_email": "qiaojl@dhu.edu.cn",
@@ -2854,7 +2854,7 @@
     "id": "910265",
     "category": "C1",
     "title": "Optical Actuator Made by Single Carbon Nanocoil",
-    "affl": "大连理工大学",
+    "affl": "Dalian University Of Technology",
     "author": [
       "Peng, Wang",
       "Chenghao, Deng",
@@ -2953,7 +2953,7 @@
       "Jacques, Lefebvre",
       "Zhao, Li",
       "Chang, Guo",
-      "François, Lapointe",
+      "Francois, Lapointe",
       "Arnold, Kell",
       "Chantal, Paquet",
       "Thomas, Lacelle",
@@ -2970,7 +2970,7 @@
     "id": "910533",
     "category": "A1",
     "title": "Flexible, all-inorganic actuators based on vanadium dioxide and carbon nanotube bimorphs",
-    "affl": "北京工业大学",
+    "affl": "Beijing University Of Technology",
     "author": [
       "He, Ma",
       "Jiwei, Hou",
@@ -3150,7 +3150,7 @@
     "id": "910847",
     "category": "S1",
     "title": "Growth of High-density Single-walled Carbon Nanotube Arrays by Multiple Catalysts Reactivation",
-    "affl": "北京大学",
+    "affl": "Peking University",
     "author": [
       "Zequn, Wang",
       "Qiuchen, Zhao",
@@ -3504,7 +3504,7 @@
   },
   {
     "id": "911632",
-    "category": "I",
+    "category": "U",
     "title": "Reduced Graphene Oxide: from Scale-up Preparation to Supercapacitor & Functional Applications",
     "affl": "Institute of Coal Chemistry, Chinese Academy of Sciences",
     "author": [
@@ -3576,7 +3576,7 @@
   },
   {
     "id": "911801",
-    "category": "I",
+    "category": "U",
     "title": "Application of Raman spectroscopy for monitoring the integration process of individual single-walled carbon nanotubes into field-effect transistor based sensors",
     "affl": "MNS D-MAVT",
     "author": [
@@ -3814,7 +3814,7 @@
     "id": "912027",
     "category": "S2",
     "title": "Selective dispersion of metallic single-walled carbon nanotubes with imidazolium-based ionic liquids",
-    "affl": "黑龙江大学",
+    "affl": "Heilongjiang University",
     "author": [
       "Wende, Xu",
       "Yongfu, Lian"
@@ -3828,7 +3828,7 @@
   },
   {
     "id": "912069",
-    "category": "I",
+    "category": "U",
     "title": "Production of High-Purity Semiconducting Carbon Nanotubes by acid-assisted gel chromatography",
     "affl": "Beijing National Laboratory for Condensed Matter Physics, Institute of Physics, Chinese Academy of Sciences",
     "author": [
@@ -3900,7 +3900,7 @@
   },
   {
     "id": "912101",
-    "category": "I",
+    "category": "U",
     "title": "Mass production of multiple single-chirality species (n, m) by temperature tuning the interaction of compound surfactants with carbon nanotubes",
     "affl": "The Insititute of Physics",
     "author": [
@@ -4206,12 +4206,12 @@
     "title": "Thermal Stability and Flexibility of Hydrogen Terminated Phosphorene Nanoflakes",
     "affl": "Furukawa Electric Institute of Technology",
     "author": [
-      "Tibor, Höltzl",
-      "Dorina, Bódi"
+      "Tibor, Holtzl",
+      "Dorina, Bodi"
     ],
     "dept": "Furukawa Electric Institute of Technology",
     "first_email": "tibor.holtzl@furukawaelectric.com",
-    "corr_name": "Tibor, Höltzl",
+    "corr_name": "Tibor, Holtzl",
     "corr_email": "tibor.holtzl@furukawaelectric.com",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris velit, fermentum at condimentum sit amet, mollis vel erat. Vestibulum ornare tincidunt dui, sit amet mollis nisi rhoncus sit amet. Morbi sodales, metus non dignissim condimentum, mi libero ultrices leo, ac cursus risus mauris in massa. Proin congue posuere elit et malesuada. Mauris semper id felis ut rutrum. Proin finibus venenatis magna eget condimentum. Nullam pretium felis sit amet quam laoreet, nec viverra felis congue. Integer sit amet fermentum est, ut condimentum nunc. Nunc quis metus non velit facilisis sollicitudin sed sed dui. In pellentesque, justo ut ullamcorper fringilla, magna lorem sodales sapien, nec ornare diam sem eu metus. Phasellus egestas erat at imperdiet faucibus. Maecenas placerat hendrerit tellus et rhoncus.",
     "poster_num": "PO066"
@@ -4407,7 +4407,7 @@
     "id": "913171",
     "category": "A2",
     "title": "Emerging Nanocarbon Materials for Lithium-Sulfur Batteries",
-    "affl": "清华大学",
+    "affl": "Tsinghua University",
     "author": [
       "Qiang, Zhang"
     ],
@@ -4458,16 +4458,16 @@
     "id": "913699",
     "category": "C1",
     "title": "Pressure-induced charge transfer between single-wall carbon nanotubes and encapsulated quaterthiophene",
-    "affl": "Departamento de Física, Universidade Federal do Ceará, Fortaleza, Ceará, 60455-900 Brazil",
+    "affl": "Departamento de Fisica, Universidade Federal do Ceara, Fortaleza, Ceara, 60455-900 Brazil",
     "author": [
       "Rafael, Silva Alencar",
-      "Acrísio, Lins Aguiar",
+      "Acrisio, Lins Aguiar",
       "Laurent, Alvarez",
       "Denis, Machon",
       "Antonio Gomes, Souza Filho",
       "Alfonso, San-Miguel"
     ],
-    "dept": "Departamento de Física",
+    "dept": "Departamento de Fisica",
     "first_email": "rafael_alencar@fisica.ufc.br",
     "corr_name": "Rafael, Silva Alencar",
     "corr_email": "rafael_alencar@fisica.ufc.br",
@@ -4478,7 +4478,7 @@
     "id": "913728",
     "category": "C1",
     "title": "Atomic-layered MoS2 on SiO2 under high pressure: Bimodal adhesion and biaxial strain effects",
-    "affl": "Departamento de Física, Universidade Federal do Ceará, Fortaleza, Ceará 60455-900, Brazil",
+    "affl": "Departamento de Fisica, Universidade Federal do Ceara, Fortaleza, Ceara 60455-900, Brazil",
     "author": [
       "Rafael, Silva Alencar",
       "Karlo David, Alves Saboia",
@@ -4595,7 +4595,7 @@
     "id": "913957",
     "category": "S1",
     "title": "Direct synthesis and in situ characterization of monolayer parallelogrammic rhenium diselenide on gold foil",
-    "affl": "北京大学",
+    "affl": "Peking University",
     "author": [
       "Shaolong, Jiang",
       "Yanfeng, Zhang"
@@ -4759,7 +4759,7 @@
     "id": "916182",
     "category": "S1",
     "title": "Design and fabrication of Nanoparticles for radiotherapy enhancement",
-    "affl": "中国科学院高能物理研究所",
+    "affl": "Institute of High Energy Physics of the Chinese Academy of Sciences",
     "author": [
       "Zhanjun, Gu",
       "Zhao, Guo",
@@ -4794,7 +4794,7 @@
     "id": "917898",
     "category": "A2",
     "title": "One Dimensional Nanomaterials for Emerging Energy Storage",
-    "affl": "武汉理工大学",
+    "affl": "Wuhan University Of Technology",
     "author": [
       "Liqiang, Mai"
     ],
@@ -5350,7 +5350,7 @@
   {
     "id": "926978",
     "category": "S1",
-    "title": "Synchronous immobilization and conversion of polysulfides on VO2-VN composites targeting high-rate lithium–sulfur batteries",
+    "title": "Synchronous immobilization and conversion of polysulfides on VO2-VN composites targeting high-rate lithium-sulfur batteries",
     "affl": "Soochow University",
     "author": [
       "Yingze, Song",
@@ -5386,12 +5386,12 @@
     "id": "927089",
     "category": "C1",
     "title": "Optical properties of dyes confined into carbon and boron nitride nanotubes for bio-imaging",
-    "affl": "Laboratoire d’Etude des Microstructures, UMR 104 CNRS-Onera, Châtillon, France",
+    "affl": "Laboratoire d'Etude des Microstructures, UMR 104 CNRS-Onera, Chatillon, France",
     "author": [
       "Etienne, Gaufres",
       "Charlotte, Allard",
       "Raffaela, Nascimento",
-      "Leonard, Schué",
+      "Leonard, Schue",
       "Emmanuel, Flahaut",
       "Annick, Loiseau",
       "Richard, Martel"
@@ -6091,7 +6091,7 @@
     "id": "945402",
     "category": "S3",
     "title": "Enhanced ion transport in densified CNT arrays",
-    "affl": "苏州大学",
+    "affl": "Suzhou University",
     "author": [
       "Xiaohua, Zhang"
     ],
@@ -6429,9 +6429,9 @@
   },
   {
     "id": "967522",
-    "category": "I",
+    "category": "U",
     "title": "Batch production of 6-inch uniform monolayer MoS2 catalyzed by sodium in glass",
-    "affl": "北京大学",
+    "affl": "Peking University",
     "author": [
       "Pengfei, Yang"
     ],
@@ -6507,7 +6507,7 @@
       "Jiangtao, Di",
       "Qingwen, Li"
     ],
-    "dept": "suzhou institute of Nano-Tech and Nano-Bionics（SINANO）, Chinese Academy of Science",
+    "dept": "suzhou institute of Nano-Tech and Nano-Bionics (SINANO), Chinese Academy of Science",
     "first_email": "blv2017@sinano.ac.cn",
     "corr_name": "Minghai, Chen",
     "corr_email": "mhchen2008@sinano.ac.cn",
@@ -6518,7 +6518,7 @@
     "id": "973969",
     "category": "C1",
     "title": "Toughening CNT-based composites via non-covalent interactions",
-    "affl": "哈尔滨工业大学",
+    "affl": "Harbin Institute of Technology",
     "author": [
       "Shuxuan, Qu",
       "Weibang, Lu"
@@ -6619,21 +6619,21 @@
     "id": "983419",
     "category": "S1",
     "title": "Mechanism of SiOx particles formation during CVD graphene growth on Cu substrates",
-    "affl": "中国科学院上海微系统与信息技术研究所",
+    "affl": "Shanghai Institute of Microsystem and Information Technology",
     "author": [
-      "广辉, 于",
-      "晓明, 葛",
-      "燕辉, 张",
-      "志蓥, 陈",
-      "妍萍, 隋",
-      "逸俭, 梁",
-      "诗珂, 胡",
-      "晶, 李"
+      "Guanghui, Yi",
+      "Xiaoming, Ge",
+      "Yanhui, Zhang",
+      "Zhiying, Chen",
+      "Yanping, Sui",
+      "Yijian, Liang",
+      "Shike, Hu",
+      "Jing, Li"
     ],
     "dept": "超导中心",
     "first_email": "ghyu@mail.sim.ac.cn",
-    "corr_name": "晓明, 葛",
-    "corr_email": "",
+    "corr_name": "Xiaoming, Ge",
+    "corr_email": "Unknown",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris velit, fermentum at condimentum sit amet, mollis vel erat. Vestibulum ornare tincidunt dui, sit amet mollis nisi rhoncus sit amet. Morbi sodales, metus non dignissim condimentum, mi libero ultrices leo, ac cursus risus mauris in massa. Proin congue posuere elit et malesuada. Mauris semper id felis ut rutrum. Proin finibus venenatis magna eget condimentum. Nullam pretium felis sit amet quam laoreet, nec viverra felis congue. Integer sit amet fermentum est, ut condimentum nunc. Nunc quis metus non velit facilisis sollicitudin sed sed dui. In pellentesque, justo ut ullamcorper fringilla, magna lorem sodales sapien, nec ornare diam sem eu metus. Phasellus egestas erat at imperdiet faucibus. Maecenas placerat hendrerit tellus et rhoncus.",
     "poster_num": "PS084"
   },
@@ -6749,7 +6749,7 @@
     "id": "1026200",
     "category": "S1",
     "title": "Highly conductive nanocomposite enabled by an accordion-like graphene network",
-    "affl": "东华大学",
+    "affl": "Donghua University",
     "author": [
       "Lijun, Yang",
       "Wei, Weng",

@@ -83,18 +83,6 @@ main > .mdl-layout__tab-panel {
   border-radius: 10px;
 }
 
-.main-content .mdl-grid.mdl-grid--no-spacing .help-button {
-  position: absolute;
-  z-index: 3;
-  top: 8px;
-  right: 8px;
-  height: 32px;
-}
-
-.main-content .mdl-grid.mdl-grid--no-spacing .help-button-tooltip.help-button-tooltip {
-  margin-top: 0 !important; /* fuck inline styles */
-}
-
 .main-content .mdl-card {
   height: auto;
   display: flex;
@@ -284,6 +272,32 @@ main > .mdl-layout__tab-panel {
  *
  */
 
+/* help button */
+.main-content .mdl-grid.mdl-grid--no-spacing .help-button {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  right: 8px;
+  height: 32px;
+}
+.main-content .mdl-grid.mdl-grid--no-spacing .help-button-tooltip.help-button-tooltip {
+  margin-top: 0 !important; /* fuck inline styles */
+}
+
+/* filter button */
+.main-content .mdl-grid.mdl-grid--no-spacing .filter-button {
+  position: absolute;
+  z-index: 3;
+  top: 40px;
+  right: 8px;
+  height: 32px;
+}
+.main-content .mdl-grid.mdl-grid--no-spacing .filter-button-tooltip.filter-button-tooltip {
+  margin-top: 0 !important; /* fuck inline styles */
+  max-width: initial;
+}
+
+/* fav button */
 .main-content section .fav-button {
   position: absolute;
   z-index: 3;
@@ -309,42 +323,31 @@ main > .mdl-layout__tab-panel {
   color: white;
 }
 
-.main-content .topics-card .mdl-list__item {
-  height: auto;
-  padding: 6px 16px;
-}
 
-.main-content .topics-card .mdl-list {
-  margin: 0;
-}
-
-.main-content .topics-card .mdl-secondary-list .mdl-list__item {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 18px;
-  height: auto;
-  min-height: 0;
-  color: rgba(0, 0, 0, .54);
-  display: block;
-  padding: 0 16px;
-}
-
-.main-content #schedule .schedule-compact .mdl-list__item--three-line {
+.main-content .compact-list .mdl-list__item--three-line {
   height: auto;
   padding: 6px 10px;
 }
-.main-content #schedule .schedule-compact .mdl-list__item--three-line .mdl-list__item-primary-content {
+.main-content .compact-list .mdl-list__item--three-line .mdl-list__item-primary-content {
   height: auto;
 }
-.main-content #schedule .schedule-compact .mdl-list__item .mdl-list__item-primary-content .mdl-list__item-icon {
+.main-content .compact-list .mdl-list__item .mdl-list__item-primary-content .mdl-list__item-icon {
   margin-right: 8px;
 }
-.main-content #schedule .schedule-compact .mdl-list__item--three-line .mdl-list__item-text-body {
+.main-content .compact-list .mdl-list__item--three-line .mdl-list__item-text-body {
   height: auto;
 }
-
-
+.main-content .compact-content {
+  letter-spacing: initial;
+  font-size: 15px;
+  min-height: 44px;
+}
+.main-content .compact-content i.mdl-list__item-icon.material-icons {
+  font-size: 18px;
+  height: auto;
+  width: auto;
+  margin-left: 8px;
+}
 
 
 /* CSS only for background images.
