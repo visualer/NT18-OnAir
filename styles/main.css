@@ -311,7 +311,7 @@ main > .mdl-layout__tab-panel {
   right: 8px;
   height: 32px;
 }
-.main-content .mdl-grid.mdl-grid--no-spacing .filter-button-tooltip.filter-button-tooltip {
+.main-content .mdl-grid.mdl-grid--no-spacing .fav-filter-button-tooltip.fav-filter-button-tooltip {
   margin-top: 0 !important;
   max-width: initial;
 }
