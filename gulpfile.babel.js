@@ -116,7 +116,8 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/functions.js',
+      './app/scripts/search.js',
+      './app/scripts/load-partial.js',
       './app/scripts/main.js',
       './app/scripts/app.js'
       // Other scripts
@@ -173,7 +174,7 @@ gulp.task('lunr-prebuild', () => {
     this.field('title');
     this.field('author');
     this.field('content');
-    this.field('poster_num');
+    this.field('session');
     absData.forEach(function (doc, index) {
       this.add({
         index: index,
@@ -182,13 +183,14 @@ gulp.task('lunr-prebuild', () => {
         title: doc.title,
         author: `${doc.author.join(' ')} ${doc.dept} ${doc.affl}`,
         content: doc.content,
-        poster_num: `${doc.poster_num} ${doc.poster_num.substring(0, 2)}`,
+        session: ('SC'.includes(doc.poster_num[1]) ? 2 : 4) - parseInt(doc.poster_num.slice(2, 5)) % 2,
         // only for IDE to recognize the variable
         corr_name: '',
         first_email: '',
         corr_email: '',
         dept: '',
-        affl: ''
+        affl: '',
+        poster_num: ''
       });
     }, this);
   });

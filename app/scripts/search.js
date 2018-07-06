@@ -3,85 +3,82 @@
 function addSearchHandler() {
 
   let $searchInput = $('#searchInput');
-  let $searchInputLabel = $('#searchInputLabel');
 
-  $searchInput.focus(() => {
-    $searchInputLabel.html('Search...');
-  }).blur(() => {
-    if ($searchInput.val() === '')
-      $searchInputLabel.html('Search... or enter ":fav"');
-  }).keydown((e) => {
+  $searchInput.keydown((e) => {
+
+    if (e.keyCode !== 13) return true; // $.ui.keyCode.ENTER
+    e.preventDefault();
+
     let $searchResult = $('#searchResult');
     let $searchActions = $('#abstract').find('.mdl-card__actions');
-    let searchString = $searchInput.val();
+    let searchString = $searchInput.val().replace(/[^a-zA-Z0-9+\-*:]+/ig, " ").trim();
 
-    if (e.keyCode !== 13) return true;
-    e.preventDefault();
+    let changeText = (text) => { $searchInput.parent()[0].MaterialTextfield.change(text); };
+
+
+    changeText(searchString); // legitimized input
     $searchResult.html('');
 
     if (idx === null) {
-      showMsg('Abstracts load error.', () => {
-        location.href = errorReport;
-      }, 'Report');
+      showMsg('Abstracts load error.', () => { location.href = errorReport; }, 'Report');
       return;
     }
 
-    let result = idx.search((searchString === '' || searchString === ':fav') ? '*' : searchString);
-    if (searchString === ':fav') {
-      result = result.filter((elem) => fav.indexOf(data[elem.ref].id) > -1);
+    let result = [];
+    try {
+      result = idx.search(searchString === '' ? '*' : searchString);
+    } catch (e) {
+      showMsg('Unrecognized input.', () => changeText(''), 'Clear Input');
+      if (!$searchActions.hasClass('hidden')) $searchActions.transition('fade out');
+      return;
     }
 
+    let favFilterEnabled = $('#favFilterButton').attr('data-fav-filter-state') === "1";
+    if (favFilterEnabled) result = result.filter((elem) => fav.indexOf(data[elem.ref].id) > -1);
+
     if (result.length === 0) {
-      showMsg(`No ${searchString === ':fav' ? 'favorites' : 'result'}.`, () => {
-        $searchInput.parent()[0].MaterialTextfield.change('');
-      }, 'Clear Input');
+      if (favFilterEnabled)
+        showMsg('No favorites found.');
+      else
+        showMsg('No results found.', () => { changeText(''); }, 'Clear Input');
       if (!$searchActions.hasClass('hidden')) $searchActions.transition('fade out');
       return;
     }
 
     // auto paging
-    let allPagesCount = Math.ceil(result.length / 18); // maybe use bitwise operator?
+    let allPagesCount = Math.ceil(result.length / 12); // maybe use bitwise operator?
     let currPageCount = 1;
     let $searchActionPrev = $('#searchActionPrev');
     let $searchActionNext = $('#searchActionNext');
 
     let appendResults = () => {
+
       $searchResult.html('');
-      if (currPageCount === 1) {
-        $searchActionPrev.attr('disabled', 'disabled');
-      } else {
-        $searchActionPrev.removeAttr('disabled');
-      }
-      if (currPageCount === allPagesCount) {
-        $searchActionNext.attr('disabled', 'disabled');
-      } else {
-        $searchActionNext.removeAttr('disabled');
-      }
-      result.slice((currPageCount - 1) * 18, currPageCount * 18).forEach((elem, resultIndex) => {
-        $searchResult.append(generateResultTemplate(elem, resultIndex));
-      }); // if slice(a, b) and b is greater than arr.length, slice will take b as arr.length so no problem.
+      $searchActionPrev.attr('disabled', (currPageCount === 1) ? 'disabled' : null);
+      $searchActionNext.attr('disabled', (currPageCount === allPagesCount) ? 'disabled' : null);
       $('#searchActionPageNum').html(`${currPageCount} / ${allPagesCount}`);
+
+      result.slice((currPageCount - 1) * 12, currPageCount * 12).forEach((elem, resultIndex) => {
+        $searchResult.append(generateResultTemplate(elem, resultIndex));
+      });
+
       componentHandler.upgradeAllRegistered();
+
     };
 
     appendResults();
-    $searchActionPrev.click(() => {
-      currPageCount -= 1;
-      appendResults();
-    });
-    $searchActionNext.click(() => {
-      currPageCount += 1;
-      appendResults();
-    });
+    $searchActionPrev.click(() => { currPageCount -= 1; appendResults(); });
+    $searchActionNext.click(() => { currPageCount += 1; appendResults(); });
 
     componentHandler.upgradeAllRegistered();
-    if ($searchActions.hasClass('hidden')) {
-      $searchActions.transition('fade in');
-    }
+    if ($searchActions.hasClass('hidden')) $searchActions.transition('fade in');
     $searchInput.blur();
 
   });
 }
+
+
+
 
 
 function generateResultTemplate(elem, resultIndex) {
@@ -92,6 +89,13 @@ function generateResultTemplate(elem, resultIndex) {
 
   let resultEntry = data[elem.ref];
   let colorIndex = resultIndex % colors.length;
+  let posterNum = resultEntry.poster_num;
+  let sessionIndex = ('SC'.includes(posterNum[1]) ? 2 : 4)  - parseInt(posterNum.slice(2, 5)) % 2;
+  let sessionDate = ['',
+    'July 17<sup>th</sup> 16:00',
+    'July 18<sup>th</sup> 10:30',
+    'July 19<sup>th</sup> 10:30',
+    'July 19<sup>th</sup> 16:00'][sessionIndex];
 
   let corrIsFirst; // whether correlating author is presenting author
   let authorHTML = resultEntry.author.map((val, index) => {
@@ -130,7 +134,7 @@ function generateResultTemplate(elem, resultIndex) {
               </div>
             </div>
             <div class="category-info">
-              <p>${resultEntry.category}: ${resultEntry.poster_num}</p>
+              <p>${resultEntry.category}: ${posterNum}, ${sessionDate}</p>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fav-button" 
                     id="favButton${resultIndex}">

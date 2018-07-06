@@ -71,14 +71,15 @@
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
       <a id="tabHome" href="#home" class="mdl-layout__tab is-active">Home</a>
       <a id="tabSchedule" href="#schedule" class="mdl-layout__tab">Schedule</a>
-      <a id="tabAbstract" href="#abstract" class="mdl-layout__tab">Poster Abstracts</a>
+      <a id="tabAbstract" href="#abstract" class="mdl-layout__tab">Abstracts</a>
+      <a id="tabTopics" href="#topics" class="mdl-layout__tab">Topics</a>
     </div>
   </header>
 
   <!-- Content -->
   <main class="mdl-layout__content">
 
-    <!-- Home tab with partial -->
+    <!-- Home tab partial -->
     <div class="mdl-layout__tab-panel is-active" id="home">
 
       <!-- title card -->
@@ -118,7 +119,7 @@
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="searchInput">
               <label class="mdl-textfield__label" for="searchInput" id="searchInputLabel">
-                Search... or enter ":fav"
+                Search...
               </label>
             </div>
             <div style="padding: 4px 0;;" class="mdl-card__actions hidden">
@@ -134,16 +135,34 @@
               </button>
             </div>
           </div>
-          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon help-button" id="helpButton">
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon help-button"
+                  id="helpButton">
             <i class="material-icons">help_outline</i>
           </button>
           <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left help-button-tooltip"
                data-mdl-for="helpButton">
             <b>Search options:</b><br />
-            :fav &mdash; show favorites<br />ab*c &mdash; ab...c wildcard<br />
-            +abc &mdash; must include abc<br />-abc &mdash; exclude abc<br /><br />
-            <b>Search fields</b>:<br />
-            author:, title:, category:, content:, poster_num:
+            <span>ab*c &mdash; ab...c wildcard</span><br />
+            <span>+abc &mdash; must include abc</span><br />
+            <span>-abc &mdash; exclude abc</span><br /><br />
+            <b>Search fields:</b><br />
+            <span>author:, title:, content:, category:, session:</span> <!-- prevent text nodes -->
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon filter-button"
+                  id="filterButton">
+            <i class="material-icons">filter_list</i>
+          </button>
+          <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left filter-button-tooltip"
+               data-mdl-for="filterButton">
+            Apply search filter by category
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fav-filter-button"
+                  id="favFilterButton" data-fav-filter-state="0">
+            <i class="material-icons">star_border</i>
+          </button>
+          <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left fav-filter-button-tooltip"
+               data-mdl-for="favFilterButton">
+            Toggle favorite-only displaying
           </div>
         </div>
       </section>
@@ -152,6 +171,9 @@
       </section>
       <section class="section--footer"></section>
     </div>
+
+    <!-- Topics tab partial -->
+    <div class="mdl-layout__tab-panel" id="topics"></div>
 
     <!-- Footer -->
     <footer class="mdl-mega-footer mdl-layout--small-height-only mdl-layout--large-screen-only" style="bottom: 0;">
@@ -177,6 +199,13 @@
     </footer>
   </main>
 
+  <!-- scroll top btn, phone only -->
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect
+                 mdl-button--colored mdl-color--primary hidden"
+          id="scrollTopButton" onclick="scrollToTop()">
+    <i class="material-icons">arrow_upward</i>
+  </button>
+
   <!-- snack bar message -->
   <div id="msgContainer" class="mdl-js-snackbar mdl-snackbar">
     <div class="mdl-snackbar__text"></div>
@@ -193,7 +222,8 @@
 <script src="lib/localforage/localforage.min.js"></script>
 <script src="lib/swiper/swiper.min.js"></script>
 <!-- build:js scripts/app.min.js -->
-<script src="scripts/functions.js"></script>
+<script src="scripts/search.js"></script>
+<script src="scripts/load-partial.js"></script>
 <script src="scripts/main.js"></script>
 <script src="scripts/app.js"></script>
 <!-- endbuild -->
