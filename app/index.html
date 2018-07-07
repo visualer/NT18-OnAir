@@ -153,7 +153,7 @@
             <i class="material-icons">filter_list</i>
           </button>
           <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left filter-button-tooltip"
-               data-mdl-for="filterButton">
+               data-mdl-for="filterButton" data-mdl-taphold="true">
             Apply search filter by category
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fav-filter-button"
@@ -161,12 +161,12 @@
             <i class="material-icons">star_border</i>
           </button>
           <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left fav-filter-button-tooltip"
-               data-mdl-for="favFilterButton">
+               data-mdl-for="favFilterButton" data-mdl-taphold="true">
             Toggle favorite-only displaying
           </div>
         </div>
       </section>
-      <section id="searchResult" class="section--center mdl-grid" style="align-items: center;">
+      <section id="searchResult" class="section--center mdl-grid" style="align-items: start;">
         <!-- Placeholder for search results-->
       </section>
       <section class="section--footer"></section>
@@ -175,28 +175,6 @@
     <!-- Topics tab partial -->
     <div class="mdl-layout__tab-panel" id="topics"></div>
 
-    <!-- Footer -->
-    <footer class="mdl-mega-footer mdl-layout--small-height-only mdl-layout--large-screen-only" style="bottom: 0;">
-      <!-- no large-screen-only override, for iPad Pro -->
-      <div class="mdl-mega-footer--middle-section">
-        <div class="mdl-mega-footer--drop-down-section">
-          <input class="mdl-mega-footer--heading-checkbox" title="" type="checkbox" checked>
-          <h1 class="mdl-mega-footer--heading">Links</h1>
-          <ul class="mdl-mega-footer--link-list">
-            <li><a href="http://visualer.github.io">visualer's GitHub Page</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="mdl-mega-footer--bottom-section">
-        <div class="mdl-logo mdl-color-text--grey-200">
-          &copy; 2009–2018 Nanomaterials and Nanostructures Group, Peking University. All rights reserved.
-          <br />
-          <br />
-          Please contact Sida Sun, accel(at)pku.edu.cn for any technical assistance.
-          (<a href="https://github.com/visualer" class="mdl-color-text--grey-500">GitHub</a>)
-        </div>
-      </div>
-    </footer>
   </main>
 
   <!-- scroll top btn, phone only -->

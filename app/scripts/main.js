@@ -89,7 +89,6 @@ function init() {
     .click(() => { clickTab('#tabTopics'); scrollToTop(); return false; })
     .taphold((e) => {
       if (isMobile) $('.filter-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
-      return false;
     });
 
   $('#favFilterButton')
@@ -103,7 +102,6 @@ function init() {
     })
     .taphold((e) => {
       if (isMobile) $('.fav-filter-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
-      return false;
     });
 
   // process data and search

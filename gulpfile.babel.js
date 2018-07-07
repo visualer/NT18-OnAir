@@ -65,6 +65,8 @@ gulp.task('images', () =>
 gulp.task('copy', () =>
   gulp.src([
     'app/**',
+    '!app/data-src',
+    '!app/data-src/**', // https://github.com/gulpjs/gulp/issues/165
     '!app/scripts/**',
     '!app/*.html',
     'node_modules/apache-server-configs/dist/.htaccess'
@@ -165,8 +167,8 @@ gulp.task('html', () => {
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // generate prebuild index for lunr
-gulp.task('lunr-prebuild', () => {
-  let absData = JSON.parse(fs.readFileSync('app/data/abstracts.json', {encoding: 'utf8'}));
+gulp.task('json-prebuild', () => {
+  let absData = JSON.parse(fs.readFileSync('app/data-src/abstracts.json', {encoding: 'utf8'}));
   let idx = lunr(function () {
     this.ref('index');
     this.field('id');
@@ -194,6 +196,7 @@ gulp.task('lunr-prebuild', () => {
       });
     }, this);
   });
+  fs.writeFileSync('app/data/abstracts.json', JSON.stringify(absData), {encoding: 'utf8'});
   fs.writeFileSync('app/data/abstracts-indexed.json', JSON.stringify(idx), {encoding: 'utf8'});
 });
 
@@ -202,7 +205,7 @@ gulp.task('lunr-prebuild', () => {
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lunr-prebuild', 'html', 'scripts', 'images', 'copy'],
+    ['json-prebuild', 'html', 'scripts', 'images', 'copy'],
     'generate-service-worker',
     cb
   )

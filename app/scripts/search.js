@@ -93,8 +93,8 @@ function generateResultTemplate(elem, resultIndex) {
   let sessionIndex = ('SC'.includes(posterNum[1]) ? 2 : 4)  - parseInt(posterNum.slice(2, 5)) % 2;
   let sessionDate = ['',
     'July 17<sup>th</sup> 16:00',
-    'July 18<sup>th</sup> 10:30',
-    'July 19<sup>th</sup> 10:30',
+    'July 18<sup>th</sup> 11:00',
+    'July 19<sup>th</sup> 11:00',
     'July 19<sup>th</sup> 16:00'][sessionIndex];
 
   let corrIsFirst; // whether correlating author is presenting author
@@ -116,7 +116,7 @@ function generateResultTemplate(elem, resultIndex) {
                  style="min-height: 80px;">
               <h4 class="mdl-card__title-text" style="margin-top: 30px; font-size: 20px;">${resultEntry.title}</h4>
             </div>
-            <div class="mdl-card__supporting-text" style="padding: 0 20px;">
+            <div class="mdl-card__supporting-text" style="padding-top: 0; padding-bottom: 0;">
               <span class="result-content hidden">
                 <h6 style="margin: 8px;">${authorHTML}</h6>
                 <p style="margin-bottom: 6px;">
@@ -178,6 +178,5 @@ function generateResultTemplate(elem, resultIndex) {
           if ($(e.target.parentElement).hasClass('fav-button') && isMobile) {
             $(e.currentTarget).find('.mdl-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
           }
-          return false;
         });
 }

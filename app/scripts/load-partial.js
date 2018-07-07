@@ -3,18 +3,18 @@
 
 function loadPartial() {
 
-  $('#home-partial').load('partial/home-partial.html', () => {
+  $('#home-partial').load('data/home-partial.html', () => {
     componentHandler.upgradeAllRegistered();
   });
 
 
-  $('#topics').load('partial/topics-partial.html', () => {
+  $('#topics').load('data/topics-partial.html', () => {
 
     componentHandler.upgradeAllRegistered();
 
     $('#topics').find('.mdl-button__ripple-container').click(function () {
 
-      let $target = $(this), $parent = $target.parent(), $nextAll = $target.parent().nextAll();
+      let $target = $(this), $parent = $target.parent(), $nextAll = $parent.nextAll();
       let $arrow = $target.prev().children(':first');
 
       if (!$parent[0].hasAttribute('data-expansion')) {
@@ -40,36 +40,40 @@ function loadPartial() {
   });
 
 
-  $('#schedule').load('partial/schedule-partial.html', () => {
+  $('#schedule').load('data/schedule-partial.html', () => {
 
-    if (isPhone) { // init Swiper WHEN IT'S VISIBLE ($.one). https://github.com/nolimits4web/swiper/issues/2276
+    window.swiperObj = new Swiper('.swiper-container', {
+      autoHeight: true,
+      spaceBetween: 70,
+      roundLengths: true,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+    });
 
-      $('#schedule-partial').addClass('swiper-container')
-        .children().addClass('swiper-slide').css('margin-left', '0')
-        .appendTo('<div class="swiper-wrapper"></div>')
-        .parent().appendTo('#schedule-partial')
-        .parent().append('<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>');
+    $('#tabSchedule').one('click', '.mdl-layout__tab-ripple-container', () => { window.swiperObj.update(); });
 
-      window.swiperObj = new Swiper('.swiper-container', {
-        autoHeight: true,
-        spaceBetween: 70,
-        roundLengths: true,
-        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
-      });
-
-      $('#tabSchedule').one('click', '.mdl-layout__tab-ripple-container', () => { window.swiperObj.update(); });
-
-    }
 
     componentHandler.upgradeAllRegistered();
 
     $('#schedule').find('.mdl-button__ripple-container').click(function () {
+      let $target = $(this), $parent = $target.parent(), $next = $parent.next();
+      let $arrow = $target.prev().children(':first');
+      if ($parent[0].hasAttribute('data-poster-session-redirect')) {
 
-      let $target = $(this), $next = $target.parent().next(), $arrow = $target.prev().children(':first');
-      if (!$target.hasClass('mdl-button__ripple-container')) return false;
-      toggleArrowRotation($arrow);
-      $next.toggleClass('hidden');
+        clickTab('#tabAbstract');
+        let $searchInput = $('#searchInput');
+        let searchGroup = $searchInput.val().replace(/[^a-zA-Z0-9+\-*:]+/ig, " ").split(' ');
+        let sessionIndex = searchGroup.findIndex((e) => e.slice(0, 8) === 'session:');
+        if (sessionIndex > -1) searchGroup.splice(sessionIndex, 1);
+        $searchInput.parent()[0].MaterialTextfield
+          .change(`${searchGroup.join(' ')} session:${$parent.attr('data-poster-session-redirect')}`);
+        $searchInput.trigger($.Event('keydown', { keyCode: 13 }));  // trigger search
+        scrollToTop();
 
+      } else {
+        toggleArrowRotation($arrow);
+        $next.toggleClass('hidden');
+      }
+      return false;
     });
 
   });
