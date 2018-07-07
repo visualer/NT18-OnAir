@@ -34,6 +34,9 @@ p {
 .main-content .mdl-layout__header-row {
   padding-left: 40px;
 }
+.main-content .mdl-layout {
+  overflow-y: scroll;
+}
 .main-content .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
   font-size: inherit;
 }
@@ -159,9 +162,6 @@ main > .mdl-layout__tab-panel {
   margin-bottom: 24px;
 }
 
-.main-content .mdl-layout__tab-panel {
-  background-color: #F8F8F8;
-}
 
 .main-content .mdl-list__item.mdl-button {
   text-transform: none;
@@ -343,6 +343,12 @@ main > .mdl-layout__tab-panel {
 }
 
 
+.main-content #schedule-partial .mdl-card__supporting-text {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: calc(100% - 20px);
+}
+
 .main-content .compact-list .mdl-list__item--three-line {
   height: auto;
   padding: 6px 10px;
@@ -368,7 +374,21 @@ main > .mdl-layout__tab-panel {
   margin-left: 8px;
 }
 
+.main-content .inline-content {
+  display: inline;
+}
+.main-content .schedule-content-title {
+  font-size: 20px;
+  line-height: normal;
+  color: #660066;
+}
+.main-content .schedule-content-author {
+  margin-left: 8px;
+}
 
+.main-content .swiper-slide {
+  margin-left: 0;
+}
 /* CSS only for background images.
  */
 

@@ -3,7 +3,6 @@
     "id": "840745",
     "category": "C1",
     "title": "Low-Dimensional Nanostructure Property Measurements in a Transmission Electron Microscope",
-    "type": "Oral",
     "affl": "Queensland University of Technology (QUT)",
     "author": [
       "Dmitri, Golberg"
@@ -11,15 +10,12 @@
     "dept": "School of Chemistry, Physics and Mechanical Engineering",
     "first_email": "dmitry.golberg@qut.edu.au",
     "corr_name": "Dmitri, Golberg",
-    "corr_email": "dmitry.golberg@qut.edu.au",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "dmitry.golberg@qut.edu.au"
   },
   {
     "id": "890620",
     "category": "C1",
     "title": "Few-layer graphene based nanocomposites for potential use in dental, biomedical applications",
-    "type": "Oral",
     "affl": "Karlsruhe Institute of Technology",
     "author": [
       "Sharali, Malik"
@@ -27,15 +23,12 @@
     "dept": "Institute of Nanotechnology",
     "first_email": "sharali.malik@kit.edu",
     "corr_name": "Sharali, Malik",
-    "corr_email": "sharali.malik@kit.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "sharali.malik@kit.edu"
   },
   {
     "id": "893279",
     "category": "S1",
     "title": "Improved Synthesis of Linear Carbon Chains Inside Carbon Nanotubes",
-    "type": "Oral",
     "affl": "University of Vienna",
     "author": [
       "Lei, Shi",
@@ -53,15 +46,12 @@
     "dept": "Faculty of Physics",
     "first_email": "lei.shi@univie.ac.at",
     "corr_name": "Thomas, Pichler",
-    "corr_email": "thomas.pichler@univie.ac.at",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "thomas.pichler@univie.ac.at"
   },
   {
     "id": "901436",
     "category": "T",
     "title": "Chirality phase diagrams for Single-Walled Carbon Nanotubes",
-    "type": "Oral",
     "affl": "Aix-Marseille Univ. and CNRS",
     "author": [
       "Christophe, Bichara",
@@ -73,15 +63,12 @@
     "dept": "Centre Interdisciplinaire de Nanoscience de Marseille",
     "first_email": "bichara@cinam.univ-mrs.fr",
     "corr_name": "Christophe, Bichara",
-    "corr_email": "bichara@cinam.univ-mrs.fr",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "bichara@cinam.univ-mrs.fr"
   },
   {
     "id": "902132",
     "category": "T",
     "title": "Modulation of CVD Carbon Nanomaterial Nucleation and Growth Mechanisms via Chemical Etchants",
-    "type": "Oral",
     "affl": "The University of Newcastle",
     "author": [
       "Alister, Page",
@@ -91,15 +78,12 @@
     "dept": "Discipline of Chemistry",
     "first_email": "alister.page@newcastle.edu.au",
     "corr_name": "Alister, Page",
-    "corr_email": "alister.page@newcastle.edu.au",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "alister.page@newcastle.edu.au"
   },
   {
     "id": "902451",
     "category": "T",
     "title": "Nucleation and Growth Mechanisms of Boron Nitride Nanomaterials – Non-Equilibrium Molecular Dynamics Simulations",
-    "type": "Oral",
     "affl": "The University of Newcastle",
     "author": [
       "Alister, Page",
@@ -108,15 +92,12 @@
     "dept": "Discipline of Chemistry",
     "first_email": "alister.page@newcastle.edu.au",
     "corr_name": "Alister, Page",
-    "corr_email": "alister.page@newcastle.edu.au",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "alister.page@newcastle.edu.au"
   },
   {
     "id": "902602",
     "category": "K",
     "title": "Fused Organic Networks for Energy Conversion and Storage",
-    "type": "Oral",
     "affl": "UNIST",
     "author": [
       "Jong-Beom, Baek",
@@ -125,15 +106,12 @@
     "dept": "School of Energy and Chemical Engineering",
     "first_email": "jbbaek@unist.ac.kr",
     "corr_name": "Jong-Beom, Baek",
-    "corr_email": "jbbaek@unist.ac.kr",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "jbbaek@unist.ac.kr"
   },
   {
     "id": "905510",
     "category": "S3",
     "title": "The Bonding inside and outside Fullerene Cages",
-    "type": "Oral",
     "affl": "Huazhong University of Science and Technology",
     "author": [
       "Xing, Lu"
@@ -141,15 +119,12 @@
     "dept": "School of Materials Science and Engineering",
     "first_email": "lux@hust.edu.cn",
     "corr_name": "Xing, Lu",
-    "corr_email": "lux@hust.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "lux@hust.edu.cn"
   },
   {
     "id": "906593",
     "category": "K",
     "title": "Dark exciton dynamics in atomically thin 2D materials",
-    "type": "Oral",
     "affl": "Chalmers University of Technology",
     "author": [
       "Ermin, Malic"
@@ -157,15 +132,12 @@
     "dept": "Department of Physics",
     "first_email": "ermin.malic@chalmers.se",
     "corr_name": "Ermin, Malic",
-    "corr_email": "ermin.malic@chalmers.se",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "ermin.malic@chalmers.se"
   },
   {
     "id": "907505",
     "category": "O",
     "title": "Electron hydrodynamics in graphene: introduction and status",
-    "type": "Oral",
     "affl": "School of Physics and Astronomy",
     "author": [
       "Denis, Bandurin"
@@ -173,15 +145,12 @@
     "dept": "Condensed Matter Physics Group",
     "first_email": "denis.bandurin@manchester.ac.uk",
     "corr_name": "Denis, Bandurin",
-    "corr_email": "denis.bandurin@manchester.ac.uk",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "denis.bandurin@manchester.ac.uk"
   },
   {
     "id": "907508",
     "category": "K",
     "title": "Probing Luttinger Liquid in Single Walled Carbon Nanotubes",
-    "type": "Oral",
     "affl": "UC Berkeley",
     "author": [
       "Feng, Wang"
@@ -189,15 +158,12 @@
     "dept": "Physics",
     "first_email": "fengwang76@berkeley.edu",
     "corr_name": "Feng, Wang",
-    "corr_email": "fengwang76@berkeley.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "fengwang76@berkeley.edu"
   },
   {
     "id": "907638",
     "category": "A2",
     "title": "Carbon Nanotube Sponges and Energy Storage Applications",
-    "type": "Oral",
     "affl": "北京大学",
     "author": [
       "anyuan, cao"
@@ -205,15 +171,12 @@
     "dept": "工学院",
     "first_email": "anyuan@pku.edu.cn",
     "corr_name": "anyuan, cao",
-    "corr_email": "anyuan@pku.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "anyuan@pku.edu.cn"
   },
   {
     "id": "908407",
     "category": "P-GSS18",
     "title": "Synthesis of Width - Controlled Nanoribbons via Terrylene Encapsulation",
-    "type": "Oral",
     "affl": "University of Vienna",
     "author": [
       "Claudia, Berkmann",
@@ -226,15 +189,12 @@
     "dept": "Faculty of Physics",
     "first_email": "claudia.berkmann@univie.ac.at",
     "corr_name": "Claudia, Berkmann",
-    "corr_email": "claudia.berkmann@univie.ac.at",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "claudia.berkmann@univie.ac.at"
   },
   {
     "id": "908701",
     "category": "S2",
     "title": "Influence of Dissolved Oxygen on Defect Introduction to SWCNTs in Ultrasonic Dispersion Process",
-    "type": "Oral",
     "affl": "AIST",
     "author": [
       "Hiromichi, Kataura",
@@ -245,15 +205,12 @@
     "dept": "Nanomaterial Research Institute",
     "first_email": "h-kataura@aist.go.jp",
     "corr_name": "Hiromichi, Kataura",
-    "corr_email": "h-kataura@aist.go.jp",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "h-kataura@aist.go.jp"
   },
   {
     "id": "909463",
     "category": "A4",
     "title": "Graphene Materials in Antimicrobial Nanomedicine",
-    "type": "Oral",
     "affl": "The University of Sydney",
     "author": [
       "Yuan, Chen",
@@ -262,15 +219,12 @@
     "dept": "School of Chemical and Biomolecular Engineering",
     "first_email": "yuan.chen@sydney.edu.au",
     "corr_name": "Yuan, Chen",
-    "corr_email": "yuan.chen@sydney.edu.au",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "yuan.chen@sydney.edu.au"
   },
   {
     "id": "909636",
     "category": "A1",
     "title": "Single-walled carbon nanotubes for flexible and stretchable electronic applications",
-    "type": "Oral",
     "affl": "Skolkovo Institute of Science and Technology",
     "author": [
       "Albert, Nasibulin"
@@ -278,15 +232,12 @@
     "dept": "Photonics and quantum materials CREI",
     "first_email": "a.nasibulin@skoltech.ru",
     "corr_name": "Albert, Nasibulin",
-    "corr_email": "a.nasibulin@skoltech.ru",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "a.nasibulin@skoltech.ru"
   },
   {
     "id": "910016",
     "category": "A4",
     "title": "Gd-metallofullerenol nanomaterial as non-toxic breast cancer stem cell-specific inhibitor",
-    "type": "Oral",
     "affl": "National Center for Nanoscience and Technology of China",
     "author": [
       "Ying, Liu",
@@ -298,15 +249,12 @@
     "dept": "CAS Key Laboratory for Biomedical Effects of Nanomaterials and Nanosafety",
     "first_email": "liuy@nanoctr.cn",
     "corr_name": "Chunying, Chen",
-    "corr_email": "chenchy@nanoctr.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "chenchy@nanoctr.cn"
   },
   {
     "id": "910490",
     "category": "C1",
     "title": "Raman spectra by circularly polarized light in 2D materials",
-    "type": "Oral",
     "affl": "Tohoku University",
     "author": [
       "Riichiro, Saito",
@@ -317,15 +265,12 @@
     "dept": "Physics",
     "first_email": "rsaito@flex.phys.tohoku.ac.jp",
     "corr_name": "Riichiro, Saito",
-    "corr_email": "rsaito@flex.phys.tohoku.ac.jp",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "rsaito@flex.phys.tohoku.ac.jp"
   },
   {
     "id": "911685",
     "category": "S1",
     "title": "Kinetics Evolution Growth of (n, n-1) Tubes",
-    "type": "Oral",
     "affl": "Peking University",
     "author": [
       "Shuchen, Zhang",
@@ -334,15 +279,12 @@
     "dept": "College of Chemistry and Molecular Engineering",
     "first_email": "zhangsc-cnc@pku.edu.cn",
     "corr_name": "Shuchen, Zhang",
-    "corr_email": "zhangsc-cnc@pku.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "zhangsc-cnc@pku.edu.cn"
   },
   {
     "id": "911804",
     "category": "O",
     "title": "Nanomechanical characterization of the Kondo charge dynamics in a carbon nanotube",
-    "type": "Oral",
     "affl": "University of Regensburg",
     "author": [
       "Andreas, Hüttel",
@@ -355,15 +297,12 @@
     "dept": "Institute for Experimental and Applied Physics",
     "first_email": "andreas.huettel@ur.de",
     "corr_name": "Andreas, Hüttel",
-    "corr_email": "andreas.huettel@ur.de",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "andreas.huettel@ur.de"
   },
   {
     "id": "911805",
     "category": "C1",
     "title": "Shaping a single electron in a nanotube with a parallel magnetic field",
-    "type": "Oral",
     "affl": "University of Regensburg",
     "author": [
       "Andreas, Hüttel",
@@ -377,15 +316,12 @@
     "dept": "Institute for Experimental and Applied Physics",
     "first_email": "andreas.huettel@ur.de",
     "corr_name": "Andreas, Hüttel",
-    "corr_email": "andreas.huettel@ur.de",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "andreas.huettel@ur.de"
   },
   {
     "id": "912296",
     "category": "K",
     "title": "Optical and Thermoelectric Properties of Fermi Level Tuned and Aligned Single Wall Carbon Nanotube Thin Films",
-    "type": "Oral",
     "affl": "Tokyo Metropolitan University",
     "author": [
       "Kazuhiro, Yanagi"
@@ -393,15 +329,12 @@
     "dept": "Physics",
     "first_email": "yanagi-kazuhiro@tmu.ac.jp",
     "corr_name": "Kazuhiro, Yanagi",
-    "corr_email": "yanagi-kazuhiro@tmu.ac.jp",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "yanagi-kazuhiro@tmu.ac.jp"
   },
   {
     "id": "912504",
     "category": "T",
     "title": "Theoretical study on low-dimensional carbides for catalytic applications",
-    "type": "Oral",
     "affl": "Tsinghua-Berkeley Shenzhen Institute",
     "author": [
       "Xiaolong, Zou"
@@ -409,15 +342,12 @@
     "dept": "Xiaolong",
     "first_email": "xlzou@sz.tsinghua.edu.cn",
     "corr_name": "Xiaolong, Zou",
-    "corr_email": "xlzou@sz.tsinghua.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "xlzou@sz.tsinghua.edu.cn"
   },
   {
     "id": "913293",
     "category": "P-GSS18",
     "title": "Modeling electronic excitations in thin films: the issue of environment",
-    "type": "Oral",
     "affl": "LEM, CNRS - ONERA, 92322 France",
     "author": [
       "Lorenzo, Sponza",
@@ -428,15 +358,12 @@
     "dept": "LEM",
     "first_email": "lorenzo.sponza@onera.fr",
     "corr_name": "Lorenzo, Sponza",
-    "corr_email": "lorenzo.sponza@onera.fr",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "lorenzo.sponza@onera.fr"
   },
   {
     "id": "914323",
     "category": "K",
     "title": "Controlling the inner dielectric environment of carbon nanotubes to tune their optical properties",
-    "type": "Oral",
     "affl": "University of Antwerp",
     "author": [
       "Sofie, Cambre",
@@ -450,15 +377,12 @@
     "dept": "Physics Department",
     "first_email": "sofie.cambre@uantwerpen.be",
     "corr_name": "Sofie, Cambre",
-    "corr_email": "sofie.cambre@uantwerpen.be",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "sofie.cambre@uantwerpen.be"
   },
   {
     "id": "919170",
     "category": "C1",
     "title": "Hexagonal Boron Nitride in the Class of 2D Materials: Luminescence Properties",
-    "type": "Oral",
     "affl": "LEM, CNRS-ONERA, Chatillon France",
     "author": [
       "Annick, Loiseau",
@@ -473,15 +397,12 @@
     "dept": "Laboratoire dEtude des Microstructures",
     "first_email": "annick.loiseau@onera.fr",
     "corr_name": "Annick, Loiseau",
-    "corr_email": "annick.loiseau@onera.fr",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "annick.loiseau@onera.fr"
   },
   {
     "id": "919878",
     "category": "T",
     "title": "Strategies for the Chirality Control during Carbon Nanotubes Growth",
-    "type": "Oral",
     "affl": "Institute for Basic Science",
     "author": [
       "Feng, Ding"
@@ -489,15 +410,12 @@
     "dept": "Center for Multidimensional Carbon Materials",
     "first_email": "f.ding@unist.ac.kr",
     "corr_name": "Feng, Ding",
-    "corr_email": "f.ding@unist.ac.kr",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "f.ding@unist.ac.kr"
   },
   {
     "id": "922268",
     "category": "A4",
     "title": "Precise Quantification of Cut Boron Nitride Nanotubes in Liquids",
-    "type": "Oral",
     "affl": "Michigan Technological University",
     "author": [
       "Yoke Khin, Yap",
@@ -508,15 +426,12 @@
     "dept": "Physics",
     "first_email": "ykyap@mtu.edu",
     "corr_name": "Yoke Khin, Yap",
-    "corr_email": "ykyap@mtu.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "ykyap@mtu.edu"
   },
   {
     "id": "924617",
     "category": "S1",
     "title": "Carbon Nanotube Forest Growth at 375 °C: Process Decoupling and Temperature Effect on Chiral Distribution",
-    "type": "Oral",
     "affl": "Kingston University London",
     "author": [
       "Santiago, Esconjauregui",
@@ -527,15 +442,12 @@
     "dept": "School of Mechanical Engineering",
     "first_email": "c.esconjauregui@kingston.ac.uk",
     "corr_name": "Santiago, Esconjauregui",
-    "corr_email": "c.esconjauregui@kingston.ac.uk",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "c.esconjauregui@kingston.ac.uk"
   },
   {
     "id": "926768",
     "category": "S1",
     "title": "Single-walled carbon nanotubes co-axially wrapped with mono- and few-layer boron nitride nanotubes",
-    "type": "Oral",
     "affl": "Department of Mechanical Engineering, The University of Tokyo",
     "author": [
       "Rong, Xiang",
@@ -553,15 +465,12 @@
     "dept": "Department of Mechanical Engineering",
     "first_email": "xiangrong@photon.t.u-tokyo.ac.jp",
     "corr_name": "Rong, Xiang",
-    "corr_email": "xiangrong@photon.t.u-tokyo.ac.jp",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "xiangrong@photon.t.u-tokyo.ac.jp"
   },
   {
     "id": "927742",
     "category": "S1",
     "title": "Digital-Coded Isotope Labeling on Individual Single-Walled Carbon Nanotubes Grown on Crystal Quartz",
-    "type": "Oral",
     "affl": "The University of Tokyo",
     "author": [
       "Shigeo, Maruyama",
@@ -576,15 +485,12 @@
     "dept": "Department of Mechanical Engineering",
     "first_email": "maruyama@photon.t.u-tokyo.ac.jp",
     "corr_name": "Shigeo, Maruyama",
-    "corr_email": "maruyama@photon.t.u-tokyo.ac.jp",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "maruyama@photon.t.u-tokyo.ac.jp"
   },
   {
     "id": "927916",
     "category": "K",
     "title": "Interfaces between Small Molecules and Semiconducting Single-Walled Carbon Nanotubes for Precise Control Over Energy and Charge Transport",
-    "type": "Oral",
     "affl": "National Renewable Energy Laboratory",
     "author": [
       "Jeffrey, Blackburn",
@@ -602,15 +508,12 @@
     "dept": "Materials Physics",
     "first_email": "jeffrey.blackburn@nrel.gov",
     "corr_name": "Jeffrey, Blackburn",
-    "corr_email": "jeffrey.blackburn@nrel.gov",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "jeffrey.blackburn@nrel.gov"
   },
   {
     "id": "928154",
     "category": "C1",
     "title": "Temperature depenence on the double-resonance Raman process for two dimensional Transition Metal Dichalcogenides",
-    "type": "Oral",
     "affl": "Universidade Federal de Minas Gerais",
     "author": [
       "Cristiano, Fantini",
@@ -622,15 +525,12 @@
     "dept": "Department of Physics",
     "first_email": "fantini.cris@gmail.com",
     "corr_name": "Cristiano, Fantini",
-    "corr_email": "fantini.cris@gmail.com",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "fantini.cris@gmail.com"
   },
   {
     "id": "937918",
     "category": "S1",
     "title": "In Situ Study on Catalysts for Controlled Growth of Carbon Nanotubes",
-    "type": "Oral",
     "affl": "Peking University",
     "author": [
       "Feng, Yang",
@@ -642,15 +542,12 @@
     "dept": "College of Chemistry and Molecular Engineering",
     "first_email": "fengyang@pku.edu.cn",
     "corr_name": "Yan, Li",
-    "corr_email": "yanli@pku.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "yanli@pku.edu.cn"
   },
   {
     "id": "945460",
     "category": "A2",
     "title": "Constructing Carbon Nanotube Networks for Electrochemical Energy Storage",
-    "type": "Oral",
     "affl": "Suzhou Institute of Nano-Tech and Nano-Bionics, Chinese Academy of Sciences",
     "author": [
       "Qingwen, Li"
@@ -658,15 +555,12 @@
     "dept": "Advanced Materials Division",
     "first_email": "qwli2007@sinano.ac.cn",
     "corr_name": "Qingwen, Li",
-    "corr_email": "qwli2007@sinano.ac.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "qwli2007@sinano.ac.cn"
   },
   {
     "id": "960559",
     "category": "C1",
     "title": "Experimental observation of chiral phonons in monolayer WSe2",
-    "type": "Oral",
     "affl": "University of California at Berkeley",
     "author": [
       "Hanyu, Zhu",
@@ -683,15 +577,12 @@
     "dept": "Mechanical Engineering",
     "first_email": "zhuhy11@berkeley.edu",
     "corr_name": "Xiang, Zhang",
-    "corr_email": "xzhang@me.berkeley.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "xzhang@me.berkeley.edu"
   },
   {
     "id": "962025",
     "category": "K",
     "title": "Inhalation toxicity of carbon-based nanomaterials",
-    "type": "Oral",
     "affl": "National Research Centre for the Workning Environment",
     "author": [
       "Ulla, Vogel"
@@ -699,15 +590,12 @@
     "dept": "Danish Center for Nanosafety",
     "first_email": "ubv@nrcwe.dk",
     "corr_name": "Ulla, Vogel",
-    "corr_email": "ubv@nrcwe.dk",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "ubv@nrcwe.dk"
   },
   {
     "id": "963902",
     "category": "K",
     "title": "Cardiovascular disease as a (nano)particle-induced occupational disease",
-    "type": "Oral",
     "affl": "National Research Centre for the Workning Environment",
     "author": [
       "Ulla, Vogel"
@@ -715,15 +603,12 @@
     "dept": "Danish Center for Nanosafety",
     "first_email": "ubv@nrcwe.dk",
     "corr_name": "Ulla, Vogel",
-    "corr_email": "ubv@nrcwe.dk",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "ubv@nrcwe.dk"
   },
   {
     "id": "964591",
     "category": "K",
     "title": "2D Material Inks for Electronics, Optoelectronics and Photonics",
-    "type": "Oral",
     "affl": "Cambridge Graphene Centre, University of Cambridge",
     "author": [
       "Tawfique, Hasan"
@@ -731,15 +616,12 @@
     "dept": "Cambridge Graphene Centre, University of Cambridge",
     "first_email": "th270@cam.ac.uk",
     "corr_name": "Tawfique, Hasan",
-    "corr_email": "th270@cam.ac.uk",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "th270@cam.ac.uk"
   },
   {
     "id": "964604",
     "category": "K",
     "title": "Graphene Nanoribbons as a New Semiconductor Family",
-    "type": "Oral",
     "affl": "Max Planck Institute for Polymer Research, ",
     "author": [
       "Klaus, Müllen"
@@ -747,15 +629,12 @@
     "dept": "Max Planck Institute for Polymer Research, ",
     "first_email": "muellen@mpip-mainz.mpg.de",
     "corr_name": "Klaus, Müllen",
-    "corr_email": "muellen@mpip-mainz.mpg.de",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "muellen@mpip-mainz.mpg.de"
   },
   {
     "id": "974899",
     "category": "K",
     "title": "Effective theory for the twisted bilayer graphene",
-    "type": "Oral",
     "affl": "Osaka University",
     "author": [
       "Mikito, Koshino"
@@ -763,15 +642,12 @@
     "dept": "Department of Physics",
     "first_email": "mikito.koshino@gmail.com",
     "corr_name": "Mikito, Koshino",
-    "corr_email": "mikito.koshino@gmail.com",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "mikito.koshino@gmail.com"
   },
   {
     "id": "981008",
     "category": "K",
     "title": "Coulomb Drag Transport Between Nanotubes and Graphene",
-    "type": "Oral",
     "affl": "Harvard University",
     "author": [
       "Philip, Kim"
@@ -779,15 +655,12 @@
     "dept": "Physics",
     "first_email": "pkim@physics.harvard.edu",
     "corr_name": "Philip, Kim",
-    "corr_email": "pkim@physics.harvard.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "pkim@physics.harvard.edu"
   },
   {
     "id": "981689",
     "category": "K",
     "title": "In-Situ TEM Studies on Phase Transition Mechanism of TMDs by Alkali Metal Intercalation",
-    "type": "Oral",
     "affl": "Institute of Physics, Chinese Academy of Sciences",
     "author": [
       "Xuedong, Bai",
@@ -799,15 +672,12 @@
     "dept": "State Key Laboratory for Surface Physics",
     "first_email": "xdbai@iphy.ac.cn",
     "corr_name": "Xuedong, Bai",
-    "corr_email": "xdbai@iphy.ac.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "xdbai@iphy.ac.cn"
   },
   {
     "id": "1003310",
     "category": "C1",
     "title": "High performance carbon nanotube fiber and film ",
-    "type": "Oral",
     "affl": "East China University of Science and Technology",
     "author": [
       "Jian Nong, Wang"
@@ -815,15 +685,12 @@
     "dept": "School of Mechanical and Power Engineering",
     "first_email": "jnwang@ecust.edu.cn",
     "corr_name": "Jian Nong, Wang",
-    "corr_email": "jnwang@ecust.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "jnwang@ecust.edu.cn"
   },
   {
     "id": "1011482",
     "category": "P-NMES18",
     "title": "Carbon-based metal-free electrocatalysis for efficient energy conversion and storage",
-    "type": "Oral",
     "affl": "Case Western Reserve University",
     "author": [
       "Liming, Dai"
@@ -831,15 +698,12 @@
     "dept": "Department of Macromolecular Science and Engineering",
     "first_email": "liming.dai@case.edu",
     "corr_name": "Liming, Dai",
-    "corr_email": "liming.dai@case.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "liming.dai@case.edu"
   },
   {
     "id": "1014098",
     "category": "P-CNTFA18",
     "title": "Carbon Nanotubes for High-Performance Flexible Electronics and Integrated Smart Sensor System",
-    "type": "Oral",
     "affl": "Peking University",
     "author": [
       "Youfan, Hu"
@@ -847,15 +711,12 @@
     "dept": "Department of Electronics",
     "first_email": "youfanhu@pku.edu.cn",
     "corr_name": "Youfan, Hu",
-    "corr_email": "youfanhu@pku.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "youfanhu@pku.edu.cn"
   },
   {
     "id": "1015572",
     "category": "P-CNTFA18",
     "title": "A simple method for aligning CNTs toward electronics devices",
-    "type": "Oral",
     "affl": "Meijo University",
     "author": [
       "Sumio, Iijima"
@@ -863,15 +724,12 @@
     "dept": "Graduate School of Science and Technology",
     "first_email": "iijimas@meijo-u.ac.jp",
     "corr_name": "Sumio, Iijima",
-    "corr_email": "iijimas@meijo-u.ac.jp",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "iijimas@meijo-u.ac.jp"
   },
   {
     "id": "1019329",
     "category": "A1",
     "title": "Wearable electronics based on graphene materials",
-    "type": "Oral",
     "affl": "Executive Director of Beijing Graphene Institute",
     "author": [
       "Wei, Di"
@@ -879,15 +737,12 @@
     "dept": "Executive Director of Beijing Graphene Institute",
     "first_email": "weidi-cnc@pku.edu.cn",
     "corr_name": "Wei, Di",
-    "corr_email": "weidi-cnc@pku.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "weidi-cnc@pku.edu.cn"
   },
   {
     "id": "1019523",
     "category": "P-CNTFA18",
     "title": "FC-CVD synthesis with dry deposition of SWNT thin films for flexible electronics applications",
-    "type": "Oral",
     "affl": "Aalto University School of Science",
     "author": [
       "Esko, Kauppinen"
@@ -895,15 +750,12 @@
     "dept": "puumiehenkuja 2",
     "first_email": "esko.kauppinen@aalto.fi",
     "corr_name": "Esko, Kauppinen",
-    "corr_email": "esko.kauppinen@aalto.fi",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "esko.kauppinen@aalto.fi"
   },
   {
     "id": "1020410",
     "category": "K",
     "title": "Wafer-Scale Crystalline Carbon Nanotubes: Physics and Applications",
-    "type": "Oral",
     "affl": "Rice University, Houston",
     "author": [
       "Junichiro, Kono"
@@ -911,15 +763,12 @@
     "dept": "Department of Electrical and Computer Engineering",
     "first_email": "kono@rice.edu",
     "corr_name": "Junichiro, Kono",
-    "corr_email": "kono@rice.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "kono@rice.edu"
   },
   {
     "id": "1022283",
     "category": "O",
     "title": "Optical Spectroscopy of Individual Carbon Nanotubes with Defined Structure",
-    "type": "Oral",
     "affl": "Peking University",
     "author": [
       "Kaihui, Liu"
@@ -927,15 +776,12 @@
     "dept": "Physics",
     "first_email": "khliu@pku.edu.cn",
     "corr_name": "Kaihui, Liu",
-    "corr_email": "khliu@pku.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "khliu@pku.edu.cn"
   },
   {
     "id": "1022295",
     "category": "O",
     "title": "Growth and Characterization of Semiconducting Carbon Nanotubes for Nanoelectronics",
-    "type": "Oral",
     "affl": "清华大学",
     "author": [
       "Kaili, Jiang"
@@ -943,15 +789,12 @@
     "dept": "Department of Physics物理系",
     "first_email": "JiangKL@tsinghua.edu.cn",
     "corr_name": "Kaili, Jiang",
-    "corr_email": "JiangKL@tsinghua.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "JiangKL@tsinghua.edu.cn"
   },
   {
     "id": "1022328",
     "category": "O",
     "title": "Carbon Nanotube Dry Adhesives with Performances Superior to Nature-originated Adhesions ",
-    "type": "Oral",
     "affl": "华中科技大学 材料科学与工程学院",
     "author": [
       "Ming, Xu"
@@ -959,15 +802,12 @@
     "dept": "华中科技大学",
     "first_email": "ming.xu@hust.edu.cn",
     "corr_name": "Ming, Xu",
-    "corr_email": "ming.xu@hust.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "ming.xu@hust.edu.cn"
   },
   {
     "id": "1029390",
     "category": "A1",
     "title": "SWNT thin films for 3D electronics applications",
-    "type": "Oral",
     "affl": "Aalto University School of Science",
     "author": [
       "Esko, Kauppinen"
@@ -975,15 +815,12 @@
     "dept": "puumiehenkuja 2",
     "first_email": "esko.kauppinen@aalto.fi",
     "corr_name": "Esko, Kauppinen",
-    "corr_email": "esko.kauppinen@aalto.fi",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "esko.kauppinen@aalto.fi"
   },
   {
     "id": "1032703",
     "category": "O",
     "title": "From Carbon-Based Nanotubes to Nanocages for Advanced Energy Conversion and Storage",
-    "type": "Oral",
     "affl": "Nanjing University",
     "author": [
       "Zheng, Hu"
@@ -991,15 +828,12 @@
     "dept": "Nankai University",
     "first_email": "zhenghu@nju.edu.cn",
     "corr_name": "Zheng, Hu",
-    "corr_email": "zhenghu@nju.edu.cn",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "zhenghu@nju.edu.cn"
   },
   {
     "id": "1032706",
     "category": "T",
     "title": "Aligned Carbon Nanotube Transistors and Neuromorphic Computing",
-    "type": "Oral",
     "affl": "Univ. of Southern California",
     "author": [
       "Chongwu, Zhou"
@@ -1007,8 +841,6 @@
     "dept": "Dept. of Electrical Engineering",
     "first_email": "chongwuz@usc.edu",
     "corr_name": "Chongwu, Zhou",
-    "corr_email": "chongwuz@usc.edu",
-    "content": "No content btw",
-    "poster_num": "not yet"
+    "corr_email": "chongwuz@usc.edu"
   }
 ]
