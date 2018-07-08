@@ -426,6 +426,13 @@ main > .mdl-layout__tab-panel {
   height: 180px;
 }
 
+.mdl-color--pink-purple-400 {
+  background-color: #d8428e !important;
+}
+
+.mdl-color-text--pink-purple-400 {
+  color: #d8428e !important;
+}
 
 /* font
  * credit from Google Stylesheet, locally hosted

@@ -23,7 +23,7 @@ let validateSearchString = () => {
 };
 let doHighlight = () => {
   $('#searchResult').mark(window.prevSearchHighlight, {
-    exclude: ['h4.mdl-card__title-text'],
+    exclude: ['h4.mdl-card__title-text', 'div.category-info *'],
     wildcards: 'enabled'
   });
 };

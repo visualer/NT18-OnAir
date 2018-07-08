@@ -31,6 +31,7 @@ function addSearchHandler() {
       return;
     }
 
+    // favorite filtering
     let favFilterEnabled = $('#favFilterButton').attr('data-fav-filter-state') === "1";
     if (favFilterEnabled) result = result.filter((elem) => fav.indexOf(data[elem.ref].id) > -1);
 
@@ -42,6 +43,18 @@ function addSearchHandler() {
       if (!$searchActions.hasClass('hidden')) $searchActions.transition('fade out');
       return;
     }
+
+    // strict highlighting
+    let strictGroups = searchString.split(' ').map((e) => `+${e}`);
+    let strictResult = [];
+    if (strictGroups.length > 1 && searchString.indexOf('+') < 0 && searchString.indexOf('-') < 0)
+      strictResult = idx.search(strictGroups.join(' ')).map((e) => e.ref);
+    result.forEach((elem, index) => {
+      elem.isStrict = (strictResult.indexOf(elem.ref) > -1);
+      elem.originalIndex = index;
+    });
+    // https://stackoverflow.com/questions/1427608/fast-stable-sorting-algorithm-implementation-in-javascript
+    result.sort((a, b) => a.isStrict === b.isStrict ? a.originalIndex - b.originalIndex : (a.isStrict ? -1 : 1));
 
     // auto paging
     let allPagesCount = Math.ceil(result.length / 12); // maybe use bitwise operator?
@@ -59,19 +72,18 @@ function addSearchHandler() {
       result.slice((currPageCount - 1) * 12, currPageCount * 12).forEach((elem, resultIndex) => {
         $searchResult.append(generateResultTemplate(elem, resultIndex));
       });
-
       componentHandler.upgradeAllRegistered();
-
     };
 
+    // search finalizing
     appendResults();
     $searchActionPrev.click(() => { currPageCount -= 1; appendResults(); });
     $searchActionNext.click(() => { currPageCount += 1; appendResults(); });
-
     componentHandler.upgradeAllRegistered();
     if ($searchActions.hasClass('hidden')) $searchActions.transition('fade in');
     $searchInput.blur();
 
+    // keyword highlighting
     window.prevSearchHighlight = searchString.split(' ').map((e) => {
       if (e[0] === '-') return '';
       if (e[0] === '+') e = e.substring(1);
@@ -91,7 +103,9 @@ function addSearchHandler() {
 
 function generateResultTemplate(elem, resultIndex) {
 
-  let colorSeries = ['deep-purple-300', 'deep-purple-400', 'indigo-500', 'indigo-400'];
+  let colorSeries = elem.isStrict ?
+    ['pink-300', 'pink-400', 'pink-purple-400'] :
+    ['deep-purple-400', 'indigo-400', 'deep-purple-300'];
   let colors = colorSeries.map((e) => 'mdl-color--' + e);
   let textColors = colorSeries.map((e) => 'mdl-color-text--' + e);
 
@@ -132,7 +146,7 @@ function generateResultTemplate(elem, resultIndex) {
                   Presenting${corrIsFirst ? ' and corresponding' : ''}:
                   ${resultEntry.first_email}, ${resultEntry.affl}
                 </p>
-                ${corrIsFirst ? '' : `<p>* Corresponding: ${resultEntry.corr_email}</p>`}
+                ${corrIsFirst ? '' : `<p>* Corresponding: ${resultEntry.corr_email || '(unknown)'}</p>`}
                 <hr /><p style="line-height: 18px;">${resultEntry.content}</p>
               </span>
             </div>
