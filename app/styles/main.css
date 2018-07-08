@@ -299,7 +299,6 @@ main > .mdl-layout__tab-panel {
   height: 32px;
 }
 .main-content .mdl-grid.mdl-grid--no-spacing .filter-button-tooltip.filter-button-tooltip {
-  margin-top: 0 !important;
   max-width: initial;
 }
 
@@ -312,7 +311,6 @@ main > .mdl-layout__tab-panel {
   height: 32px;
 }
 .main-content .mdl-grid.mdl-grid--no-spacing .fav-filter-button-tooltip.fav-filter-button-tooltip {
-  margin-top: 0 !important;
   max-width: initial;
 }
 
@@ -343,17 +341,17 @@ main > .mdl-layout__tab-panel {
 }
 
 
-.main-content #schedule-partial .mdl-card__supporting-text {
+.main-content .compact-card .mdl-card__supporting-text {
   padding-left: 10px;
   padding-right: 10px;
   width: calc(100% - 20px);
 }
 
-.main-content .compact-list .mdl-list__item--three-line {
+.main-content .compact-list .mdl-list__item {
   height: auto;
   padding: 6px 10px;
 }
-.main-content .compact-list .mdl-list__item--three-line .mdl-list__item-primary-content {
+.main-content .compact-list .mdl-list__item .mdl-list__item-primary-content {
   height: auto;
 }
 .main-content .compact-list .mdl-list__item .mdl-list__item-primary-content .mdl-list__item-icon {
@@ -404,6 +402,11 @@ main > .mdl-layout__tab-panel {
 }
 .main-content .image-card-header-slider-3 {
   background: url('../images/slider/slider-3.jpg') no-repeat;
+  background-size: cover;
+  height: 180px;
+}
+.main-content .image-card-header-slider-4 {
+  background: url('../images/slider/slider-4.jpg') bottom center no-repeat;
   background-size: cover;
   height: 180px;
 }

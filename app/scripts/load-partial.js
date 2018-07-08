@@ -22,7 +22,7 @@ function loadPartial() {
         if (!$parent[0].hasAttribute('data-category')) return false;
         clickTab('#tabAbstract');
         let $searchInput = $('#searchInput');
-        let searchGroup = $searchInput.val().replace(/[^a-zA-Z0-9+\-*:]+/ig, " ").split(' ');
+        let searchGroup = validateSearchString().split(' ');
         let categoryIndex = searchGroup.findIndex((e) => e.slice(0, 9) === 'category:');
         if (categoryIndex > -1) searchGroup.splice(categoryIndex, 1);
         $searchInput.parent()[0]
@@ -61,7 +61,7 @@ function loadPartial() {
 
         clickTab('#tabAbstract');
         let $searchInput = $('#searchInput');
-        let searchGroup = $searchInput.val().replace(/[^a-zA-Z0-9+\-*:]+/ig, " ").split(' ');
+        let searchGroup = validateSearchString().split(' ');
         let sessionIndex = searchGroup.findIndex((e) => e.slice(0, 8) === 'session:');
         if (sessionIndex > -1) searchGroup.splice(sessionIndex, 1);
         $searchInput.parent()[0].MaterialTextfield

@@ -177,6 +177,7 @@ gulp.task('json-prebuild', () => {
     this.field('author');
     this.field('content');
     this.field('session');
+    this.field('poster_num');
     absData.forEach(function (doc, index) {
       this.add({
         index: index,
@@ -186,13 +187,13 @@ gulp.task('json-prebuild', () => {
         author: `${doc.author.join(' ')} ${doc.dept} ${doc.affl}`,
         content: doc.content,
         session: ('SC'.includes(doc.poster_num[1]) ? 2 : 4) - parseInt(doc.poster_num.slice(2, 5)) % 2,
+        poster_num: doc.poster_num,
         // only for IDE to recognize the variable
         corr_name: '',
         first_email: '',
         corr_email: '',
         dept: '',
         affl: '',
-        poster_num: ''
       });
     }, this);
   });

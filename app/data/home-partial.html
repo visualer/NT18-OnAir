@@ -9,27 +9,11 @@
     <div class="mdl-card__supporting-text">
       <p>
         Welcome to Peking University!<br /><br />
-        NT18 OnAir provides all the essential information of the NT18 Conference
-        on your mobile, including
-        program information, abstracts, etc.<br /><br />
+        NT18 OnAir provides the essential information of the NT18 Program
+        on your mobile device, including
+        schedule and poster abstracts, and provides advanced search functionality.<br /><br />
         Hope you enjoy your staying here!
       </p>
-    </div>
-  </div>
-  <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
-                    mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-    <div class="mdl-card__title mdl-color-text--white image-card-header-slider-2">
-      <h2 class="mdl-card__title-text">Conference Abstracts</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
-      <p>
-        NT18 Conference Abstracts are all available at NT18 OnAir.<br /><br />
-        You can search by title, author, affiliation and content, and read them online.
-      </p>
-    </div>
-    <div class="mdl-card__actions">
-      <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
-           onclick="clickTab('#tabAbstract');">Search abstracts</div>
     </div>
   </div>
   <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
@@ -39,13 +23,67 @@
     </div>
     <div class="mdl-card__supporting-text">
       <p>
-        The detailed schedule of NT18 can be found on "schedule" tab.<br /><br />
-        <b>Program information and important dates are shown before NT18 is to be held.</b>
+        The detailed schedule of NT18 Program can be found on "schedule" tab. <br /><br />
+        You can view abstracts of Tutorial, Keynote, Invited talks and Oral presentations
+        by expanding the corresponding event.
       </p>
     </div>
     <div class="mdl-card__actions">
       <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
-           onclick="clickTab('#tabSchedule');">View Details</div>
+           onclick="clickTab('#tabSchedule');scrollToTop();">View Details</div>
+    </div>
+  </div>
+  <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
+                    mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card__title mdl-color-text--white image-card-header-slider-2">
+      <h2 class="mdl-card__title-text">Poster Abstracts</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <p>
+        Before each poster session, you can search and favorite the poster in which you are interested
+        in advance, and locate them quickly by enabling "favorite-only filter", which can be done by
+        tapping the star button beside the search card.<br /><br />
+        Wildcard, excluding, and searching within fields are also supported. And by enabling highlight,
+        your search keywords will have more visibility under the yellow background.
+      </p>
+    </div>
+    <div class="mdl-card__actions">
+      <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
+           onclick="clickTab('#tabAbstract');scrollToTop();">Search abstracts</div>
+    </div>
+  </div>
+  <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
+                    mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card__title mdl-color-text--white image-card-header-slider-4">
+      <h2 class="mdl-card__title-text">Advanced Searching</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <p>
+        If you are trying to find posters by topics, you can filter posters using predefined
+        categories in Topics tab. You can also find posters in a certain session by corresponding
+        entries in the schedule. <br /><br />
+        And If you are to restrict your search within a field, "author:", "title:", and "content:"
+        keywords should be prefixed, such as "title:MoS2".
+      </p>
+    </div>
+    <div class="mdl-card__actions">
+      <div class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--primary"
+           onclick="clickTab('#tabTopics');scrollToTop();">View Topics</div>
+    </div>
+  </div>
+  <div class="mdl-card mdl-cell mdl-shadow--2dp mdl-cell--6-col-desktop
+                    mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card__title mdl-color-text--white image-card-header-slider-5">
+      <h2 class="mdl-card__title-text">Support &amp; Assistance</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <p>
+        What if files are not loading, and "Load error" pops up continuously from the bottom?
+        You can just tap the "Report" button on the snackbar and send the error report to accel(at)pku.edu.cn,
+        and the bug will be fixed as soon as possible.<br /><br />
+        If you still have important technical problems, usage problems or advices which you consider
+        difficult to describe by e-mail, you can contact the developer in person on poster session 2, PC094.
+      </p>
     </div>
   </div>
 </section>

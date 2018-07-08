@@ -8,7 +8,7 @@ let writeStream = fs.createWriteStream(path.join(__dirname, '../data/schedule-pa
 let firstDate = 16; // July 16<sup>th</sup>
 
 writeStream.write(`
-<section class="mdl-grid section--center compact-list swiper-container"
+<section class="mdl-grid section--center compact-list swiper-container compact-card"
         id="schedule-partial" style="align-items: start;">
 <div class="swiper-wrapper">
 `);

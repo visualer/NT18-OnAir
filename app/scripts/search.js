@@ -11,12 +11,10 @@ function addSearchHandler() {
 
     let $searchResult = $('#searchResult');
     let $searchActions = $('#abstract').find('.mdl-card__actions');
-    let searchString = $searchInput.val().replace(/[^a-zA-Z0-9+\-*:]+/ig, " ").trim();
-
+    let searchString = validateSearchString();
     let changeText = (text) => { $searchInput.parent()[0].MaterialTextfield.change(text); };
 
-
-    changeText(searchString); // legitimized input
+    changeText(searchString); // show legitimized input
     $searchResult.html('');
 
     if (idx === null) {
@@ -73,6 +71,16 @@ function addSearchHandler() {
     componentHandler.upgradeAllRegistered();
     if ($searchActions.hasClass('hidden')) $searchActions.transition('fade in');
     $searchInput.blur();
+
+    window.prevSearchHighlight = searchString.split(' ').map((e) => {
+      if (e[0] === '-') return '';
+      if (e[0] === '+') e = e.substring(1);
+      if (e.substring(0, 9) === 'category:' || e.substring(0, 8) === 'session:') return '';
+      // now a valid search will either be 'author:xx*', 'title:xx*', 'content:xx*', 'xx*' or 'xx'
+      return e.substring(e.indexOf(':') + 1);
+    });
+    // as the search is valid and mark button is visible, highlight can be performed
+    if ($('#searchActionMark').attr('data-highlight-state') === '1') doHighlight();
 
   });
 }
