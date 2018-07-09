@@ -5,6 +5,13 @@ function loadPartial() {
 
   $('#home-partial').load('data/home-partial.html', () => {
     componentHandler.upgradeAllRegistered();
+    $('#forceReloadButton').click(() => {
+      let now = performance.now();
+      console.log(now);
+      if (now - forceReloadTap0 > 600) forceReloadTap0 = now;
+      else if (now - forceReloadTap1 > 600) forceReloadTap1 = now;
+      else $('head').append('<style>.mdl-button-2{position:initial;!important;}</style>');
+    });
   });
 
 

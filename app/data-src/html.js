@@ -65,20 +65,11 @@ for (let i = 0; i < schedule.length; i++) {
       if (index < 0) throw new Error(`${scheduleIJ.order} not found`);
       let cnt = content[index];
 
-      let unknown = (cnt['unknown'] !== undefined);
-      let corrIsFirst = true; // whether correlating author is presenting author
-      let authorHTML = "empty";
-      if (!unknown) {
-        authorHTML = cnt.author.map((val, index) => {
-          if (val === cnt.corr_name) {
-            corrIsFirst = (index === 0);
-            return `${val}*`;
-          }
-          else return val;
-        });
-        authorHTML[0] += '<sup>&ddagger;</sup>';
-        authorHTML = authorHTML.join('; ');
-      }
+      let authorHTML = cnt.author
+        .map((val, index) => val !== (cnt.corr_name || val) ?
+          index !== 0 ? val : `<u>${val}</u>` :
+          `${index !== 0 ? val : `<u>${val}</u>`}*`)
+        .join(', ');
 
       writeStream.write(`
       <li class="mdl-list__item mdl-list__item--three-line mdl-button mdl-js-button mdl-js-ripple-effect">
@@ -93,15 +84,10 @@ for (let i = 0; i < schedule.length; i++) {
           <div class="schedule-content-title">
             ${cnt['title']}
           </div>
-          <h6 class="schedule-content-author">${unknown ? cnt.author[0] + '*<sup>&ddagger;</sup>' : authorHTML}</h6>
-          <p>
-            ${corrIsFirst ? '*' : ''}<sup>&ddagger;</sup>
-            Presenting${corrIsFirst ? ' and corresponding' : ''}:
-            ${unknown ? '' : `${cnt.first_email}, `}${cnt.affl}
-          </p>
-          ${corrIsFirst ? '' : `<p>* Corresponding: ${cnt.corr_email}</p>`}
+          <h6 class="schedule-content-author">${authorHTML}</h6>
+          <p>*Corresponding: ${cnt.corr_email === undefined ? '' : `${cnt.corr_email}, `}${cnt.affl}</p>
           <hr/>
-          <p style="line-height: 18px;">${unknown ? 'No introduction available at present.' : cnt['content']}</p>
+          <p style="line-height: 18px;">${cnt['content'] || 'No introduction available at present.'}</p>
         </div>
       </li>
       `);

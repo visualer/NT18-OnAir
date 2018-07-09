@@ -8,6 +8,7 @@ let errorReport = null;
 let fav = [];
 let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 let isPhone = /Android|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
+let forceReloadTap0 = -1, forceReloadTap1 = -1;
 
 let skipA2HS = () => { $('.mdl__loader.non-standalone').transition('fade out'); };
 let clickTab = (tabId) => {
@@ -19,13 +20,14 @@ let scrollToTop = () => {
   $('.mdl-layout__content').stop().animate({ scrollTop: 0 });
 };
 let validateSearchString = () => {
-  return $('#searchInput').val().replace(/[^a-zA-Z0-9+\-*:]+/ig, " ").trim().replace(/\s{2,}/g, ' ');
+  return $('#searchInput').val().replace(/[^a-zA-Z0-9\-*:]+/ig, " ").trim().replace(/\s{2,}/g, ' ');
 };
 let doHighlight = () => {
-  $('#searchResult').mark(window.prevSearchHighlight, {
-    exclude: ['h4.mdl-card__title-text', 'div.category-info *'],
-    wildcards: 'enabled'
-  });
+  if ($('#searchActionMark').attr('data-highlight-state') === '1')
+    $('#searchResult').mark(window.prevSearchHighlight, {
+      exclude: ['h4.mdl-card__title-text', 'div.category-info *'],
+      wildcards: 'enabled'
+    });
 };
 
 
@@ -122,8 +124,8 @@ function init() {
       let hlState = 1 - parseInt($hlBtn.attr('data-highlight-state'));
       $hlBtn.attr('data-highlight-state', hlState);
       $hlBtn.find('i.material-icons').html(hlState === 1 ? 'format_color_reset' : 'border_color');
-      if (hlState === 1) doHighlight();
-      else $searchResult.unmark();
+      doHighlight(); // if (hlState === 1) is included in the function
+      if (hlState === 0) $searchResult.unmark();
     })
     .taphold((e) => {
       if (isMobile) $('.mark-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);

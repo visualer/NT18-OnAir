@@ -171,29 +171,26 @@ gulp.task('json-prebuild', () => {
   let absData = JSON.parse(fs.readFileSync('app/data-src/abstracts.json', {encoding: 'utf8'}));
   let idx = lunr(function () {
     this.ref('index');
-    this.field('id');
     this.field('category');
     this.field('title');
-    this.field('author');
+    this.field('author', { boost: 5 });
     this.field('content');
     this.field('session');
     this.field('poster_num');
     absData.forEach(function (doc, index) {
       this.add({
         index: index,
-        id: doc.id,
         category: doc.category,
         title: doc.title,
-        author: `${doc.author.join(' ')} ${doc.dept} ${doc.affl}`,
+        author: `${doc.author.join(' ')} ${doc.affl}`,
         content: doc.content,
         session: ('SC'.includes(doc.poster_num[1]) ? 2 : 4) - parseInt(doc.poster_num.slice(2, 5)) % 2,
         poster_num: doc.poster_num,
         // only for IDE to recognize the variable
         corr_name: '',
-        first_email: '',
         corr_email: '',
-        dept: '',
         affl: '',
+        id: ''
       });
     }, this);
   });

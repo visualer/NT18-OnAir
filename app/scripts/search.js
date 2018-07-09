@@ -24,12 +24,15 @@ function addSearchHandler() {
 
     let result = [];
     try {
-      result = idx.search(searchString === '' ? '*' : searchString);
+      result = idx.search(searchString === '' ? '*' :
+        searchString.split(' ').map((e) => e[0] === '-' ? e : `+${e}`).join(' ')
+      );
     } catch (e) {
       showMsg('Unrecognized input.', () => changeText(''), 'Clear Input');
       if (!$searchActions.hasClass('hidden')) $searchActions.transition('fade out');
       return;
     }
+
 
     // favorite filtering
     let favFilterEnabled = $('#favFilterButton').attr('data-fav-filter-state') === "1";
@@ -44,20 +47,10 @@ function addSearchHandler() {
       return;
     }
 
-    // strict highlighting
-    let strictGroups = searchString.split(' ').map((e) => `+${e}`);
-    let strictResult = [];
-    if (strictGroups.length > 1 && searchString.indexOf('+') < 0 && searchString.indexOf('-') < 0)
-      strictResult = idx.search(strictGroups.join(' ')).map((e) => e.ref);
-    result.forEach((elem, index) => {
-      elem.isStrict = (strictResult.indexOf(elem.ref) > -1);
-      elem.originalIndex = index;
-    });
-    // https://stackoverflow.com/questions/1427608/fast-stable-sorting-algorithm-implementation-in-javascript
-    result.sort((a, b) => a.isStrict === b.isStrict ? a.originalIndex - b.originalIndex : (a.isStrict ? -1 : 1));
 
     // auto paging
-    let allPagesCount = Math.ceil(result.length / 12); // maybe use bitwise operator?
+    let resultsPerPage = 12;
+    let allPagesCount = Math.ceil(result.length / resultsPerPage); // maybe use bitwise operator?
     let currPageCount = 1;
     let $searchActionPrev = $('#searchActionPrev');
     let $searchActionNext = $('#searchActionNext');
@@ -69,16 +62,16 @@ function addSearchHandler() {
       $searchActionNext.attr('disabled', (currPageCount === allPagesCount) ? 'disabled' : null);
       $('#searchActionPageNum').html(`${currPageCount} / ${allPagesCount}`);
 
-      result.slice((currPageCount - 1) * 12, currPageCount * 12).forEach((elem, resultIndex) => {
-        $searchResult.append(generateResultTemplate(elem, resultIndex));
+      result.slice((currPageCount - 1) * resultsPerPage, currPageCount * resultsPerPage).forEach((elem) => {
+        $searchResult.append(generateResultTemplate(elem));
       });
       componentHandler.upgradeAllRegistered();
     };
 
     // search finalizing
     appendResults();
-    $searchActionPrev.click(() => { currPageCount -= 1; appendResults(); });
-    $searchActionNext.click(() => { currPageCount += 1; appendResults(); });
+    $searchActionPrev.click(() => { currPageCount -= 1; appendResults(); doHighlight(); });
+    $searchActionNext.click(() => { currPageCount += 1; appendResults(); doHighlight(); });
     componentHandler.upgradeAllRegistered();
     if ($searchActions.hasClass('hidden')) $searchActions.transition('fade in');
     $searchInput.blur();
@@ -92,7 +85,7 @@ function addSearchHandler() {
       return e.substring(e.indexOf(':') + 1);
     });
     // as the search is valid and mark button is visible, highlight can be performed
-    if ($('#searchActionMark').attr('data-highlight-state') === '1') doHighlight();
+    doHighlight();
 
   });
 }
@@ -100,72 +93,55 @@ function addSearchHandler() {
 
 
 
+function generateResultTemplate(elem) {
 
-function generateResultTemplate(elem, resultIndex) {
-
-  let colorSeries = elem.isStrict ?
-    ['pink-300', 'pink-400', 'pink-purple-400'] :
-    ['deep-purple-400', 'indigo-400', 'deep-purple-300'];
-  let colors = colorSeries.map((e) => 'mdl-color--' + e);
-  let textColors = colorSeries.map((e) => 'mdl-color-text--' + e);
+  let colors = ['mdl-color--deep-purple-400', 'mdl-color--blue-900'];
 
   let resultEntry = data[elem.ref];
-  let colorIndex = resultIndex % colors.length;
   let posterNum = resultEntry.poster_num;
-  let sessionIndex = ('SC'.includes(posterNum[1]) ? 2 : 4)  - parseInt(posterNum.slice(2, 5)) % 2;
+  let colorIndex = 'SC'.includes(posterNum[1]) ? 0 : 1;
+  let sessionIndex = (1 + colorIndex) * 2  - parseInt(posterNum.slice(2, 5)) % 2;
   let sessionDate = ['',
     'July 17<sup>th</sup> 16:00',
     'July 18<sup>th</sup> 11:00',
     'July 19<sup>th</sup> 11:00',
     'July 19<sup>th</sup> 16:00'][sessionIndex];
 
-  let corrIsFirst; // whether correlating author is presenting author
-  let authorHTML = resultEntry.author.map((val, index) => {
-    if (val === resultEntry.corr_name) {
-      corrIsFirst = (index === 0);
-      return `${val}*`;
-    }
-    else return val;
-  });
-  authorHTML[0] += '<sup>&ddagger;</sup>';
-  authorHTML = authorHTML.join('; ');
+
+  let authorHTML = resultEntry.author
+    .map((val, index) => val !== (resultEntry.corr_name || val) ?
+      index !== 0 ? val : `<u>${val}</u>` :
+      `${index !== 0 ? val : `<u>${val}</u>`}*`)
+    .join(', ');
 
   return $(`
           <div class="mdl-card mdl-cell mdl-shadow--2dp result-unit
                       mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"
-               data-article-id="${resultEntry.id}" data-result-id="${resultIndex}">
-            <div class="mdl-card__title mdl-color-text--white ${colors[colorIndex]}"
+               data-article-id="${resultEntry.id}" data-result-id="${resultEntry.id}">
+            <div class="mdl-card__title mdl-color-text--white mdl-button-2 mdl-js-button
+                        mdl-js-ripple-effect ${colors[colorIndex]} toggle-button"
                  style="min-height: 80px;">
               <h4 class="mdl-card__title-text" style="margin-top: 30px; font-size: 20px;">${resultEntry.title}</h4>
             </div>
-            <div class="mdl-card__supporting-text" style="padding-top: 0; padding-bottom: 0;">
-              <span class="result-content hidden">
-                <h6 style="margin: 8px;">${authorHTML}</h6>
-                <p style="margin-bottom: 6px;">
-                  ${corrIsFirst ? '*' : ''}<sup>&ddagger;</sup>
-                  Presenting${corrIsFirst ? ' and corresponding' : ''}:
-                  ${resultEntry.first_email}, ${resultEntry.affl}
-                </p>
-                ${corrIsFirst ? '' : `<p>* Corresponding: ${resultEntry.corr_email || '(unknown)'}</p>`}
-                <hr /><p style="line-height: 18px;">${resultEntry.content}</p>
-              </span>
-            </div>
-            <div class="mdl-card__actions">
-              <div class="mdl-button mdl-js-button mdl-js-ripple-effect ${textColors[colorIndex]} toggle-button">
-                Toggle Details
-              </div>
+            <div class="mdl-card__supporting-text hidden" style="padding-top: 0; padding-bottom: 0;">
+              <h6 style="margin: 16px;">${resultEntry.authorHTML || authorHTML}</h6>
+              <p>
+                *Corresponding: 
+                ${resultEntry.corr_email === '' ? '' : `${resultEntry.corr_email}, `}${resultEntry.affl}
+              </p>
+              <hr /><p style="line-height: 18px;">${resultEntry.content}</p>
             </div>
             <div class="category-info">
               <p>${resultEntry.category}: ${posterNum}, ${sessionDate}</p>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon fav-button" 
-                    id="favButton${resultIndex}">
+                    id="favButton${resultEntry.id}">
               <i class="material-icons mdl-color-text--white fav-icon">
                 ${fav.indexOf(resultEntry.id) > -1 ? 'star' : 'star_border'}
               </i>
             </button>
             <div class="mdl-tooltip mdl-tooltip--large mdl-tooltip--left"
-                 data-mdl-for="favButton${resultIndex}" data-mdl-taphold="true">
+                 data-mdl-for="favButton${resultEntry.id}" data-mdl-taphold="true">
               ${fav.indexOf(resultEntry.id) > -1 ? 'Remove from' : 'Add to'} favorites
             </div>
           </div>
@@ -177,7 +153,7 @@ function generateResultTemplate(elem, resultIndex) {
 
           if ($target.hasClass('toggle-button')) {
 
-            $currTarget.find('.result-content').toggleClass('hidden');
+            $currTarget.find('.mdl-card__supporting-text').transition({ animation: 'fade', queue: false });
             return false;
 
           } else if ($target.hasClass('fav-button')) {
