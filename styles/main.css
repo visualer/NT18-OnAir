@@ -269,8 +269,27 @@ main > .mdl-layout__tab-panel {
  *
  *
  */
-/* scroll top button */
 
+.fav-button .mdl-button__ripple-container {
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+}
+
+/* card header button, modified .mdl-button */
+.mdl-button-2 {
+  will-change: box-shadow;
+  transition: box-shadow .2s cubic-bezier(.4,0,1,1),
+    background-color .2s cubic-bezier(.4,0,.2,1),
+    color .2s cubic-bezier(.4,0,.2,1);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+
+/* scroll top button */
 #scrollTopButton {
   position: fixed;
   right: 30px;
@@ -284,7 +303,6 @@ main > .mdl-layout__tab-panel {
   z-index: 3;
   top: 8px;
   right: 8px;
-  height: 32px;
 }
 .main-content .mdl-grid.mdl-grid--no-spacing .help-button-tooltip.help-button-tooltip {
   margin-top: 0 !important; /* fuck inline styles */
@@ -296,7 +314,6 @@ main > .mdl-layout__tab-panel {
   z-index: 3;
   top: 40px;
   right: 8px;
-  height: 32px;
 }
 .main-content .mdl-grid.mdl-grid--no-spacing .filter-button-tooltip.filter-button-tooltip {
   max-width: initial;
@@ -308,7 +325,7 @@ main > .mdl-layout__tab-panel {
   z-index: 3;
   top: 72px;
   right: 8px;
-  height: 32px;
+
 }
 .main-content .mdl-grid.mdl-grid--no-spacing .fav-filter-button-tooltip.fav-filter-button-tooltip {
   max-width: initial;
@@ -319,8 +336,7 @@ main > .mdl-layout__tab-panel {
   position: absolute;
   z-index: 3;
   top: 8px;
-  right: 8px;
-  height: 32px; /* is that .mdl_card > * rule necessary? */
+  right: 8px; /* is that .mdl_card > * rule necessary? */
 }
 
 .main-content section .category-info {
@@ -426,13 +442,7 @@ main > .mdl-layout__tab-panel {
   height: 180px;
 }
 
-.mdl-color--pink-purple-400 {
-  background-color: #d8428e !important;
-}
 
-.mdl-color-text--pink-purple-400 {
-  color: #d8428e !important;
-}
 
 /* font
  * credit from Google Stylesheet, locally hosted
