@@ -480,9 +480,9 @@
     "title": "Carbon Nanotube Sponges and Energy Storage Applications",
     "affl": "Peking University",
     "author": [
-      "anyuan cao"
+      "Anyuan Cao"
     ],
-    "corr_name": "anyuan cao",
+    "corr_name": "Anyuan Cao",
     "corr_email": "anyuan@pku.edu.cn",
     "content": "Development of advanced energy storage systems such as supercapacitors and rechargeable batteries demands high performance electrode materials. Carbon nanotube (CNT) sponges are bulk aerogel-like materials made from three-dimensionally overlapped multi-walled nanotubes. They are light-weight, highly porous and flexible, with many potential applications such as adsorption, catalysis, sensors and electrodes. In this presentation, I will describe the synthesis method, structural characteristics and unique properties of CNT sponges in the context of macroscopic CNT or graphene-based assemblies. Using the sponge as a three-dimensional isotropic porous template, we have fabricated various hierarchical composite materials with tailored microstructures and interesting properties. Examples include CNT-pseudo polymer composite sponges could serve as compressible electrodes for supercapacitors, CNT-MoS<sub>2</sub> and CNT-Co<sub>3</sub>O<sub>4</sub> core-shell sponges act as high-capacity lithium ion battery anodes, and CNT-MOF hybrid networks for lithium-sulfur batteries. CNT sponges thus provide a universal platform for manufacturing functional nanocomposite materials and exploring a wide range of applications particularly in energy and environmental areas.",
     "order": "O35"
@@ -577,16 +577,16 @@
     "title": "Interfaces Between Small Molecules and Semiconducting Single-Walled Carbon Nanotubes for Precise Control Over Energy and Charge Transport",
     "affl": "National Renewable Energy Laboratory, USA",
     "author": [
-      "Jeffrey Blackburn", 
-      "Hyun-Suk Kang", 
-      "Rachelle Ihly", 
-      "Bradley MacLeod", 
-      "Noah Stanton", 
-      "Colin Nuckolls", 
-      "Sofie Cambre", 
-      "Wim Wenseleers", 
-      "Andrew Ferguson", 
-      "Dylan Arias", 
+      "Jeffrey Blackburn",
+      "Hyun-Suk Kang",
+      "Rachelle Ihly",
+      "Bradley MacLeod",
+      "Noah Stanton",
+      "Colin Nuckolls",
+      "Sofie Cambre",
+      "Wim Wenseleers",
+      "Andrew Ferguson",
+      "Dylan Arias",
       "Justin Johnson"
     ],
     "corr_email": "jeffrey.blackburn@nrel.gov",
