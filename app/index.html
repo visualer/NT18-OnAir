@@ -120,7 +120,7 @@
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="searchInput">
               <label class="mdl-textfield__label" for="searchInput" id="searchInputLabel">
-                Search...
+                Search by title/author/content...
               </label>
             </div>
             <div style="padding: 4px 0;;" class="mdl-card__actions hidden">
@@ -199,6 +199,20 @@
   </div>
 
 </div>
+
+<!-- u want sum electric violet filter? -->
+<svg height="0" xmlns="http://www.w3.org/2000/svg">
+  <filter id="drop-shadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3"></feGaussianBlur>
+    <feOffset dx="0" dy="0" result="offsetblur"></feOffset>
+    <feFlood flood-color="rgba(56,0,100,0.8)"></feFlood>
+    <feComposite in2="offsetblur" operator="in"></feComposite>
+    <feMerge>
+      <feMergeNode></feMergeNode>
+      <feMergeNode in="SourceGraphic"></feMergeNode>
+    </feMerge>
+  </filter>
+</svg>
 
 <script src="lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="lib/jquery/jquery.mobile.tap-event.min.js"></script>

@@ -3,7 +3,9 @@
 function addSearchHandler() {
 
   let $searchInput = $('#searchInput');
-
+  let $searchMaterialTextfield = $searchInput.parent()[0].MaterialTextfield;
+  $searchInput.focus(() => $searchMaterialTextfield.onUpdateClasses());
+  $searchInput.blur(() => $searchMaterialTextfield.onUpdateClasses());
   $searchInput.keydown((e) => {
 
     if (e.keyCode !== 13) return true; // $.ui.keyCode.ENTER
@@ -12,7 +14,7 @@ function addSearchHandler() {
     let $searchResult = $('#searchResult');
     let $searchActions = $('#abstract').find('.mdl-card__actions');
     let searchString = validateSearchString();
-    let changeText = (text) => { $searchInput.parent()[0].MaterialTextfield.change(text); };
+    let changeText = (text) => { $searchMaterialTextfield.change(text); };
 
     changeText(searchString); // show legitimized input
     $searchResult.html('');

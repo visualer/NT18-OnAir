@@ -96,8 +96,8 @@
       "event": "Dinner"
     },
     {
-      "starttime": "19:00",
-      "endtime": "20:30",
+      "starttime": "18:30",
+      "endtime": "20:00",
       "event": "Campus Tour, Talk of Sponsors"
     }
   ],
@@ -209,8 +209,8 @@
       "event": "Dinner"
     },
     {
-      "starttime": "19:00",
-      "endtime": "20:30",
+      "starttime": "18:30",
+      "endtime": "20:00",
       "event": "Campus Tour"
     }
   ],
@@ -346,8 +346,8 @@
       "event": "Dinner"
     },
     {
-      "starttime": "19:00",
-      "endtime": "20:30",
+      "starttime": "18:30",
+      "endtime": "20:00",
       "event": "Campus Tour, Talk of Sponsors"
     }
   ],

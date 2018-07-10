@@ -13,7 +13,7 @@ let forceReloadTap0 = -1, forceReloadTap1 = -1;
 let skipA2HS = () => { $('.mdl__loader.non-standalone').transition('fade out'); };
 let clickTab = (tabId) => {
   $(tabId).find('span').click();
-  if (tabId === '#tabSchedule') window.swiperObj.update();
+  if (tabId === '#tabSchedule' && !window.swiperInitialized) window.swiperObj.update();
 };
 let scrollToTop = () => {
   $('.mdl-layout').stop().animate({ scrollTop: 0 }); // for desktop
@@ -97,39 +97,9 @@ function init() {
 
   // process HTML and search filter buttons
 
-  loadPartial();
+  loadPartial(); // ajaxing
 
-  $('#filterButton')
-    .click(() => { clickTab('#tabTopics'); scrollToTop(); return false; })
-    .taphold((e) => {
-      if (isMobile) $('.filter-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
-    });
-
-  $('#favFilterButton')
-    .click(() => {
-      // data-fav-filter-state is reusable attr => declared explicitly, no need to (val | 0)
-      let $ffBtn = $('#favFilterButton'), ffState = 1 - parseInt($ffBtn.attr('data-fav-filter-state'));
-      $ffBtn.attr('data-fav-filter-state', ffState);
-      $ffBtn.find('i.material-icons').html(ffState === 1 ? 'star' : 'star_border');
-      $('#searchInput').trigger($.Event('keydown', { keyCode: 13 }));
-      return false;
-    })
-    .taphold((e) => {
-      if (isMobile) $('.fav-filter-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
-    });
-
-  $('#searchActionMark')
-    .click(() => {
-      let $hlBtn = $('#searchActionMark'), $searchResult = $('#searchResult');
-      let hlState = 1 - parseInt($hlBtn.attr('data-highlight-state'));
-      $hlBtn.attr('data-highlight-state', hlState);
-      $hlBtn.find('i.material-icons').html(hlState === 1 ? 'format_color_reset' : 'border_color');
-      doHighlight(); // if (hlState === 1) is included in the function
-      if (hlState === 0) $searchResult.unmark();
-    })
-    .taphold((e) => {
-      if (isMobile) $('.mark-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
-    });
+  initializeActions();
 
   // process data and search
 
@@ -156,3 +126,50 @@ function init() {
 
 }
 
+function initializeActions() {
+
+  componentHandler.upgradeAllRegistered();
+
+  let $searchInput = $('#searchInput');
+
+  $('#filterButton')
+    .click(() => { clickTab('#tabTopics'); scrollToTop(); return false; })
+    .taphold((e) => {
+      if (isMobile) $('.filter-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
+    });
+
+  $('#favFilterButton')
+    .click(() => {
+      // data-fav-filter-state is reusable attr => declared explicitly, no need to (val | 0)
+      let $ffBtn = $('#favFilterButton'), ffState = 1 - parseInt($ffBtn.attr('data-fav-filter-state'));
+      $ffBtn.attr('data-fav-filter-state', ffState);
+      $ffBtn.find('i.material-icons').html(ffState === 1 ? 'star' : 'star_border');
+      $searchInput.trigger($.Event('keydown', { keyCode: 13 }));
+      return false;
+    })
+    .taphold((e) => {
+      if (isMobile) $('.fav-filter-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
+    });
+
+  $('#searchActionMark')
+    .click(() => {
+      let $hlBtn = $('#searchActionMark'), $searchResult = $('#searchResult');
+      let hlState = 1 - parseInt($hlBtn.attr('data-highlight-state'));
+      $hlBtn.attr('data-highlight-state', hlState);
+      $hlBtn.find('i.material-icons').html(hlState === 1 ? 'format_color_reset' : 'border_color');
+      doHighlight(); // if (hlState === 1) is included in the function
+      if (hlState === 0) $searchResult.unmark();
+    })
+    .taphold((e) => {
+      if (isMobile) $('.mark-button-tooltip')[0].MaterialTooltip.boundMouseEnterHandler(e);
+    });
+
+  let $searchField = $searchInput.parent()[0];
+  $searchField.MaterialTextfield.onUpdateClasses = () => {
+    let $searchInputLabel = $('#searchInputLabel');
+    if ($($searchField).hasClass('is-dirty') || $($searchField).hasClass('is-focused'))
+      $searchInputLabel.html('Search...');
+    else $searchInputLabel.html('Search by title/author/content...')
+  };
+
+}

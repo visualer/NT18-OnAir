@@ -7,7 +7,6 @@ function loadPartial() {
     componentHandler.upgradeAllRegistered();
     $('#forceReloadButton').click(() => {
       let now = performance.now();
-      console.log(now);
       if (now - forceReloadTap0 > 600) forceReloadTap0 = now;
       else if (now - forceReloadTap1 > 600) forceReloadTap1 = now;
       else $('head').append('<style>.mdl-button-2{position:initial;!important;}</style>');
@@ -53,7 +52,17 @@ function loadPartial() {
       autoHeight: true,
       spaceBetween: 70,
       roundLengths: true,
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      on: {
+        update: () => {
+          window.swiperInitialized = true;
+          let elapsed = Math.floor((new Date() - new Date('2018/7/16 00:00:00')) / (60 * 60 * 24 * 1000));
+          window.swiperObj.slideTo(elapsed > 4 || elapsed < 0 ? 0 : elapsed);
+        },
+        slideChange: () => {
+          scrollToTop();
+        }
+      }
     });
 
     $('#tabSchedule').one('click', '.mdl-layout__tab-ripple-container', () => { window.swiperObj.update(); });

@@ -128,8 +128,8 @@ for (let i = 0; i < schedule.length; i++) {
 
 writeStream.write(`
 </div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev" style="filter:url(#drop-shadow)"></div>
+  <div class="swiper-button-next" style="filter:url(#drop-shadow)"></div>
 </section>
 <section class="section--footer"></section>
 `);
