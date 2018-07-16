@@ -65,7 +65,7 @@ for (let i = 0; i < schedule.length; i++) {
       if (index < 0) throw new Error(`${scheduleIJ.order} not found`);
       let cnt = content[index];
 
-      let authorHTML = cnt.author
+      let authorHTML = cnt.authorHTML || cnt.author
         .map((val, index) => val !== (cnt.corr_name || val) ?
           index !== 0 ? val : `<u>${val}</u>` :
           `${index !== 0 ? val : `<u>${val}</u>`}*`)
@@ -75,7 +75,7 @@ for (let i = 0; i < schedule.length; i++) {
       <li class="mdl-list__item mdl-list__item--three-line mdl-button mdl-js-button mdl-js-ripple-effect">
         <span class="mdl-list__item-primary-content">
           <i class="material-icons mdl-list__item-icon">expand_less</i>
-          <span>${completeNotation} by ${cnt.author[0]}</span>
+          <span>${completeNotation} by ${cnt.presentingAuthor || cnt.author[0]}</span>
           <span class="mdl-list__item-text-body">${scheduleIJ['starttime']}&ndash;${scheduleIJ['endtime']}</span>
         </span>
       </li>
