@@ -297,22 +297,11 @@ main > .mdl-layout__tab-panel {
   z-index: 99;
 }
 
-/* help button */
-.main-content .mdl-grid.mdl-grid--no-spacing .help-button {
-  position: absolute;
-  z-index: 3;
-  top: 8px;
-  right: 8px;
-}
-.main-content .mdl-grid.mdl-grid--no-spacing .help-button-tooltip.help-button-tooltip {
-  margin-top: 0 !important; /* fuck inline styles */
-}
-
 /* filter button */
 .main-content .mdl-grid.mdl-grid--no-spacing .filter-button {
   position: absolute;
   z-index: 3;
-  top: 40px;
+  top: 8px;
   right: 8px;
 }
 .main-content .mdl-grid.mdl-grid--no-spacing .filter-button-tooltip.filter-button-tooltip {
@@ -323,7 +312,7 @@ main > .mdl-layout__tab-panel {
 .main-content .mdl-grid.mdl-grid--no-spacing .fav-filter-button {
   position: absolute;
   z-index: 3;
-  top: 72px;
+  top: 40px;
   right: 8px;
 
 }
