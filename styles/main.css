@@ -175,13 +175,13 @@ main > .mdl-layout__tab-panel {
  *
  *
  */
+.main-content .non-standalone {
+    display: none !important;
+  }
 
 @media all and (display-mode: standalone), all and (min-width: 840px)  {
 
-  .main-content .non-standalone {
-    display: none;
-  }
-
+  
 }
 
 @media (min-width: 840px) {
